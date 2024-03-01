@@ -1,0 +1,17 @@
+index
+account
+overview
+train
+players
+player?id
+teams
+team?id
+mates
+myteam
+play3
+play5
+play7
+play11
+mbox
+msend
+msent

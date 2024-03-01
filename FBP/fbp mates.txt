@@ -1,0 +1,102 @@
+request matehood - req mate
+dequest matehood - deq mate
+accept matehood - add mate
+reject matehood - rej mate
+remove matehood - rem mate
+block matehood - blo mate
+deblock matehood - deb mate
+
+(user pode evitar requests) - coluna bool 'allow'
+
+nao precisa usar array search, push, unset
+precisa procurar, adicionar ou remover da string
+
+req mate:
+ SELECT confs FROM users WHERE id=".$pid."
+ <php>
+  $confs = sql(confs)
+  $confs_ids = explode(",", $confs)
+  array_push($confs_ids, $uid)
+  $update_confs = implode(",", $confs_ids)
+ UPDATE users SET confs=".$update_confs." WHERE id=".$pid."
+
+deq mate:
+ SELECT confs FROM users WHERE id=".$pid."
+ <php>
+  $confs = sql(confs)
+  $confs_ids = explode(",", $confs)
+  $key = array_search($uid, $confs_ids)
+  unset($confs_ids[$key])
+  $update_confs = implode(",", $confs_ids)
+ UPDATE users SET confs=".$update_confs." WHERE id=".$pid."
+
+add mate:
+ SELECT mates FROM users WHERE id=".$uid."
+ <php>
+  $umates = sql(mates)
+  $umates_ids = explode(",", $umates)
+  array_push($umates_ids, $pid)
+  $update_umates = implode(",", $umates_ids)
+ UPDATE users SET mates=".$update_umates." WHERE id=".$uid."
+ SELECT confs FROM users WHERE id=".$uid."
+ <php>
+  $confs = sql(confs)
+  $confs_ids = explode(",", $confs)
+  $key = array_search($pid, $confs_ids)
+  unset($confs_ids[$key])
+  $update_confs = implode(",", $confs_ids)
+ UPDATE users SET confs=".$update_confs." WHERE id=".$uid."
+ SELECT mates FROM users WHERE id=".$pid."
+ <php>
+  $pmates = sql(mates)
+  $pmates_ids = explode(",", $pmates)
+  array_push($pmates_ids, $new_pmate_id)
+  $update_pmates = implode(",", $pmates_ids)
+ UPDATE users SET mates=".$update_pmates." WHERE id=".$pid."
+
+rej mate:
+ SELECT confs FROM users WHERE id=".$uid."
+ <php>
+  $confs = sql(confs)
+  $confs_ids = explode(",", $confs)
+  $key = array_search($pid, $confs_ids)
+  unset($confs_ids[$key])
+  $update_confs = implode(",", $confs_ids)
+ UPDATE users SET confs=".$update_confs." FROM users WHERE id=".$uid."
+
+rem mate:
+ SELECT mates FROM users WHERE id=".$uid."
+ <php>
+  $umates = sql(mates)
+  $umates_ids = explode(",", $umates)
+  $key = array_search($pid, $umates_ids)
+  unset($umates_ids[$key])
+  $update_umates = implode(",", $umates_ids)
+ UPDATE users SET mates=".$update_umates." WHERE id=".$uid."
+ SELECT mates FROM users WHERE id=".$pid."
+ <php>
+  $pmates = sql(mates)
+  $pmates_ids = explode(",", $pmates)
+  $key = array_search($uid, $pmates_ids)
+  unset($pmates_ids[$key])
+  $update_pmates = implode(",", $pmates_ids)
+ UPDATE users SET mates=".$update_pmates." WHERE id=".$uid."
+
+blo mate:
+ SELECT block FROM users WHERE id=".$uid."
+ <php>
+  $block = sql(block)
+  $block_ids = explode(",", $block)
+  array_push($block_ids, $pid)
+  $update_block = implode(",", $block_ids)
+ UPDATE users SET block=".$update_block." WHERE id=".$uid."
+
+deb mate:
+ SELECT block FROM users WHERE id=".$uid."
+ <php>
+  $block = sql(block)
+  $block_ids = explode(",", $block)
+  $key = array_search($pid, $block_ids)
+  unset($block_ids[$key])
+  $update_block = implode(",", $block_ids)
+ UPDATE users SET block=".$block_ids." WHERE id=".$uid."

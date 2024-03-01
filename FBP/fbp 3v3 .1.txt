@@ -1,0 +1,76 @@
+FBPG
+3v3
+
+User + Player + Bot vs 3 Bots
+
+3- St 9 |  6 | 7 | 7
+4- Sp 5 |  7 | 7 | 6
+8- Sk 9 |  8 | 7 | 8
+3- At 6 | 10 | 7 | 8
+3- De 7 |  6 | 7 | 6
+total: 36 | 37 | 35 | 35
+
+Finta + Tackle = Duels
+Passe + Marking = Plays
+Runob + Interc = Runs
+
+finta -> passe -> runob -> shot
+goal < shot < runob < pass < finta
+
+success:
+ finta: (2*skill + speed)
+ tackle: (2*skill + strength)
+ passe: (2*skill + attack)
+ marking: (2*defense + strength)
+ runob: (2*attack + speed)
+ interc: (2*speed + defense)
+ shot: (2*skill + strength)
+
+finta: 2speed+skill
+passe: 2attack+skill
+interc: 2defense+speed
+
+3-4-6-4-4
+
+4*(2*skill) + 2*defense + 2*attack + 2*speed + 2*speed + 3*strength + attack + defense
+8*skill + 3* defense + 3*attack + 4*speed + 3*strength
+
+User:
+ finta: 2*9 +5 = 23, tackle: 2*9 +9 = 27 | duels: 50
+ passe: 2*9 +6 = 24, marking: 2*7 +9 = 23| plays: 47
+ runob: 2*6 +5 = 17, interc: 2*5 +7 = 17 | runs: 34
+ shot: 2*9 +9 = 27, total: 158, média: 23| goals: 4
+Player:
+ finta: 2*8 +7 = 23, tackle: 2*9 +6 = 24  | duels: 47
+ passe: 2*8 +10 = 26, marking: 2*6 +6 = 18| plays: 44
+ runob: 2*10 +7 = 27, interc: 2*7 +6 = 20 | runs: 47
+ shot: 2*8 +6 = 22, total: 160, média: 23 | goals: 5
+
+pu: 23/44, 26/40, 17/39, 27 -> 274.482 / 68.640 = 4
+up: 23/44, 24/40, 27/39, 22 -> 327.888 / 68.640 = 5
+
+Bot1:
+ finta: 2*7 +7 = 21, tackle: 2*7 +7 = 21 | duels: 42
+ passe: 2*7 +7 = 21, marking: 2*7 +7 = 21| plays: 42
+ runob: 2*7 +7 = 21, interc: 2*7 +7 = 21 | runs: 42
+ shot: 2*7 +7 = 21, total: 147, média: 21| goals: 3
+Bot2:
+ finta: 2*8 +6 = 22, tackle: 2*8 +7 = 23 | duels: 45
+ passe: 2*8 +8 = 24, marking: 2*6 +7 = 19| plays: 43
+ runob: 2*8 +6 = 22, interc: 2*6 +6 = 18 | runs: 40
+ shot: 2*8 +7 = 23, total: 151, média: 22| goals: 3
+
+21: 22/51, 24/41, 21/37, 21 -> 232.848 / 77.367 = 3
+12: 21/51, 21/41, 22/37, 23 -> 223.146 / 77.367 = 3
+
+Result:
+
+UPB BBB
+48 D 43
+45 P 42
+40 R 41
+33 C 18
+ 9 G 6 
+
+UPBB: finta,passe,runob,shot,tackle,marking,interc;total,duels,plays,runs,goals
+Team: 2tackle,2marking,2interc,2duels,2plays,2runs,2goals
