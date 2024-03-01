@@ -1,0 +1,43 @@
+html {text-align: center;}
+
+#header {height: 64px;}
+
+.container {
+	height: 100%;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	background-image: linear-gradient(to right, lightgray 1%, #7FDF7F, lightgray 99%);
+}
+
+.menu{
+	width: 128px;
+	background-image: linear-gradient(to right, darkgreen 25%, #7FDF7F, darkgreen 75%);
+	
+	padding: 72px 16px;
+	
+	display: flex;
+	flex-direction: column;
+}
+
+.menu-left{
+	border-radius: 64px 0 0 64px;
+}
+.menu-right{
+	border-radius: 0 64px 64px 0;
+}
+
+.menu > a {
+	color: black;
+	text-decoration: none;
+	background-image: radial-gradient(white, #7FDF7F);
+	padding: 8px;
+	border: 4px solid black;
+	border-radius: 16px;
+	margin: 8px 0;
+}
+
+.content {
+	min-width: 512px;
+	border: 4px solid white;
+	margin: 64px 16px;
