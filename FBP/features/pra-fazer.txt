@@ -1,0 +1,50 @@
+pra fazer:
+
+remove name attribute from input form when searching empty
+add form input validation on submit
+
+make search player
+make search team
+
+make mailing system
+
+<--->
+
+make training
+
+make play-3
+
+use $_SESSION vars to take user message beyond redirects
+maybe try alert() -> REDIRECT()
+
+<--->
+
+game appearance
+
+make notification display system (mail, mates, games?)
+
+<--->
+
+make play-5
+
+make team upgrade to class 7
+
+make play-7
+
+make play-7 competitions
+
+make team upgrade to class 11
+
+make play-11
+
+make play-11 competitions
+
+make player permanence in club
+
+make team upgrade to club
+
+make player contracts
+
+make team training
+
+make player transfers

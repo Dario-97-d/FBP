@@ -1,0 +1,21 @@
+2024-06-02 18:38:08 mail:warning - invalid username
+2024-06-02 18:38:26 mail:warning - invalid username
+2024-06-03 11:47:03 mail:Fail - Invalid username at MAIL_display_username(). Givanildo Silva - 
+2024-06-03 11:47:25 mail:Fail - Invalid username at MAIL_display_username(). Givanildo Silva - username must contain only numbers, letters, underscore, hyphen and space.
+2024-06-03 11:48:49 mail:Fail - Invalid username at MAIL_display_username(). Givanildo Silva - username must contain only numbers, letters, underscore, hyphen and space.
+2024-06-03 11:49:14 mail:Fail - Invalid username at MAIL_display_username(). Givanildo Silva - username must contain only numbers, letters, underscore, hyphen and space.
+2024-06-03 11:52:23 mail:Fail - Invalid username at MAIL_display_username(). Givanildo Silva - username must contain only numbers, letters, underscore, hyphen and space.
+2024-06-03 11:53:46 mail:Fail - Invalid username at MAIL_display_username(). Cris Rock - username must contain only numbers, letters, underscore, hyphen and space.
+2024-06-07 15:45:31 mail:Fail - Invalid username at MAIL_send(). username:  - Username must be 7 to 15 chars long.
+2024-06-07 15:46:58 mail:Fail - Invalid username at MAIL_send(). username:  - Username must be 7 to 15 chars long.
+2024-06-07 15:47:12 mail:Fail - Invalid text at MAIL_send(). Text is empty.
+2024-06-07 15:47:52 mail:Fail - Invalid text at MAIL_send(). Text is empty.
+2024-06-07 15:50:43 mail:Fail - User not found at MAIL_send(). username: CrisRocka
+2024-06-07 16:10:41 mail:Fail - User not found at MAIL_send(). username: CrisRocka
+2024-06-16 11:23:41 mail:Fail - Invalid username at MAIL_send(). username: 1
+2024-06-16 11:24:59 mail:Fail - Invalid username at MAIL_send(). username: 1
+[2024-06-18 18:30:00] mail: Fail - User not found at MAIL_send(). $receiver_username: CrisRocka, $username_handled: CrisRocka
+[2024-06-18 18:30:09] mail: Fail - Invalid text at MAIL_send(). Text is empty.
+[2024-06-18 18:38:35] mail Fail - User not found at MAIL_send(). $receiver_username: CrisRocka, $username_handled: CrisRocka
+[2024-06-19 09:46:51] mail Fail - User not found at MAIL_send(). $receiver_username: CrisRocka, $username_handled: CrisRocka
+[2024-06-19 09:49:33] mail Fail - User not found at MAIL_send(). $receiver_username: CrisRocka, $username_handled: CrisRocka
