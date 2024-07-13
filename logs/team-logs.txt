@@ -1,0 +1,8 @@
+2024-06-03 16:11:44 team:Fail - Invalid team name at TEAM_update_name(). new_name: 
+2024-06-07 13:36:59 team:Fail - Invalid team name at TEAM_create(). team_name: 123
+2024-06-07 13:37:31 team:Fail - Invalid team name at TEAM_create(). team_name: 123
+2024-06-07 13:38:00 team:Fail - Invalid team name at TEAM_create(). team_name: 123@
+2024-06-07 13:38:19 team:Fail - Invalid team name at TEAM_create(). team_name: 1234
+2024-06-16 19:07:30 team:Fail - Invalid username at TEAM_expel_player(). username: 
+2024-06-16 19:50:13 team:Warning - MySQL error - Could not get team at TEAM_get_info().
+2024-06-16 19:50:17 team:Warning - MySQL error - Could not get team at TEAM_get_info().

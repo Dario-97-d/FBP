@@ -1,0 +1,5 @@
+[2024-07-01 23:10:39] input Fail - mates-overview: MATES_send_request() -> INPUT_handle_username() -> INPUT_failed(), Session User ID: 3 - Username must be 3 to 15 chars long.
+[2024-07-01 23:12:12] input Fail - mates-overview: MATES_send_request() -> INPUT_handle_username() -> INPUT_failed(), Session User ID: 3 - Username must be 3 to 15 chars long.
+[2024-07-01 23:14:42] input Fail - mates-overview: MATES_send_request() -> INPUT_handle_username() -> INPUT_failed() - Username must be 3 to 15 chars long. (Session User ID: 3)
+[2024-07-01 23:32:48] input Fail - mates-overview: MATES_send_request() -> INPUT_handle_username() -> INPUT_failed() - : Username must be 3 to 15 chars long. (Session User ID: 3)
+[2024-07-01 23:39:08] input Fail - mates-overview: MATES_send_request() -> INPUT_handle_username() -> INPUT_failed() - : Username must be 3 to 15 chars long. (Session User ID: 3)

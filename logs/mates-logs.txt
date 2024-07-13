@@ -1,0 +1,24 @@
+2024-06-12 17:43:25 mates:Fail - Invalid username at MATES_send_request(). to_username: Zinene
+2024-06-12 17:46:10 mates:Fail - Invalid username at MATES_send_request(). to_username: Zinene, message: Username must be 3 to 15 chars long.
+2024-06-16 16:18:43 mates:Warning - SQL result *is not* 1 row for get mates ids at MATES_get_all(). user_id: 8
+2024-06-16 16:18:45 mates:Warning - SQL result *is not* 1 row for get mates ids at MATES_get_all(). user_id: 8
+[2024-07-01 18:47:49] mates Fail - Invalid username at MATES_send_request(). $to_username: 
+[2024-07-01 18:49:29] mates Fail - Invalid username at MATES_send_request(). $to_username: 
+[2024-07-01 18:54:53] mates Fail - Invalid username at MATES_send_request(). $to_username: 
+[2024-07-01 18:55:41] mates Fail - Invalid username at MATES_send_request(). $to_username: 
+[2024-07-01 18:55:53] mates Fail - Invalid username at MATES_send_request(). $to_username: 
+[2024-07-01 18:57:40] mates Fail - Invalid username at MATES_send_request(). $to_username: 
+[2024-07-01 18:59:55] mates Fail - Invalid username at MATES_send_request(). $to_username: 
+[2024-07-01 19:05:59] mates Fail - Invalid username at MATES_send_request(). $to_username: 
+[2024-07-01 19:08:31] mates Fail - Invalid username at MATES_send_request(). $to_username: 
+[2024-07-01 19:08:49] mates Fail - Invalid username at MATES_send_request(). $to_username: 
+[2024-07-01 19:28:26] mates Fail - Invalid username at MATES_send_request(). $to_username: 
+[2024-07-01 19:31:51] mates Fail - Invalid username at MATES_send_request(). $to_username: 
+[2024-07-01 19:32:15] mates Fail - Invalid username at MATES_send_request(). $to_username: 
+[2024-07-01 19:42:56] mates Fail - Invalid username at MATES_send_request(). $to_username: 
+[2024-07-01 23:04:00] mates Fail - mates-overview: , Session User ID: 3 - Invalid username at MATES_send_request(). $to_username: 
+[2024-07-01 23:05:39] mates Fail - mates-overview: , Session User ID: 3 - Invalid username at MATES_send_request(). $to_username: 
+[2024-07-01 23:06:09] mates Fail - mates-overview: , Session User ID: 3 - Invalid username at MATES_send_request(). $to_username: 
+[2024-07-01 23:07:16] mates Fail - mates-overview: , Session User ID: 3 - Invalid username at MATES_send_request(). $to_username: 
+[2024-07-01 23:08:11] mates Fail - mates-overview: MATES_send_request(), Session User ID: 3 - Invalid username at MATES_send_request(). $to_username: 
+[2024-07-01 23:10:39] mates Fail - mates-overview: MATES_send_request(), Session User ID: 3 - Invalid username at MATES_send_request(). $to_username: 

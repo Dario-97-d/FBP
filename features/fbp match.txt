@@ -1,0 +1,97 @@
+AP: att, agi
+DP: def, agi
+
+Dri: ski, agi
+
+Tac: def, agr
+FT: def, agr, ski
+
+Pas: ski
+KP: ski + att
+
+Sho: ski
+
+A 3,5 - 1,75
+A 2
+S 4
+A 2
+D 2,5 - 1,25
+
+Att + Agi: dribbler
+Att + Agr: shooter
+
+Def + Agi: interceptor
+Def + Agr: tackler
+
+Pass
+Key Pass
+Dribble
+Shot
+Goal
+Tackle
+Interception
+
+player has the ball:
+ -pass
+ -dribble (+agi)
+ -shoot (+agr)
+other team has the ball:
+ -stand (+agi)
+ -tackle (+agr)
+
+pass > shot
+pass > pass > shot
+pass > dribble shot
+
+dribble > shot
+dribble > dribble > shot
+dribble > pass > shot
+
+interception > shot
+interception > pass > shot
+interception > dribble shot
+
+tackle > shot
+tackle > pass > shot
+tackle > dribble > shot
+
+
+with ball:
+
+stage 1
+
+  if (Ad) && (agi > agr) : {dribble}, if dribble==true {stage 2};
+  else {pass}, if pass==key {stage 2};
+
+stage 2
+
+  if (Ad) && (agr > agi) : {shot}, if shot==goal {goal};
+  if (Ad) && (agi > agr) : {dribble}, if dribble==true {stage 3};
+  if (def > att) : {pass}, if pass==key {stage 3};
+
+stage 3
+
+  shot
+    if shot==goal {goal};
+
+
+no ball:
+
+stage 1
+
+  if (agr > agi) : {tackle}, if tackle==full {get_ball, stage 3};
+  else : {stand}
+    if intercept_pass==true {get_ball, stage 3};
+    if intercept_key_pass==true {get_ball, stage 2};
+
+stage 2
+
+  if (agr > agi) : {tackle}, if tackle==full {get_ball, stage 2};
+  else : {stand}
+    if intercept_pass==true {get_ball, stage 2};
+    if intercept_key_pass==true {get_ball, stage 1};
+
+---
+
+start -> duel -> play -> run -> shot
+

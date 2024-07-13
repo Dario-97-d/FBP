@@ -1,0 +1,42 @@
+html, body { height: 100%; }
+
+body { background-color: #131; font-family: arial; text-align: center; }
+body a { color: purple; font-weight: bold; }
+
+h1 { color: purple; padding: 16px 0; }
+input { margin:4px; padding: 4px; }
+input[type=submit] { min-width: 64px; }
+textarea { margin: auto; width: 500px; height: 250px; }
+select { padding: 4px; }
+select option { padding: 4px; }
+
+.top-bar { width: 512px; border: 4px solid green; padding: 4px 0; margin: 16px auto; }
+.top-bar-link { font-size: larger; font-weight: bold; color: green; text-decoration: none; padding: 1px 3px; margin: 0 8px; }
+
+.content {
+	min-height: 100%;
+	max-width: 50%;
+	/*background-color: rgba(127,255,127,0.67);*/
+	background-image: linear-gradient( rgba(127,255,127,0.75) 50%, rgba(127,255,127,0.5) );
+	padding: 16px;
+	border: 4px solid white;
+	margin: 0 auto;
+	border-radius: 16px;
+}
+.content a { color: black; }
+
+.footer { color: white; padding: 8px; }
+
+table { text-align: center; width: 512px; margin: 0 auto; }
+table.table2 { border: 4px solid green; border-radius: 8px; }
+
+.table1 { background-color: rgba(255,255,255,0.1); border: 2px solid purple; padding: 2px; }
+.table1 a { color: purple; }
+.table1 th { min-width: 96px; }
+
+.table2 { font-weight: bold; color: rgba(255,255,255,0.9); }
+.table2 a { font-weight: bold; color: rgba(127,31,127,0.9); }
+.table2 th { background: green; }
+.table2 td { background: linear-gradient( rgba(0,170,0,1), rgba(0,170,0,0.75) ); }
+
+.at-username { color: rgba(63,63,63,0.9); }
