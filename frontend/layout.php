@@ -12,6 +12,9 @@
 
 	<body>
 
+		<?php /* Show all dialog entries */ ?>
+		<?= DIALOG_all() ?>
+		
 		<div>
 			<a href="index">FBP</a>
 		</div>
@@ -37,7 +40,7 @@
 
 		<div class="footer">FBP (C)</div>
 		
-		<?= DIALOG_all() ?>
+		<script src="scripts/remove-empty-inputs.js"></script>
 
 	</body>
 
