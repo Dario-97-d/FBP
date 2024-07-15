@@ -3,7 +3,7 @@
 
 <h2>Class <?= $_team_info['team_class'] ?> | <?= $_team_info['rating'] ?> &empty;</h2>
 
-<table class="table2" style="width:512px;" cellpadding="8" cellspacing="0">
+<table class="table2" width="512" cellpadding="8" cellspacing="0">
 	<tr>
 		<th>#</th>
 		<th>Username</th>
