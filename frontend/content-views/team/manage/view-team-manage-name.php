@@ -10,10 +10,13 @@
 	{
 		?>
 		
-		<form action="team-manage-name" method="POST" onsubmit="return confirm('Update team name to '+ document.getElementById('input-name').value +'?')">
-			<div class="input"><input type="text" id="input-name" name="new-team-name" /></div>
+		<form action="team-manage-name" method="POST" onsubmit="return confirm('Update team name to '+ document.getElementById('team-name').value +'?')">
 			
-			<div class="input"><input type="submit" class="button1" value="Submit" /></div>
+			<label for="team-name" hidden>Enter new team name</label>
+			<input type="text" id="team-name" name="new-team-name">
+			
+			<br />
+			<input type="submit" value="Submit">
 		</form>
 		
 		<?php

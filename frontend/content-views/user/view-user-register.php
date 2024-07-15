@@ -1,19 +1,27 @@
 
 <h1>Register</h1>
 <form method="POST">
-	Username:
+	
+	<label for="username">Username:</label>
 	<br />
-	<input type="text" name="username" />
+	<input type="text" id="username" name="username" />
 	<br />
-	Player name:
+	
+	<label for="player-name">Player name:</label>
 	<br />
-	<input type="text" name="player-name" />
+	<input type="text" id="player-name" name="player-name" />
 	<br />
-	Password:
+	
+	<label for="password">Password:</label>
 	<br />
-	<input type="password" name="password" />
+	<input type="password" id="password" name="password" />
 	<br />
-	E-mail: <br /><input type="email" name="email" /><br />
+	
+	<label for="email">E-mail:</label>
 	<br />
-	<input type="submit" class="button1" name="register" value="Register" />
+	<input type="email" id="email" name="email" />
+	<br />
+	
+	<br />
+	<input type="submit" name="register" value="Register" />
 </form>

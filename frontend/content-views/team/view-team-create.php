@@ -1,11 +1,15 @@
 
 <h1>Create Team</h1>
 
-<form method="POST" onsubmit="return confirm('Create team '+ document.getElementById('input-name').value +'?')">
-	Team Name (4-16 chs):
+<form method="POST" onsubmit="return confirm('Create team '+ document.getElementById('team-name').value +'?')">
+	
+	<label for="team-name">Team Name</label>
 	<br />
-	<input type="text" id="input-name" name="new-team-name" />
+	<input type="text" id="team-name" name="new-team-name">
 	<br />
+	<span id="team-name-chars">(4 to 16 characters)</span>
 	<br />
-	<input type="submit" value="Start Team" />
+	
+	<br />
+	<input type="submit" value="Start Team">
 </form>

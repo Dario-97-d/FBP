@@ -84,7 +84,11 @@
 <br />
 
 <form method="POST" onsubmit="return confirm('Submit mate request?')">
-	<input type="text" name="request-mate-username" />
+	
+	<label for="request-mate-username" hidden>Enter Username</label>
+	<input type="text" id="request-mate-username" name="request-mate-username" placeholder="Username" />
+	
 	<br />
+	
 	<input type="submit" value="Submit Request" />
 </form>
