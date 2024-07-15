@@ -1,9 +1,10 @@
 pra fazer:
 
-use label element
-fix warnings from ms edge
-
 add form input validation on submit
+- register
+- login
+- send mail
+- submit mate request
 
 make search player
 make search team
