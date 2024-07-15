@@ -1,5 +1,7 @@
 <?php
 
+	// -- Backend --
+	
 	// General functions.
 	$_FILEREF_logger_functions           = __DIR__ . '/../functions/logger-functions.php';
 	$_FILEREF_result_functions           = __DIR__ . '/../functions/result-functions.php';
@@ -24,11 +26,14 @@
 	
 	// -- Frontend --
 	
+	// Layout and Content files.
 	$_FILEREF_frontend_content           = __DIR__ . '/../frontend/content.php';
 	$_FILEREF_frontend_layout            = __DIR__ . '/../frontend/layout.php';
 	
-	$_FILEREF_view_error                 = __DIR__ . '/../frontend/content-views/view-error.php';
-	
+	// Partial Views.
 	$_FILEREF_partial_view_logout_link   = __DIR__ . '/../frontend/partial-views/logout-link.html';
 	$_FILEREF_partial_view_top_bar       = __DIR__ . '/../frontend/partial-views/top-bar.html';
 	$_FILEREF_partial_view_website_map   = __DIR__ . '/../frontend/partial-views/website-map.html';
+	
+	// View Error.
+	$_FILEREF_view_error                 = __DIR__ . '/../frontend/content-views/view-error.php';
