@@ -26,6 +26,12 @@
 	
 	// -- Frontend --
 	
+	// Functions.
+	$_FILEREF_js_functions               = __DIR__ . '/../functions/frontend/js-functions.php';
+	
+	// JS scripts references.
+	$_FILEREF_js_references              = __DIR__ . '/../frontend/js-references.php';
+	
 	// Layout and Content files.
 	$_FILEREF_frontend_content           = __DIR__ . '/../frontend/content.php';
 	$_FILEREF_frontend_layout            = __DIR__ . '/../frontend/layout.php';
