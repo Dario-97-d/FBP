@@ -269,7 +269,7 @@
 		// -- DB operation --
 		return SQL_prep_get_row(
 			'SELECT
-				f.player_name,
+				f.player_name as name,
 				f.rating,
 				g.*,
 				p.*

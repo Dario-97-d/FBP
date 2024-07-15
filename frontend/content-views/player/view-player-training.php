@@ -1,5 +1,5 @@
 
-<h1><?= $_player['player_name'] ?></h1>
+<h1><?= $_player['name'] ?></h1>
 
 <table class="table2" cellpadding="8">
 	<tr>
