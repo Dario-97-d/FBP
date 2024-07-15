@@ -65,6 +65,8 @@
 	{
 		global $_DIALOG_MESSAGES;
 		
+		if ( empty( $_DIALOG_MESSAGES ) ) return;
+		
 		$script = '';
 		
 		$script_open = '<script>';
