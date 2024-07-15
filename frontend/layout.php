@@ -40,7 +40,8 @@
 
 		<div class="footer">FBP (C)</div>
 		
-		<script src="scripts/on-search-submit.js"></script>
+		<?php /* Include required JavaScript */ ?>
+		<?= JS_render_scripts() ?>
 
 	</body>
 

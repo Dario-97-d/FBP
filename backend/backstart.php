@@ -18,6 +18,10 @@
 	require_once $_FILEREF_die_functions;
 	require_once $_FILEREF_redirect_functions;
 	
+	// Frontend.
+	require_once $_FILEREF_js_functions;
+	require_once $_FILEREF_js_references;
+	
 	// Attempt MySQL connection.
 	SQL_connect() or DIE_error();
 	
