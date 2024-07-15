@@ -40,7 +40,7 @@
 
 		<div class="footer">FBP (C)</div>
 		
-		<script src="scripts/remove-empty-inputs.js"></script>
+		<script src="scripts/on-search-submit.js"></script>
 
 	</body>
 
