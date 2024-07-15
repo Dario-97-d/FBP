@@ -22,7 +22,7 @@
 	
 	function AUTH_login( $user_id )
 	{
-		$_SESSION['id'] = $get_user_id;
+		$_SESSION['id'] = $user_id;
 		
 		session_regenerate_id(true);
 	}
