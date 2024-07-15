@@ -1,11 +1,7 @@
 pra fazer:
 
-use partial views for search forms
-register js scripts and render them at the end of the <body>
-
-use partial view for mate request form
-
 use label element
+fix warnings from ms edge
 
 add form input validation on submit
 
