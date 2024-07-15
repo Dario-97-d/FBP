@@ -53,16 +53,8 @@
 	}
 	else
 	{
-		?>
-		
-		<h2>Find partner</h2>
-		
-		<?php
-			// Partial View: Search Player.
-			require_once $_FILEREF_partial_view_search_player;
-		?>
-		
-		<?php
+		// Partial View: Search Player.
+		require_once $_FILEREF_partial_view_search_player;
 	}
 
 ?>
