@@ -1,6 +1,12 @@
 pra fazer:
 
-remove name attribute from input form when searching empty
+use partial views for search forms
+register js scripts and render them at the end of the <body>
+
+use partial view for mate request form
+
+use label element
+
 add form input validation on submit
 
 make search player
