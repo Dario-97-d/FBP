@@ -39,4 +39,8 @@ table.table2 { border: 4px solid green; border-radius: 8px; }
 .table2 th { background: green; }
 .table2 td { background: linear-gradient( rgba(0,170,0,1), rgba(0,170,0,0.75) ); }
 
+.table-training-atts th { width: 170px; }
+
 .at-username { color: rgba(63,63,63,0.9); }
+
+.logout-link a { color: darkred; text-decoration: none; }
