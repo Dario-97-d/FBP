@@ -65,7 +65,7 @@
 <h2>Expel member</h2>
 
 <form method="POST" onsubmit="return confirm('Expel '+ document.getElementById('input-username').value +'?')">
-	<input type="text" id="input-username" name="expel-player-at-username" placeholder="@username" />
+	<input type="text" id="input-username" name="expel-player-at-username" placeholder="@username" autocomplete="off" />
 	<br />
-	<div style="padding: 8px 0 0 0"><input type="submit" class="button1" value="Expel"/></div>
+	<input type="submit" value="Expel">
 </form>
