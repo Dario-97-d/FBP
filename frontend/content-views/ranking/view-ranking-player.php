@@ -70,9 +70,7 @@
 	
 </table>
 
-<form action="search-player" method="GET">
-	<br />
-	<input type="text" name="name" />
-	<br />
-	<input type="submit" value="Search Player">
-</form>
+<?php
+	// Partial View: Search Player.
+	require_once $_FILEREF_partial_view_search_player;
+?>
