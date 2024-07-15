@@ -31,7 +31,7 @@
 			
 			<?php
 				if ( $_IS_LOGGED_IN ) require_once $_FILEREF_partial_view_logout_link;
-				else echo '<a href="user-register">Register</a><br /><a href="user-login">Login</a>'
+				else echo '<a href="user-login">Login</a><br /><a href="user-register">Register</a>';
 			?>
 			
 			<?php /*require_once $_FILEREF_partial_view_website_map;*/ ?>
