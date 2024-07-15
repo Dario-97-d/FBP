@@ -9,7 +9,7 @@
 		
 		$file_content = file_get_contents( $file_name );
 		
-		$lines = explode( "\n", $file_content );
+		$lines = explode( "\r\n", $file_content );
 		
 		// 86400 seconds == 24 hours.
 		$time_limit = time() - 86400;
@@ -25,7 +25,7 @@
 			}
 		}
 		
-		$final_content = implode( "\n", array_slice( $lines, $limit_index ) );
+		$final_content = implode( "\r\n", array_slice( $lines, $limit_index ) );
 		
 		file_put_contents( $file_name, $final_content );
 	}
@@ -102,7 +102,7 @@
 		// Remove new lines from message so as to log one line.
 		$message = preg_replace( '/[\r\n]+/', ' ', $message );
 		
-		$log_line = $date_time . ' ' . $category . ' ' . $level . ' - ' . $stack_trace . ' - ' . $message . ' (' . $user . ')' . "\n";
+		$log_line = $date_time . ' ' . $category . ' ' . $level . ' - ' . $stack_trace . ' - ' . $message . ' (' . $user . ')' . "\r\n";
 		
 		// LOGGER_delete_old_records( $generic_logs_file );
 		// LOGGER_delete_old_records( $categoric_logs_file );
