@@ -269,13 +269,11 @@
 		// -- DB operation --
 		return SQL_prep_get_row(
 			'SELECT
-				u.username,
 				f.player_name,
 				f.rating,
 				g.*,
 				p.*
-			FROM game_users         u
-			JOIN football_players   f ON f.id = u.id
+			FROM football_players   f
 			JOIN generic_attributes g ON g.player_id = f.id
 			JOIN playing_attributes p ON p.player_id = f.id
 			WHERE f.id = ?',
