@@ -123,7 +123,7 @@
 			JOIN game_users       u ON u.id        = r.requester_id
 			JOIN football_players f ON f.id        = u.id
 			JOIN player_team      p ON p.player_id = f.id
-			JOIN teams            t ON t.id        = p.team_id
+			LEFT JOIN teams       t ON t.id        = p.team_id
 			WHERE r.requested_id = ?',
 			array( $_user_id ) );
 	}
@@ -144,7 +144,7 @@
 			JOIN game_users       u ON u.id        = r.requested_id
 			JOIN football_players f ON f.id        = u.id
 			JOIN player_team      p ON p.player_id = f.id
-			JOIN teams            t ON t.id        = p.team_id
+			LEFT JOIN teams       t ON t.id        = p.team_id
 			WHERE r.requester_id = ?',
 			array( $_user_id ) );
 	}
