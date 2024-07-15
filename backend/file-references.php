@@ -32,6 +32,8 @@
 	
 	// Partial Views.
 	$_FILEREF_partial_view_logout_link   = __DIR__ . '/../frontend/partial-views/logout-link.html';
+	$_FILEREF_partial_view_search_player = __DIR__ . '/../frontend/partial-views/search-player.html';
+	$_FILEREF_partial_view_search_team   = __DIR__ . '/../frontend/partial-views/search-team.html';
 	$_FILEREF_partial_view_top_bar       = __DIR__ . '/../frontend/partial-views/top-bar.html';
 	$_FILEREF_partial_view_website_map   = __DIR__ . '/../frontend/partial-views/website-map.html';
 	
