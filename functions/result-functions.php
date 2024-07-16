@@ -12,31 +12,6 @@
 		);
 	}
 	
-	function RESULT_HANDLE( $result, $fail_msgs = [] )
-	{
-		// -- Success --
-		if ( RESULT_is_success( $result ) ) return $result;
-		
-		// -- Fail --
-		if ( RESULT_is_fail( $result ) )
-		{
-			$result_message = RESULT_get_message( $result );
-			
-			foreach ( $fail_msgs as $message )
-			{
-				if ( $message === $result_message )
-				{
-					return $result;
-				}
-			}
-			
-			return RESULT_generic_fail();
-		}
-		
-		// -- Error --
-		return false;
-	}
-	
 	function RESULT_error( $message = null )
 	{
 		return RESULT( 'error', $message ?? '' );
