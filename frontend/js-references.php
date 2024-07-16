@@ -1,3 +1,3 @@
 <?php
 
-	$_JSREF_on_search_submit = 'scripts/on-search-submit.js';
+	$_JSREF_on_submit_search   = 'scripts/on-submit-search.js';
