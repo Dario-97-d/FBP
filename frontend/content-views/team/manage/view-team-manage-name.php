@@ -13,7 +13,7 @@
 		<form action="team-manage-name" method="POST" onsubmit="return confirm('Update team name to '+ document.getElementById('team-name').value +'?')">
 			
 			<label for="team-name" hidden>Enter new team name</label>
-			<input type="text" id="team-name" name="new-team-name">
+			<input type="text" id="team-name" name="new-team-name" required>
 			
 			<br />
 			<input type="submit" value="Submit">

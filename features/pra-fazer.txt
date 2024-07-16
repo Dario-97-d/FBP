@@ -1,11 +1,5 @@
 pra fazer:
 
-add form input validation on submit
-- register
-- login
-- send mail
-- submit mate request
-
 add ajax for username availability check on register
 
 make search player

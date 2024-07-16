@@ -107,7 +107,8 @@
 		?>
 		
 		<form method="POST" onsubmit="return confirm('Leave team?')">
-			<br /><input type="submit" name="leave-team" value="Leave Team" >
+			<br />
+			<input type="submit" name="leave-team" value="Leave Team">
 		</form>
 		
 		<?php
