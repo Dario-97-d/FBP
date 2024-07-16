@@ -6,6 +6,8 @@ add form input validation on submit
 - send mail
 - submit mate request
 
+add ajax for username availability check on register
+
 make search player
 make search team
 
