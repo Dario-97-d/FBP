@@ -20,7 +20,7 @@
 		
 		foreach ( $_JS_paths as $js_path )
 		{
-			$all_scripts .= '<script src="'.htmlspecialchars( $js_path, ENT_QUOTES, 'UTF-8' ).'"></script>';
+			$all_scripts .= '<script src="'.htmlspecialchars( $js_path, ENT_QUOTES, 'UTF-8' ).'"></script>' . PHP_EOL;
 		}
 		
 		return $all_scripts;
