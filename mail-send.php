@@ -6,7 +6,7 @@
 	
 	// Required at frontend.
 	$_to_username = '';
-	$_mail_text = '';
+	$_mail_text   = '';
 	
 	// -- Display Username --
 	if ( isset( $_GET['to-username'] ) )
@@ -36,9 +36,9 @@
 			DIALOG_add_input_fail('missing username or text');
 		}
 		
-		// Keep user input in frontend, if given, on failure (if mail is successful then user is redirected).
+		// Display given values if Mail Send failed.
 		$_to_username = $_POST['to-username'] ?? '';
-		$_mail_text = $_POST['message'] ?? '';
+		$_mail_text   = $_POST['message']     ?? '';
 	}
 
 ?>

@@ -4,12 +4,12 @@
 <form action="mail-send" method="POST" onsubmit="return confirm('Send message to <?= $_to_username ?>?')">
 	
 	<label for="username">To</label>
-	<input type="text" id="username" name="to-username" value="<?= $_to_username ?>" placeholder="Username" />
+	<input type="text" id="username" name="to-username" value="<?= $_to_username ?>" autocomplete="on" placeholder="Username" required>
 	
 	<br /><br />
 	
 	<label for="message"></label>
-	<textarea id="message" name="message" maxlength="255" placeholder="Message"><?= $_mail_text ?></textarea>
+	<textarea id="message" name="message" maxlength="255" placeholder="Message" required><?= $_mail_text ?></textarea>
 	
 	<br /><br />
 	

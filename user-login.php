@@ -4,6 +4,9 @@
 
 	require_once $_FILEREF_user_functions;
 	
+	// Required at frontend.
+	$_username = '';
+	
 	// -- Login --
 	if ( isset( $_POST['login'] ) )
 	{
@@ -27,6 +30,9 @@
 		{
 			DIALOG_add_input_fail('username or password missing');
 		}
+		
+		// Display given values if Login failed.
+		$_username = $_POST['username'] ?? '';
 	}
 
 ?>
