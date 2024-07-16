@@ -5,7 +5,7 @@
 	
 	<label for="team-name">Team Name</label>
 	<br />
-	<input type="text" id="team-name" name="new-team-name">
+	<input type="text" id="team-name" name="new-team-name" required>
 	<br />
 	<span id="team-name-chars">(4 to 16 characters)</span>
 	<br />
