@@ -1,28 +1,3 @@
-[2024-07-01 18:47:49] mates Fail - Invalid username at MATES_send_request(). $to_username: 
-[2024-07-01 18:49:29] mates Fail - Invalid username at MATES_send_request(). $to_username: 
-[2024-07-01 18:54:53] mates Fail - Invalid username at MATES_send_request(). $to_username: 
-[2024-07-01 18:55:41] mates Fail - Invalid username at MATES_send_request(). $to_username: 
-[2024-07-01 18:55:53] mates Fail - Invalid username at MATES_send_request(). $to_username: 
-[2024-07-01 18:57:40] mates Fail - Invalid username at MATES_send_request(). $to_username: 
-[2024-07-01 18:59:55] mates Fail - Invalid username at MATES_send_request(). $to_username: 
-[2024-07-01 19:05:59] mates Fail - Invalid username at MATES_send_request(). $to_username: 
-[2024-07-01 19:08:31] mates Fail - Invalid username at MATES_send_request(). $to_username: 
-[2024-07-01 19:08:49] mates Fail - Invalid username at MATES_send_request(). $to_username: 
-[2024-07-01 19:28:26] mates Fail - Invalid username at MATES_send_request(). $to_username: 
-[2024-07-01 19:31:51] mates Fail - Invalid username at MATES_send_request(). $to_username: 
-[2024-07-01 19:32:15] mates Fail - Invalid username at MATES_send_request(). $to_username: 
-[2024-07-01 19:42:56] mates Fail - Invalid username at MATES_send_request(). $to_username: 
-[2024-07-01 23:04:00] mates Fail - mates-overview: , Session User ID: 3 - Invalid username at MATES_send_request(). $to_username: 
-[2024-07-01 23:05:39] mates Fail - mates-overview: , Session User ID: 3 - Invalid username at MATES_send_request(). $to_username: 
-[2024-07-01 23:06:09] mates Fail - mates-overview: , Session User ID: 3 - Invalid username at MATES_send_request(). $to_username: 
-[2024-07-01 23:07:16] mates Fail - mates-overview: , Session User ID: 3 - Invalid username at MATES_send_request(). $to_username: 
-[2024-07-01 23:08:11] mates Fail - mates-overview: MATES_send_request(), Session User ID: 3 - Invalid username at MATES_send_request(). $to_username: 
-[2024-07-01 23:10:39] input Fail - mates-overview: MATES_send_request() -> INPUT_handle_username() -> INPUT_failed(), Session User ID: 3 - Username must be 3 to 15 chars long.
-[2024-07-01 23:10:39] mates Fail - mates-overview: MATES_send_request(), Session User ID: 3 - Invalid username at MATES_send_request(). $to_username: 
-[2024-07-01 23:12:12] input Fail - mates-overview: MATES_send_request() -> INPUT_handle_username() -> INPUT_failed(), Session User ID: 3 - Username must be 3 to 15 chars long.
-[2024-07-01 23:14:42] input Fail - mates-overview: MATES_send_request() -> INPUT_handle_username() -> INPUT_failed() - Username must be 3 to 15 chars long. (Session User ID: 3)
-[2024-07-01 23:32:48] input Fail - mates-overview: MATES_send_request() -> INPUT_handle_username() -> INPUT_failed() - : Username must be 3 to 15 chars long. (Session User ID: 3)
-[2024-07-01 23:39:08] input Fail - mates-overview: MATES_send_request() -> INPUT_handle_username() -> INPUT_failed() - : Username must be 3 to 15 chars long. (Session User ID: 3)
 [2024-07-03 09:35:55] mysql Error - mates-requests: MATES_accept_request() -> SQL_prep_stmt_one() - SQL result expected to be 1 row, it's  rows instead. $query: CALL sp_accept_mate_request(?, ?), $params: (2, 3) (Session User ID: 2)
 [2024-07-03 09:36:21] mysql Error - mates-overview: MATES_remove() -> SQL_prep_stmt_one() -> SQL_prep_stmt_result() - Could not execute prepared statement. $query: CALL sp_remove_mate(?, ?), $e->getMessage(): FUNCTION fbp.SUBSTRING does not exist. Check the 'Function Name Parsing and Resolution' section in the Reference Manual (Session User ID: 2)
 [2024-07-03 09:36:27] mysql Error - mates-overview: MATES_remove() -> SQL_prep_stmt_one() -> SQL_prep_stmt_result() - Could not execute prepared statement. $query: CALL sp_remove_mate(?, ?), $e->getMessage(): FUNCTION fbp.SUBSTRING does not exist. Check the 'Function Name Parsing and Resolution' section in the Reference Manual (Session User ID: 2)
@@ -54,3 +29,24 @@
 [2024-07-12 17:49:29] mysql Error - : require_once() -> SQL_prep_get_multi() -> SQL_prep_stmt_result() - Unexpected query type. Expected types: SELECT, CALL s, INSERT, UPDATE, DELETE. $query_type: select, $query: select username, pass_word from game_users (Unlogged User Session)
 [2024-07-12 17:59:11] mysql Error - user-login: USER_get_id_by_login() -> SQL_prep_get_value() -> SQL_prep_stmt_one() - SQL result expected to be 1 row, it's 0 rows instead. $query: SELECT id FROM game_users WHERE username = ? AND pass_word = ?, $params: (CrisRock, pahceuord) (Unlogged User Session)
 [2024-07-12 17:59:26] mysql Error - user-login: USER_get_id_by_login() -> SQL_prep_get_value() -> SQL_prep_stmt_one() - SQL result expected to be 1 row, it's 0 rows instead. $query: SELECT id FROM game_users WHERE username = ? AND pass_word = ?, $params: (Username, pahceuord) (Unlogged User Session)
+[2024-07-14 18:11:23] input Fail - user-register: USER_register_player() -> INPUT_handle_player_name() -> INPUT_failed() - Ronaldo Nazário: Player name may only have letters and whitespace. (Unlogged User Session)
+[2024-07-14 18:12:11] input Fail - user-register: USER_register_player() -> INPUT_handle_player_name() -> INPUT_failed() - Ronaldo Nazário: Player name may only have letters and whitespace. (Unlogged User Session)
+[2024-07-14 18:12:39] input Fail - user-register: USER_register_player() -> INPUT_handle_player_name() -> INPUT_failed() - Ronaldo Nazário: Player name may only have letters and whitespace. (Unlogged User Session)
+[2024-07-14 18:13:04] input Fail - user-register: USER_register_player() -> INPUT_handle_player_name() -> INPUT_failed() - Ronaldo Nazário: Player name may only have letters and whitespace. (Unlogged User Session)
+[2024-07-14 18:13:43] input Fail - user-register: USER_register_player() -> INPUT_handle_player_name() -> INPUT_failed() - Ronaldo Nazário: Player name may only have letters and whitespace. (Unlogged User Session)
+[2024-07-14 18:16:10] input Fail - user-register: USER_register_player() -> INPUT_handle_player_name() -> INPUT_failed() - Ronaldo Nazário: Player name may only have letters and whitespace. (Unlogged User Session)
+[2024-07-15 11:53:48] input Fail - user-login: USER_get_id_by_login() -> INPUT_handle_username() -> INPUT_failed() - : Username must be 3 to 15 chars long. (Unlogged User Session)
+[2024-07-16 14:58:46] input Fail - user-register: USER_register_player() -> INPUT_handle_password() -> INPUT_failed() - <password>: Password must be 7 to 63 chars long. (Unlogged User Session)
+[2024-07-16 14:59:00] input Fail - user-register: USER_register_player() -> INPUT_handle_password() -> INPUT_failed() - <password>: Password must be 7 to 63 chars long. (Unlogged User Session)
+[2024-07-16 15:28:47] input Fail - user-register: USER_register_player() -> INPUT_handle_username() -> INPUT_failed() - a: Username must be 3 to 15 chars long. (Unlogged User Session)
+[2024-07-16 15:28:47] input Fail - user-register: USER_register_player() -> INPUT_handle_password() -> INPUT_failed() - <password>: Password must be 7 to 63 chars long. (Unlogged User Session)
+[2024-07-16 15:30:00] input Fail - user-register: USER_register_player() -> INPUT_handle_username() -> INPUT_failed() - a: Username must be 3 to 15 chars long. (Unlogged User Session)
+[2024-07-16 15:30:00] input Fail - user-register: USER_register_player() -> INPUT_handle_player_name() -> INPUT_failed() - a: Player name must be 7 to 31 chars long. (Unlogged User Session)
+[2024-07-16 15:30:00] input Fail - user-register: USER_register_player() -> INPUT_handle_email() -> INPUT_failed() - a@a: Email must be 7 to 63 chars. (Unlogged User Session)
+[2024-07-16 15:30:00] input Fail - user-register: USER_register_player() -> INPUT_handle_password() -> INPUT_failed() - <password>: Password must be 7 to 63 chars long. (Unlogged User Session)
+[2024-07-16 15:37:36] input Fail - user-register: USER_register_player() -> INPUT_handle_password() -> INPUT_failed() - <password>: Password must be 7 to 63 chars long. (Unlogged User Session)
+[2024-07-16 15:41:22] input Fail - user-register: USER_register_player() -> INPUT_handle_password() -> INPUT_failed() - <password>: Password must be 7 to 63 chars long. (Unlogged User Session)
+[2024-07-16 15:52:36] input Fail - user-register: USER_register_player() -> INPUT_handle_email() -> INPUT_failed() - a@a: Email must be 7 to 63 chars. (Unlogged User Session)
+[2024-07-16 15:52:36] input Fail - user-register: USER_register_player() -> INPUT_handle_password() -> INPUT_failed() - <password>: Password must be 7 to 63 chars long. (Unlogged User Session)
+[2024-07-16 15:53:24] input Fail - user-register: USER_register_player() -> INPUT_handle_email() -> INPUT_failed() - a@a: Email must be 7 to 63 chars. (Unlogged User Session)
+[2024-07-16 15:53:24] input Fail - user-register: USER_register_player() -> INPUT_handle_password() -> INPUT_failed() - <password>: Password must be 7 to 63 chars long. (Unlogged User Session)

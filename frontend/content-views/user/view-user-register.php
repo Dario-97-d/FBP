@@ -1,6 +1,6 @@
 
 <h1>Register</h1>
-<form method="POST">
+<form method="POST" data-register="true">
 	
 	<label for="username">Username:</label>
 	<br />
@@ -25,3 +25,10 @@
 	<br />
 	<input type="submit" name="register" value="Register" />
 </form>
+
+<?php /* Include scripts */ ?>
+<?php JS_add_script( $_JSREF_validate_email ) ?>
+<?php JS_add_script( $_JSREF_validate_password ) ?>
+<?php JS_add_script( $_JSREF_validate_player_name ) ?>
+<?php JS_add_script( $_JSREF_validate_username ) ?>
+<?php JS_add_script( $_JSREF_on_submit_register ) ?>
