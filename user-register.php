@@ -4,6 +4,11 @@
 
 	require_once $_FILEREF_user_functions;
 	
+	// Required at frontend.
+	$_username    = '';
+	$_player_name = '';
+	$_email       = '';
+	
 	// -- Register --
 	if ( isset( $_POST['register'] ) )
 	{
@@ -48,6 +53,11 @@
 		{
 			DIALOG_add_input_fail('username or player name or email or password is missing');
 		}
+		
+		// Display given values if Register failed.
+		$_username    = $_POST['username']    ?? '';
+		$_player_name = $_POST['player-name'] ?? '';
+		$_email       = $_POST['email']       ?? '';
 	}
 
 ?>
