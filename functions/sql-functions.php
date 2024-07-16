@@ -159,7 +159,7 @@
 			}
 			catch (mysqli_sql_exception $e)
 			{
-				LOGGER_log_mysql_error( 'Could not execute prepared statement. $query: '.$query.', $params: ('.implode( ', ', $params ).'), $e->getMessage(): '.$e->getMessage() );
+				LOGGER_log_mysql_error( 'Failed execution of prepared statement. $query: '.$query.', $params: ('.implode( ', ', $params ).'), $e->getMessage(): '.$e->getMessage() );
 				mysqli_stmt_close( $stmt );
 				
 				// Return exception message for failure message handling.
