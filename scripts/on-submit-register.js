@@ -4,40 +4,20 @@ for ( let formElm of document.querySelectorAll('form[data-register="true"]') )
 {
 	formElm.addEventListener( 'submit', function( event )
 	{
-		// Attempt to validate input.
+		// Validate input.
 		const validate_username    = validateUsername  ( document.getElementById('username')   .value );
 		const validate_player_name = validatePlayerName( document.getElementById('player-name').value );
 		const validate_password    = validatePassword  ( document.getElementById('password')   .value );
 		const validate_email       = validateEmail     ( document.getElementById('email')      .value );
 		
-		// -- Alert fail message and return false if any input isn't valid --
-		
-		if ( ! validate_username.isValid )
+		// Alert fail message and return false if any input isn't valid.
+		for ( let validate_input of [ validate_username, validate_player_name, validate_password, validate_email ] )
 		{
-			alert( 'Fail:\n' + validate_username.message );
-			event.preventDefault();
-			return false;
-		}
-		
-		if ( ! validate_player_name.isValid )
-		{
-			alert( 'Fail:\n' + validate_player_name.message );
-			event.preventDefault();
-			return false;
-		}
-		
-		if ( ! validate_password.isValid )
-		{
-			alert( 'Fail:\n' + validate_password.message );
-			event.preventDefault();
-			return false;
-		}
-		
-		if ( ! validate_email.isValid )
-		{
-			alert( 'Fail:\n' + validate_email.message );
-			event.preventDefault();
-			return false;
+			if ( ! validate_input.isValid )
+			{
+				alert( 'Fail:\n' + validate_input.message );
+				return false;
+			}
 		}
 		
 		// Prepare confirmation message.
