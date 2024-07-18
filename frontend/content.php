@@ -84,6 +84,6 @@
 	}
 	catch (Exception $e)
 	{
-		LOGGER_log_error( 'frontend', 'Could not sort content.' );
+		LOGGER_log_error( 'frontend', 'Could not sort content. $e->getMessage(): '.$e->getMessage() );
 		require_once $path . 'view-error.php';
 	}
