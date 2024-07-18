@@ -31,4 +31,5 @@
 <?php JS_add_script( $_JSREF_validate_password ) ?>
 <?php JS_add_script( $_JSREF_validate_player_name ) ?>
 <?php JS_add_script( $_JSREF_validate_username ) ?>
+<?php JS_add_script( $_JSREF_api_is_username_available ) ?>
 <?php JS_add_script( $_JSREF_on_submit_register ) ?>
