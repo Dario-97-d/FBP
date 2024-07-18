@@ -1,7 +1,5 @@
 pra fazer:
 
-log exception of content page sorting catch
-
 make procedure checks return error message without signalling exception
 
 make search player
