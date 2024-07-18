@@ -1,6 +1,8 @@
 pra fazer:
 
-add ajax for username availability check on register
+log exception of content page sorting catch
+
+make procedure checks return error message without signalling exception
 
 make search player
 make search team

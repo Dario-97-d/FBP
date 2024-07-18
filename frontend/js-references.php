@@ -1,5 +1,8 @@
 <?php
 
+	// Api.
+	$_JSREF_api_is_username_available = 'scripts/api/is-username-available.js';
+	
 	// On Submit (event).
 	$_JSREF_on_submit_register   = 'scripts/on-submit-register.js';
 	$_JSREF_on_submit_search     = 'scripts/on-submit-search.js';
