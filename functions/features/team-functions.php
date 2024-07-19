@@ -246,7 +246,7 @@
 		);
 	}
 	
-	function TEAM_get_ranking_teams()
+	function TEAM_get_rankings()
 	{
 		// -- DB operation --
 		return SQL_prep_get_multi( 'SELECT * FROM teams ORDER BY rating DESC, id ASC LIMIT 50');

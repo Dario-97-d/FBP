@@ -4,7 +4,7 @@
 
 	require_once $_FILEREF_team_functions;
 	
-	$_teams = TEAM_get_ranking_teams() or DIE_error();
+	$_teams = TEAM_get_rankings() or DIE_error();
 
 ?>
 

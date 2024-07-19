@@ -210,7 +210,7 @@
 			array( $player_id ) );
 	}
 	
-	function PLAYER_get_ranking_players()
+	function PLAYER_get_rankings()
 	{
 		// -- DB operation --
 		return SQL_prep_get_multi(
