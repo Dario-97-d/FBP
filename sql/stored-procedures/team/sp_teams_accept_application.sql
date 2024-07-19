@@ -4,7 +4,7 @@ CREATE PROCEDURE IF NOT EXISTS sp_teams_accept_application (
 	IN var_team_id   INT,
 	IN var_player_id INT
 )
-BEGIN
+proc_edure:BEGIN
 	DECLARE var_player_has_team                     BOOLEAN;
 	DECLARE var_team_exists                         BOOLEAN;
 	DECLARE var_player_has_application_to_this_team BOOLEAN;
@@ -22,7 +22,8 @@ BEGIN
 	
 	-- Exit if player doesn't have application to this team
 	IF NOT var_player_has_application_to_this_team THEN
-		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'application not found';
+		SELECT 'application not found';
+		LEAVE proc_edure;
 	END IF;
 	
 	-- Check whether player already has team
@@ -30,7 +31,8 @@ BEGIN
 	
 	-- Exit if player has team
 	IF var_player_has_team THEN
-		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'this player already has a team';
+		SELECT 'this player already has a team';
+		LEAVE proc_edure;
 	END IF;
 	
 	--
@@ -72,16 +74,20 @@ BEGIN
 	--
 	
 	IF var_updated_player <> var_updated_team THEN
-		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'number of updated rows isn\'t match for player and team';
+		SELECT 'number of updated rows isn\'t match for player and team';
+		LEAVE proc_edure;
 	END IF;
 	
 	IF var_updated_player <> 1 THEN
-		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'number of rows for updated player is not 1';
+		SELECT 'number of rows for updated player is not 1';
+		LEAVE proc_edure;
 	END IF;
 	
 	-- ------- --
 	-- Success --
 	-- ------- --
+	
+	SELECT 'success';
 	
 END //
 

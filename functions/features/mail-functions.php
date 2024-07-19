@@ -20,8 +20,8 @@
 			switch ( $result )
 			{
 				// Expected failure messages.
-				case 'Column \'mail_to\' cannot be null':
-					return RESULT_fail('user not found');
+				case 'user not found':
+					return $result;
 			}
 			
 			return RESULT_generic_fail();
@@ -55,13 +55,7 @@
 		$text_handled     = $check_text    ['handled'];
 		
 		// -- DB operation --
-		$send = SQL_prep_stmt_one(
-			'INSERT INTO mail (mail_of, mail_to, mail_text)
-			VALUES (
-				?,
-				(SELECT id FROM game_users WHERE username = ?),
-				?)',
-			array( $_user_id, $username_handled, $text_handled ) );
+		$send = SQL_prep_procedure( 'CALL sp_send_mail(?,?,?)', array( $_user_id, $username_handled, $text_handled ) );
 		
 		// -- Handle result --
 		return MAIL_RESULT( $send );

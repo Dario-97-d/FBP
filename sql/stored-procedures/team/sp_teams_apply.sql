@@ -4,7 +4,7 @@ CREATE PROCEDURE IF NOT EXISTS sp_teams_apply (
 	IN var_player_id INT,
 	IN var_team_id   INT
 )
-BEGIN
+proc_edure:BEGIN
 	DECLARE var_player_has_team                     BOOLEAN;
 	DECLARE var_count_player_applications           INT;
 	DECLARE var_player_has_application_to_this_team BOOLEAN;
@@ -20,7 +20,8 @@ BEGIN
 	
 	-- Exit if player has team
 	IF var_player_has_team THEN
-		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'this player already has a team';
+		SELECT 'this player already has a team';
+		LEAVE proc_edure;
 	END IF;
 	
 	
@@ -29,7 +30,8 @@ BEGIN
 	
 	-- Exit if player has 5 applications
 	IF var_count_player_applications >= 5 THEN
-		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'this player already has 5 applications';
+		SELECT 'this player already has 5 applications';
+		LEAVE proc_edure;
 	END IF;
 	
 	
@@ -38,7 +40,8 @@ BEGIN
 	
 	-- Exit if player already has application to this team
 	IF var_player_has_application_to_this_team THEN
-		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'this player already has an application to this team';
+		SELECT 'this player already has an application to this team';
+		LEAVE proc_edure;
 	END IF;
 	
 	--
@@ -65,6 +68,8 @@ BEGIN
 	-- ------- --
 	-- Success --
 	-- ------- --
+	
+	SELECT 'success';
 	
 END //
 

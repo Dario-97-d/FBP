@@ -29,13 +29,9 @@
 				case 'this player is not free to leave the team':
 				
 					return $result;
-				
-				case 'Column \'player_id\' cannot be null':
-					return RESULT_fail('player not found');
-					
-				case 'Column \'team_id\' cannot be null':
-					return RESULT_fail('team not found');
 			}
+			
+			return RESULT_generic_fail();
 		}
 		
 		// -- Error --
@@ -54,7 +50,7 @@
 		if ( ! INPUT_is_id_valid( $team_id ) ) return RESULT_fail('invalid team id');
 		
 		// -- DB operation --
-		$accept = SQL_prep_stmt_result( 'CALL sp_teams_accept_invite(?, ?)', array( $_player_id, $team_id ) );
+		$accept = SQL_prep_procedure( 'CALL sp_teams_accept_invite(?, ?)', array( $_player_id, $team_id ) );
 		
 		// -- Handle result --
 		return PLAYER_RESULT( $accept );
@@ -70,7 +66,7 @@
 		if ( ! INPUT_is_id_valid( $team_id ) ) return RESULT_fail('invalid team id');
 		
 		// -- DB operation --
-		$apply = SQL_prep_stmt_result( 'CALL sp_teams_apply(?, ?)', array( $_player_id, $team_id ) );
+		$apply = SQL_prep_procedure( 'CALL sp_teams_apply(?, ?)', array( $_player_id, $team_id ) );
 		
 		// -- Handle result --
 		return PLAYER_RESULT( $apply );

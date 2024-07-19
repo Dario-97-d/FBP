@@ -4,7 +4,7 @@ CREATE PROCEDURE IF NOT EXISTS sp_teams_accept_invite (
 	IN var_player_id INT,
 	IN var_team_id   INT
 )
-BEGIN
+proc_edure:BEGIN
 	DECLARE var_team_has_invite_to_this_player BOOLEAN;
 	DECLARE var_player_has_team                BOOLEAN;
 	
@@ -21,7 +21,8 @@ BEGIN
 	
 	-- Exit if team doesn't have invite to this player
 	IF NOT var_team_has_invite_to_this_player THEN
-		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'invite not found';
+		SELECT 'invite not found';
+		LEAVE proc_edure;
 	END IF;
 	
 	
@@ -30,7 +31,8 @@ BEGIN
 	
 	-- Exit if player has team
 	IF var_player_has_team THEN
-		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'this player already has a team';
+		SELECT 'this player already has a team';
+		LEAVE proc_edure;
 	END IF;
 	
 	--
@@ -72,16 +74,20 @@ BEGIN
 	--
 	
 	IF var_updated_player <> var_updated_team THEN
-		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'number of updated rows isn\'t match for player and team';
+		SELECT 'number of updated rows isn\'t match for player and team';
+		LEAVE proc_edure;
 	END IF;
 	
 	IF var_updated_player <> 1 THEN
-		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'number of rows for updated player is not 1';
+		SELECT 'number of rows for updated player is not 1';
+		LEAVE proc_edure;
 	END IF;
 	
 	-- ------- --
 	-- Success --
 	-- ------- --
+	
+	SELECT 'success';
 	
 END //
 

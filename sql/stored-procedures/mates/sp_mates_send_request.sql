@@ -4,7 +4,7 @@ CREATE PROCEDURE IF NOT EXISTS sp_mates_send_request (
 	IN var_requester_id       INT,
 	IN var_requested_username VARCHAR(63)
 )
-BEGIN
+proc_edure:BEGIN
     DECLARE var_requested_id INT;
 	
 	DECLARE var_found_rows   INT;
@@ -14,7 +14,8 @@ BEGIN
 	--
 	-- Exit if user not found
 	IF var_requested_id IS NULL THEN
-		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'user not found';
+		SELECT 'user not found';
+		LEAVE proc_edure;
 	END IF;
 	
 	-- Check whether there is already a mate request between these users
@@ -27,7 +28,8 @@ BEGIN
 	--
 	-- Exit if there is request
 	IF var_found_rows > 0 THEN
-		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'there is already a pending request';
+		SELECT 'there is already a pending request';
+		LEAVE proc_edure;
 	END IF;
 	
 	-- Check whether these users are mates
@@ -40,11 +42,14 @@ BEGIN
 	--
 	-- Exit if these users are mates
 	IF var_found_rows > 0 THEN
-		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'these users are already mates';
+		SELECT 'these users are already mates';
+		LEAVE proc_edure;
 	END IF;
 	
 	-- Insert mate request
 	INSERT INTO mate_requests VALUES (var_requester_id, var_requested_id);
+	
+	SELECT 'success';
 	
 END //
 

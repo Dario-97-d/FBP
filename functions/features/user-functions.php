@@ -25,6 +25,8 @@
 				
 					return $result;
 			}
+			
+			return RESULT_generic_fail();
 		}
 		
 		// -- Error --
@@ -85,7 +87,7 @@
 		$password_handled    = $check_password   ['handled'];
 		
 		// -- DB operation --
-		$register = SQL_prep_stmt_result( 'CALL sp_register_player(?, ?, ?, ?)', array( $username_handled, $player_name_handled, $email_handled, $password_handled ) );
+		$register = SQL_prep_procedure( 'CALL sp_register_player(?, ?, ?, ?)', array( $username_handled, $player_name_handled, $email_handled, $password_handled ) );
 		
 		// -- Handle result --
 		return USER_RESULT( $register );

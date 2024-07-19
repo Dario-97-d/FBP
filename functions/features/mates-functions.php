@@ -27,6 +27,8 @@
 				
 					return $result;
 			}
+			
+			return RESULT_generic_fail();
 		}
 		
 		// -- Error --
@@ -45,7 +47,7 @@
 		if ( ! INPUT_is_id_valid( $accepted_id ) ) return RESULT_fail('invalid id');
 		
 		// -- DB operation --
-		$accept = SQL_prep_stmt_result( 'CALL sp_mates_accept_request(?, ?)', array( $_user_id, $accepted_id ) );
+		$accept = SQL_prep_procedure( 'CALL sp_mates_accept_request(?, ?)', array( $_user_id, $accepted_id ) );
 		
 		// -- Handle result --
 		return MATES_RESULT( $accept );
@@ -185,7 +187,7 @@
 		$username_handled = $check_username['handled'];
 		
 		// -- DB operation --
-		$request = SQL_prep_stmt_result( 'CALL sp_mates_send_request(?, ?)', array( $_user_id, $username_handled ) );
+		$request = SQL_prep_procedure( 'CALL sp_mates_send_request(?, ?)', array( $_user_id, $username_handled ) );
 		
 		// -- Handle result --
 		return MATES_RESULT( $request );
