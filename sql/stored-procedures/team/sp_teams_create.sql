@@ -22,6 +22,7 @@ proc_edure:BEGIN
 		LEAVE proc_edure;
 	END IF;
 	
+	
 	-- Check whether team name is available
 	SELECT EXISTS (SELECT 1 FROM teams WHERE team_name = var_team_name) INTO var_team_name_is_taken;
 	--

@@ -22,6 +22,7 @@ proc_edure:BEGIN
 		LEAVE proc_edure;
 	END IF;
 	
+	
 	-- Check whether there is already a mate request between these users
 	SELECT count(1)    INTO var_found_rows
 	FROM mate_requests
@@ -35,6 +36,7 @@ proc_edure:BEGIN
 		SELECT 'there is already a pending request';
 		LEAVE proc_edure;
 	END IF;
+	
 	
 	-- Check whether these users are mates
 	SELECT count(1) INTO var_found_rows

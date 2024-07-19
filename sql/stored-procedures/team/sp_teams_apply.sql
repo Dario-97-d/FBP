@@ -15,7 +15,7 @@ proc_edure:BEGIN
 	
 	-- Check whether player already has team
 	SELECT EXISTS (SELECT 1 FROM player_team WHERE player_id = var_player_id AND team_id IS NOT NULL) INTO var_player_has_team;
-	
+	--
 	-- Exit if player has team
 	IF var_player_has_team THEN
 		SELECT 'this player already has a team';
@@ -25,7 +25,7 @@ proc_edure:BEGIN
 	
 	-- Check whether player already has 5 applications
 	SELECT count(player_id) INTO var_count_player_applications FROM player_team_applications WHERE player_id = var_player_id GROUP BY player_id;
-	
+	--
 	-- Exit if player has 5 applications
 	IF var_count_player_applications >= 5 THEN
 		SELECT 'this player already has 5 applications';
@@ -35,7 +35,7 @@ proc_edure:BEGIN
 	
 	-- Check whether player already has an application to this team
 	SELECT EXISTS (SELECT 1 FROM player_team_applications WHERE player_id = var_player_id AND team_id = var_team_id) INTO var_player_has_application_to_this_team;
-	
+	--
 	-- Exit if player already has application to this team
 	IF var_player_has_application_to_this_team THEN
 		SELECT 'this player already has an application to this team';
