@@ -107,6 +107,23 @@
 		return RESULT_is_success( $get_value ) ? SQL_fetch_value( RESULT_get_data( $get_value ) ) : false;
 	}
 	
+	function SQL_prep_procedure( $query, $params )
+	{
+		$call_procedure = SQL_prep_stmt_result( $query, $params );
+		
+		if ( RESULT_is_success( $call_procedure ) )
+		{
+			$procedure_output = SQL_fetch_value( RESULT_get_data( $call_procedure ) );
+			
+			if ( $procedure_output != 'success' )
+			{
+				return RESULT_fail( $procedure_output );
+			}
+		}
+		
+		return $call_procedure;
+	}
+	
 	function SQL_prep_stmt_one( $query, $params )
 	{
 		$prep_stmt = SQL_prep_stmt_result( $query, $params );
@@ -151,20 +168,8 @@
 				mysqli_stmt_bind_param( $stmt, $types, ...$params );
 			}
 			
-			// -- Execute Statement --
-			// Catch exception possibly derived from invalid user action and return message.
-			try
-			{
-				mysqli_stmt_execute( $stmt );
-			}
-			catch (mysqli_sql_exception $e)
-			{
-				LOGGER_log_mysql_error( 'Failed execution of prepared statement. $query: '.$query.', $params: ('.implode( ', ', $params ).'), $e->getMessage(): '.$e->getMessage() );
-				mysqli_stmt_close( $stmt );
-				
-				// Return exception message for failure message handling.
-				return RESULT_fail( $e->getMessage() );
-			}
+			// Execute statement.
+			mysqli_stmt_execute( $stmt );
 			
 			// -- Handle Result --
 			
@@ -176,8 +181,10 @@
 			{
 				// Stored procedures.
 				case 'CALL S':
+					$procedure_output = mysqli_stmt_get_result( $stmt );
+					
 					mysqli_stmt_close( $stmt );
-					return RESULT_success();
+					return RESULT_success( $procedure_output );
 				
 				case 'SELECT':
 					$sql_result = mysqli_stmt_get_result( $stmt );
@@ -196,7 +203,7 @@
 				
 				default:
 					// -- Unexpected query type --
-					LOGGER_log_mysql_error( 'Unexpected query type. Expected types: SELECT, CALL s, INSERT, UPDATE, DELETE. $query_type: '.$query_type.', $query: '.$query );
+					LOGGER_log_mysql_error( 'Unexpected query type. Expected types: CALL s, SELECT, INSERT, UPDATE, DELETE. $query_type: '.$query_type.', $query: '.$query );
 					mysqli_stmt_close( $stmt );
 					return RESULT_error();
 			}
@@ -206,5 +213,4 @@
 			LOGGER_log_mysql_error( 'Exception at SQL_prep_stmt_result(). $query: '.$query.', $params: ('.implode( ', ', $params ).'), $e->getMessage(): '.$e->getMessage() );
 			return RESULT_error();
 		}
-		var_dump($stmt);
 	}

@@ -4,7 +4,7 @@ CREATE PROCEDURE IF NOT EXISTS sp_teams_create (
     IN var_team_name VARCHAR(63),
     IN var_player_id INT
 )
-BEGIN
+proc_edure:BEGIN
 	DECLARE var_player_has_team    BOOLEAN;
 	DECLARE var_team_name_is_taken BOOLEAN;
 	
@@ -20,7 +20,8 @@ BEGIN
 	
 	-- Exit if player already has team
 	IF var_player_has_team THEN
-		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'this player already has a team';
+		SELECT 'this player already has a team';
+		LEAVE proc_edure;
 	END IF;
 	
 	
@@ -29,7 +30,8 @@ BEGIN
 	
 	-- Exit if team name is taken
 	IF var_team_name_is_taken THEN
-		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'this team name is taken';
+		SELECT 'this team name is taken';
+		LEAVE proc_edure;
 	END IF;
 	
 	--
@@ -67,16 +69,20 @@ BEGIN
 	--
 	
 	IF var_inserted_team <> var_updated_player THEN
-		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'number of inserted rows for team isn\'t match for number of updated rows for player';
+		SELECT 'number of inserted rows for team isn\'t match for number of updated rows for player';
+		LEAVE proc_edure;
 	END IF;
 	
 	IF var_inserted_team <> 1 THEN
-		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'number of rows for inserted team is not 1';
+		SELECT 'number of rows for inserted team is not 1';
+		LEAVE proc_edure;
 	END IF;
 	
 	-- ------- --
 	-- Success --
 	-- ------- --
+	
+	SELECT 'success';
 	
 END //
 

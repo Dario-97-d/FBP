@@ -31,6 +31,8 @@
 				
 					return $result;
 			}
+			
+			return RESULT_generic_fail();
 		}
 		
 		// -- Error --
@@ -49,7 +51,7 @@
 		if ( ! INPUT_is_id_valid( $player_id ) ) return RESULT_fail('invalid player id');
 		
 		// -- DB operation --
-		$accept = SQL_prep_stmt_result( 'CALL sp_teams_accept_application(?, ?)', array( $_team_id, $player_id ) );
+		$accept = SQL_prep_procedure( 'CALL sp_teams_accept_application(?, ?)', array( $_team_id, $player_id ) );
 		
 		// -- Handle result --
 		return TEAM_RESULT( $accept );
@@ -82,7 +84,7 @@
 		$team_name_handled = $check_team_name['handled'];
 		
 		// -- DB operation --
-		$create = SQL_prep_stmt_result( 'CALL sp_teams_create(?, ?)', array( $team_name_handled, $_player_id ) );
+		$create = SQL_prep_procedure( 'CALL sp_teams_create(?, ?)', array( $team_name_handled, $_player_id ) );
 		
 		// -- Handle result --
 		return TEAM_RESULT( $create );
@@ -93,7 +95,7 @@
 		global $_team_id;
 		
 		// -- DB operation --
-		$eliminate = SQL_prep_stmt_result( 'CALL sp_teams_eliminate(?)', array( $_team_id ) );
+		$eliminate = SQL_prep_procedure( 'CALL sp_teams_eliminate(?)', array( $_team_id ) );
 		
 		// -- Handle result --
 		return TEAM_RESULT( $eliminate );
@@ -113,7 +115,7 @@
 		$username_handled = $check_username['handled'];
 		
 		// -- DB operation --
-		$expel = SQL_prep_stmt_result( 'CALL sp_teams_expel_player(?, ?)', array( $username_handled, $_team_id ) );
+		$expel = SQL_prep_procedure( 'CALL sp_teams_expel_player(?, ?)', array( $username_handled, $_team_id ) );
 		
 		// -- Handle result --
 		return TEAM_RESULT( $expel );
