@@ -1,30 +1,24 @@
 pra fazer:
 
-done: make procedure checks return error message without signalling exception
-done: make sp code consistent: SELECT EXISTS(«space or no space» )
-done: update procedures in phpmyadmin
-rename team procedure file names: team instead of teams
+check whether log player error and that sort of function is really necessary
 
 maybe handle procedure output in SQL_prep_stmt_result() instead of function SQL_prep_procedure()
 
-correct function prefix on _get_ranking_players (PLAYER instead of TEAM)
-simplify some functions names (like TEAM_accept_application instead of ..._player_application)
-
 remove unnecessary id from composite primary key tables
+
+maybe use $_SESSION vars to take user message beyond redirects
+maybe try alert() -> REDIRECT()
+
+<--->
 
 make search player
 make search team
 
 make mailing system
 
-<--->
-
 make training
 
 make play-3
-
-use $_SESSION vars to take user message beyond redirects
-maybe try alert() -> REDIRECT()
 
 <--->
 
