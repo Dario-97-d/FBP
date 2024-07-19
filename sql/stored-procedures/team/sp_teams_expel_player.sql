@@ -21,6 +21,7 @@ proc_edure:BEGIN
 		LEAVE proc_edure;
 	END IF;
 	
+	
 	-- Get staff_role of player if it is in this team
 	SELECT staff_role INTO var_player_staff_role FROM player_team WHERE player_id = var_player_id AND team_id = var_team_id;
 	--

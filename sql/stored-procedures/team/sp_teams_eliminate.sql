@@ -19,6 +19,7 @@ proc_edure:BEGIN
 		LEAVE proc_edure;
 	END IF;
 	
+	
 	-- Check whether the team has more than 1 permanent member
 	SELECT count(1) INTO var_number_of_team_elements FROM player_team WHERE team_id = var_team_id AND staff_role != 'Free' GROUP BY staff_role;
 	--

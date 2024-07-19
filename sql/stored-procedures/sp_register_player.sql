@@ -13,7 +13,7 @@ proc_edure:BEGIN
 	
 	-- Check whether username already exists
 	SELECT EXISTS (SELECT 1 FROM game_users WHERE username = var_username) INTO var_username_exists;
-	
+	--
 	-- Exit if username exists
 	IF var_username_exists THEN
 		SELECT 'this username is taken';
@@ -23,7 +23,7 @@ proc_edure:BEGIN
 	
 	-- Check whether email already exists
 	SELECT EXISTS (SELECT 1 FROM game_users WHERE email = var_email) INTO var_email_exists;
-	
+	--
 	IF var_email_exists THEN
 		SELECT 'this email is already registered';
 		LEAVE proc_edure;
@@ -40,6 +40,7 @@ proc_edure:BEGIN
 	INSERT INTO player_stats       ()                           VALUES ();
 	INSERT INTO player_team        ()                           VALUES ();
 	
+	-- Success
 	SELECT 'success';
 	
 END //

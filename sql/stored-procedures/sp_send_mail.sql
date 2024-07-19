@@ -8,9 +8,10 @@ CREATE PROCEDURE IF NOT EXISTS sp_send_mail (
 proc_edure:BEGIN
     DECLARE var_receiver_id INT;
 	
+	
 	-- Get user id by username
 	SELECT id INTO var_receiver_id FROM game_users WHERE username = var_receiver_username;
-	
+	--
 	-- Exit if username not found
 	IF var_receiver_id IS NULL THEN
 		SELECT 'user not found';
@@ -22,6 +23,7 @@ proc_edure:BEGIN
 	
 	INSERT INTO mail VALUES (var_sender_id, var_receiver_id, var_text);
 	
+	-- Success
 	SELECT 'success';
 	
 END //
