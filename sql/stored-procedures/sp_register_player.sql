@@ -4,7 +4,8 @@ CREATE PROCEDURE IF NOT EXISTS sp_register_player (
 	IN var_username    VARCHAR(63),
 	IN var_player_name VARCHAR(63),
 	IN var_email       VARCHAR(63),
-	IN var_password    VARCHAR(63))
+	IN var_password    VARCHAR(63)
+)
 proc_edure:BEGIN
     DECLARE var_username_exists BOOLEAN;
 	DECLARE var_email_exists    BOOLEAN;
