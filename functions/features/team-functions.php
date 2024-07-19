@@ -131,8 +131,8 @@
 				u.username,
 				f.id          as player_id,
 				f.player_name
-			FROM game_users                     u
-			JOIN football_players               f ON f.id = u.id
+			FROM  game_users                    u
+			JOIN  football_players              f ON f.id        = u.id
 			RIGHT JOIN player_team_applications a ON a.player_id = f.id
 			WHERE a.team_id = ?',
 			array( $_team_id ) );
@@ -164,8 +164,8 @@
 				u.username,
 				f.id          as player_id,
 				f.player_name
-			FROM game_users                u
-			JOIN football_players          f ON f.id = u.id
+			FROM  game_users               u
+			JOIN  football_players         f ON f.id        = u.id
 			RIGHT JOIN team_player_invites i ON i.player_id = f.id
 			WHERE i.team_id = ?',
 			array( $_team_id ) );
@@ -183,11 +183,13 @@
 				f.player_name,
 				f.rating       as player_rating,
 				t.staff_role
-			FROM game_users       u
-			JOIN football_players f ON f.id = u.id
-			JOIN player_team      t ON t.player_id = f.id
+			FROM  game_users       u
+			JOIN  football_players f ON f.id        = u.id
+			JOIN  player_team      t ON t.player_id = f.id
 			WHERE t.team_id = ?
-			ORDER BY staff_role ASC, f.id ASC',
+			ORDER BY
+				staff_role ASC,
+				f.id ASC',
 			array( $_team_id ) );
 	}
 	
@@ -209,7 +211,8 @@
 				team_name                                           as current_name,
 				last_name_change                                    as last_change,
 				last_name_change < DATE_SUB(now(), INTERVAL 1 week) as is_allowed
-			FROM teams WHERE id = ?',
+			FROM  teams
+			WHERE id = ?',
 			array( $_team_id ) );
 	}
 	
@@ -222,10 +225,16 @@
 		return SQL_prep_get_value(
 			'SELECT
 				CASE
-					WHEN EXISTS (SELECT 1 FROM player_team WHERE player_id = ? AND team_id IS NOT NULL) THEN \'has team\'
-					WHEN EXISTS (SELECT 1 FROM player_team_applications WHERE player_id = ? AND team_id = ?) THEN \'has application\'
-					WHEN EXISTS (SELECT 1 FROM team_player_invites WHERE team_id = ? AND player_id = ?) THEN \'has invite\'
-					WHEN (SELECT count(player_id) FROM player_team_applications WHERE player_id = ? GROUP BY player_id) >= 5 THEN \'has 5 applications\'
+					WHEN EXISTS (SELECT 1 FROM player_team              WHERE player_id = ? AND team_id IS NOT NULL) THEN \'has team\'
+					WHEN EXISTS (SELECT 1 FROM player_team_applications WHERE player_id = ? AND team_id   = ?)       THEN \'has application\'
+					WHEN EXISTS (SELECT 1 FROM team_player_invites      WHERE team_id   = ? AND player_id = ?)       THEN \'has invite\'
+					WHEN (
+						SELECT   count( player_id )
+						FROM     player_team_applications
+						WHERE    player_id = ?
+						GROUP BY player_id
+					) >= 5
+						THEN \'has 5 applications\'
 					ELSE \'none\'
 				END',
 			array(
@@ -335,8 +344,14 @@
 		
 		// -- DB operation --
 		$update = SQL_prep_stmt_one(
-			'UPDATE teams SET team_name = ?, last_name_change = CURRENT_TIMESTAMP
-			WHERE id = ? AND DATE(last_name_change) < DATE(DATE_SUB(NOW(), INTERVAL 1 WEEK))',
+			'UPDATE teams
+			SET
+				team_name        = ?,
+				last_name_change = CURRENT_TIMESTAMP
+			WHERE
+				id = ?
+				AND
+				date( last_name_change ) < date( DATE_SUB( NOW(), INTERVAL 1 WEEK ) )',
 			array( $new_name_handled, $_team_id ) );
 		
 		// -- Handle result --

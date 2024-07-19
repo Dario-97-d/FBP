@@ -113,8 +113,8 @@
 				g.skill,
 				g.attacking,
 				g.defending
-			FROM football_players   f
-			JOIN generic_attributes g ON g.player_id = f.id
+			FROM  football_players   f
+			JOIN  generic_attributes g ON g.player_id = f.id
 			WHERE f.id = ?',
 			array( $player_id ) );
 	}
@@ -132,12 +132,12 @@
 		return SQL_prep_get_value(
 			'SELECT
 				CASE
-					WHEN find_in_set(?, mates) > 0 THEN \'mates\'
+					WHEN find_in_set(?, mates)       > 0 THEN \'mates\'
 					WHEN find_in_set(?, requests_to) > 0 THEN \'request sent\'
 					WHEN find_in_set(?, requests_of) > 0 THEN \'request received\'
 					ELSE \'none\'
 				END
-			FROM user_mates
+			FROM  user_mates
 			WHERE id = ?',
 			array( $checked_id, $checked_id, $checked_id, $_user_id ) );
 	}
@@ -154,10 +154,10 @@
 				f.rating,
 				g.*,
 				p.*
-			FROM game_users         u
-			JOIN football_players   f ON f.id = u.id
-			JOIN generic_attributes g ON g.player_id = f.id
-			JOIN playing_attributes p ON p.player_id = f.id
+			FROM  game_users         u
+			JOIN  football_players   f ON f.id        = u.id
+			JOIN  generic_attributes g ON g.player_id = f.id
+			JOIN  playing_attributes p ON p.player_id = f.id
 			WHERE f.id = ?',
 			array( $_player_id ) );
 	}
@@ -176,8 +176,8 @@
 				f.player_name,
 				f.rating,
 				g.skill
-			FROM football_players   f
-			JOIN generic_attributes g ON g.player_id = f.id
+			FROM  football_players   f
+			JOIN  generic_attributes g ON g.player_id = f.id
 			WHERE f.id = ?',
 			array( $player_id ) );
 	}
@@ -202,10 +202,10 @@
 				g.defending,
 				t.team_name
 			FROM game_users         u
-			JOIN football_players   f ON f.id = u.id
+			JOIN football_players   f ON f.id        = u.id
 			JOIN generic_attributes g ON g.player_id = f.id
 			JOIN player_team        p ON p.player_id = f.id
-			LEFT JOIN teams         t ON t.id = p.team_id
+			LEFT JOIN teams         t ON t.id        = p.team_id
 			WHERE f.id = ?',
 			array( $player_id ) );
 	}
@@ -222,10 +222,12 @@
 				t.id           as team_id,
 				t.team_name
 			FROM game_users       u
-			JOIN football_players f ON f.id = u.id
+			JOIN football_players f ON f.id        = u.id
 			JOIN player_team      p ON p.player_id = f.id
-			LEFT JOIN teams       t ON t.id = p.team_id
-			ORDER BY rating DESC, f.id ASC' );
+			LEFT JOIN teams       t ON t.id        = p.team_id
+			ORDER BY
+				rating DESC,
+				f.id ASC' );
 	}
 	
 	function PLAYER_get_team_applications()
@@ -237,8 +239,8 @@
 			'SELECT
 				t.id,
 				t.team_name
-			FROM player_team_applications a
-			JOIN teams                    t ON a.team_id = t.id
+			FROM  player_team_applications a
+			JOIN  teams                    t ON a.team_id = t.id
 			WHERE a.player_id = ?',
 			array( $_player_id ) );
 	}
@@ -252,8 +254,8 @@
 			'SELECT
 				t.id,
 				t.team_name
-			FROM team_player_invites i
-			JOIN teams               t ON i.team_id = t.id
+			FROM  team_player_invites i
+			JOIN  teams               t ON i.team_id = t.id
 			WHERE i.player_id = ?',
 			array( $_player_id ) );
 	}
@@ -269,9 +271,9 @@
 				f.rating,
 				g.*,
 				p.*
-			FROM football_players   f
-			JOIN generic_attributes g ON g.player_id = f.id
-			JOIN playing_attributes p ON p.player_id = f.id
+			FROM  football_players   f
+			JOIN  generic_attributes g ON g.player_id = f.id
+			JOIN  playing_attributes p ON p.player_id = f.id
 			WHERE f.id = ?',
 			array( $_player_id ) );
 	}
