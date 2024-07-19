@@ -32,13 +32,13 @@ proc_edure:BEGIN
 	
 	-- Insert Values --
 	
-	INSERT INTO game_users (username, email, pass_word) VALUES (var_username, var_email, var_password);
-	INSERT INTO user_mates () VALUES ();
-	INSERT INTO football_players (player_name) VALUES (var_player_name);
-	INSERT INTO generic_attributes () VALUES ();
-	INSERT INTO playing_attributes () VALUES ();
-	INSERT INTO player_stats () VALUES ();
-	INSERT INTO player_team () VALUES ();
+	INSERT INTO game_users         (username, email, pass_word) VALUES (var_username, var_email, var_password);
+	INSERT INTO user_mates         ()                           VALUES ();
+	INSERT INTO football_players   (player_name)                VALUES (var_player_name);
+	INSERT INTO generic_attributes ()                           VALUES ();
+	INSERT INTO playing_attributes ()                           VALUES ();
+	INSERT INTO player_stats       ()                           VALUES ();
+	INSERT INTO player_team        ()                           VALUES ();
 	
 	SELECT 'success';
 	

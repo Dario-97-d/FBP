@@ -53,7 +53,9 @@ proc_edure:BEGIN
     
 	-- Update player's team affiliation
 	UPDATE player_team
-	SET team_id = @new_team_id, staff_role = 'Captain'
+	SET
+		team_id = @new_team_id,
+		staff_role = 'Captain'
 	WHERE player_id = var_player_id;
 	
 	SELECT row_count() INTO var_updated_player;
