@@ -9,8 +9,6 @@ proc_edure:BEGIN
 	DECLARE var_count_player_applications           INT;
 	DECLARE var_player_has_application_to_this_team BOOLEAN;
 	
-	DECLARE var_inserted_application                INT;
-	
 	--
 	-- Initial Checks
 	--
@@ -49,21 +47,7 @@ proc_edure:BEGIN
 	--
 	
 	-- Insert application
-	INSERT INTO player_team_applications (player_id, team_id)
-	VALUES (
-		( SELECT id FROM football_players WHERE id = var_player_id ),
-		( SELECT id FROM teams WHERE id = var_team_id)
-	);
-	
-	SELECT row_count() as var_inserted_application;
-	
-	--
-	-- Check ROW_COUNT
-	--
-	
-	IF var_inserted_application <> 1 THEN
-		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'number of rows for inserted application is not 1';
-	END IF;
+	INSERT INTO player_team_applications (player_id, team_id) VALUES (var_player_id, var_team_id);
 	
 	-- ------- --
 	-- Success --

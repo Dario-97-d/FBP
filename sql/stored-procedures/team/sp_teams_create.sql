@@ -8,7 +8,6 @@ proc_edure:BEGIN
 	DECLARE var_player_has_team    BOOLEAN;
 	DECLARE var_team_name_is_taken BOOLEAN;
 	
-	DECLARE var_inserted_team      INT;
 	DECLARE var_updated_player     INT;
 	
 	--
@@ -46,8 +45,6 @@ proc_edure:BEGIN
 		(SELECT rating FROM football_players WHERE id = var_player_id)
 	);
 	
-	SELECT row_count() INTO var_inserted_team;
-	
     -- Retrieve the ID of the newly inserted team
     SELECT LAST_INSERT_ID() INTO @new_team_id;
     
@@ -70,13 +67,8 @@ proc_edure:BEGIN
 	-- Check ROW_COUNT
 	--
 	
-	IF var_inserted_team <> var_updated_player THEN
-		SELECT 'number of inserted rows for team isn\'t match for number of updated rows for player';
-		LEAVE proc_edure;
-	END IF;
-	
-	IF var_inserted_team <> 1 THEN
-		SELECT 'number of rows for inserted team is not 1';
+	IF var_updated_player <> 1 THEN
+		SELECT 'number of rows for updated player is not 1';
 		LEAVE proc_edure;
 	END IF;
 	
