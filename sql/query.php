@@ -7,16 +7,26 @@
 		// Check connection.
 		if ( ! $conn )
 		{
-			$result = 'MySQL connection failed. Error no.: '.mysqli_connect_errno();
+			$_output = 'MySQL connection failed. Error no.: '.mysqli_connect_errno();
 		}
 		else
 		{
-			$query = $_POST['query'];
+			$result = mysqli_query( $conn, $_POST['query'] ) or die( mysqli_error( $conn ) );
 			
-			$result = mysqli_query( $conn, $query ) or die( mysqli_error( $conn ) );
+			$_output = '<table>';
+			while ( $row = mysqli_fetch_assoc( $result ) )
+			{
+				$_output .= '<tr>';
+				foreach ( $row as $field => $value )
+				{
+					$_output .= "<th>$field</th><td>$value</td>";
+				}
+				$_output .= '</tr>';
+			}
+			$_output .= '</table>';
 		}
 	}
-	else $result = 'Do something.';
+	else $_output = 'Do something.';
 
 ?>
 
@@ -25,4 +35,4 @@
 	<input type="submit">
 </form>
 
-<p><?= $result ?></p>
+<p><?= $_output ?></p>
