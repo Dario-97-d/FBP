@@ -4,7 +4,7 @@
 
 	require_once $_FILEREF_player_functions;
 	
-	$_players = PLAYER_get_ranking_players() or DIE_error();
+	$_players = PLAYER_get_rankings() or DIE_error();
 
 ?>
 
