@@ -37,7 +37,7 @@ proc_edure:BEGIN
 	DELETE FROM player_team_applications WHERE team_id = var_team_id;
 	
 	-- Delete invites
-	DELETE FROM team_player_invites WHERE team_id = var_team_id;
+	DELETE FROM team_player_invites      WHERE team_id = var_team_id;
 	
 	-- Update players' team affiliations
 	UPDATE player_team SET team_id = NULL, staff_role = 'None' WHERE team_id = var_team_id;

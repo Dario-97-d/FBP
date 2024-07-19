@@ -19,7 +19,7 @@ proc_edure:BEGIN
 	END IF;
 	
 	-- Check whether there is already a mate request between these users
-	SELECT count(1) INTO var_found_rows
+	SELECT count(1)    INTO var_found_rows
 	FROM mate_requests
 	WHERE
 		( requester_id = var_requester_id AND requested_id = var_requested_id)

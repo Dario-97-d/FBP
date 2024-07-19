@@ -47,16 +47,16 @@ proc_edure:BEGIN
 	-- Update team
 	UPDATE teams SET
 		members = (
-			SELECT count(player_id)
-			FROM player_team
-			WHERE team_id = var_team_id
+			SELECT   count(player_id)
+			FROM     player_team
+			WHERE    team_id = var_team_id
 			GROUP BY team_id
 		),
 		rating = (
-			SELECT sum(f.rating)
-			FROM football_players f
-			JOIN player_team      t ON t.player_id = f.id
-			WHERE t.team_id = var_team_id
+			SELECT   sum(f.rating)
+			FROM     football_players f
+			JOIN     player_team      t ON t.player_id = f.id
+			WHERE    t.team_id = var_team_id
 			GROUP BY t.team_id
 		)
 	WHERE id = var_team_id;

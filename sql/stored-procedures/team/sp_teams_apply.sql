@@ -16,7 +16,7 @@ proc_edure:BEGIN
 	--
 	
 	-- Check whether player already has team
-	SELECT EXISTS ( SELECT 1 FROM player_team WHERE player_id = var_player_id AND team_id IS NOT NULL ) INTO var_player_has_team;
+	SELECT EXISTS (SELECT 1 FROM player_team WHERE player_id = var_player_id AND team_id IS NOT NULL) INTO var_player_has_team;
 	
 	-- Exit if player has team
 	IF var_player_has_team THEN

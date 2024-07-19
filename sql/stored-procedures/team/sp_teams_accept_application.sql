@@ -19,7 +19,7 @@ proc_edure:BEGIN
 	-- Check whether player has an application to this team
 	-- (implicitly ensures both player and team exist)
 	SELECT EXISTS (SELECT 1 FROM player_team_applications WHERE player_id = var_player_id AND team_id = var_team_id) INTO var_player_has_application_to_this_team;
-	
+	--
 	-- Exit if player doesn't have application to this team
 	IF NOT var_player_has_application_to_this_team THEN
 		SELECT 'application not found';
@@ -27,8 +27,8 @@ proc_edure:BEGIN
 	END IF;
 	
 	-- Check whether player already has team
-	SELECT EXISTS ( SELECT 1 FROM player_team WHERE player_id = var_player_id AND team_id IS NOT NULL ) INTO var_player_has_team;
-	
+	SELECT EXISTS (SELECT 1 FROM player_team WHERE player_id = var_player_id AND team_id IS NOT NULL) INTO var_player_has_team;
+	--
 	-- Exit if player has team
 	IF var_player_has_team THEN
 		SELECT 'this player already has a team';
@@ -47,16 +47,16 @@ proc_edure:BEGIN
 	-- Update team
 	UPDATE teams SET
 		members = (
-			SELECT count(player_id)
-			FROM player_team
-			WHERE team_id = var_team_id
+			SELECT   count(player_id)
+			FROM     player_team
+			WHERE    team_id = var_team_id
 			GROUP BY team_id
 		),
 		rating = (
-			SELECT sum(f.rating)
-			FROM football_players f
-			JOIN player_team      t ON t.player_id = f.id
-			WHERE t.team_id = var_team_id
+			SELECT   sum(f.rating)
+			FROM     football_players f
+			JOIN     player_team      t ON t.player_id = f.id
+			WHERE    t.team_id = var_team_id
 			GROUP BY t.team_id
 		)
 	WHERE id = var_team_id;
