@@ -99,10 +99,8 @@
 				t.team_name
 			FROM mates      m
 			JOIN game_users u
-			ON
-				u.id = m.user1_id AND m.user2_id = ?
-			OR
-				u.id = m.user2_id AND m.user1_id = ?
+				ON u.id = m.user1_id AND m.user2_id = ?
+				OR u.id = m.user2_id AND m.user1_id = ?
 			JOIN football_players f ON f.id        = u.id
 			JOIN player_team      p ON p.player_id = f.id
 			LEFT JOIN teams       t ON t.id        = p.team_id',
