@@ -9,6 +9,10 @@ proc_edure:BEGIN
 	
 	DECLARE var_found_rows   INT;
 	
+	--
+	-- Initial Checks
+	--
+	
 	-- Get id of user by username
 	SELECT id INTO var_requested_id FROM game_users WHERE username = var_requested_username;
 	--
@@ -46,8 +50,16 @@ proc_edure:BEGIN
 		LEAVE proc_edure;
 	END IF;
 	
+	--
+	-- Insert
+	--
+	
 	-- Insert mate request
 	INSERT INTO mate_requests VALUES (var_requester_id, var_requested_id);
+	
+	-- ------- --
+	-- Success --
+	-- ------- --
 	
 	SELECT 'success';
 	
