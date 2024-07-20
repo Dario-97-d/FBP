@@ -1,7 +1,5 @@
 pra fazer:
 
-check whether log player error and that sort of function is really necessary
-
 maybe handle procedure output in SQL_prep_stmt_result() instead of function SQL_prep_procedure()
 
 remove unnecessary id from composite primary key tables
