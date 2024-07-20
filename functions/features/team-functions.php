@@ -285,26 +285,6 @@
 		return TEAM_RESULT( $invite );
 	}
 	
-	function TEAM_is_in_applications( $team_id, $applications )
-	{
-		if ( is_array( $applications ) )
-		{
-			foreach( $applications as $team )
-			{
-				if ( $team['id'] == $team_id )
-				{
-					return true;
-				}
-			}
-		}
-		else
-		{
-			LOGGER_log_player_error('$applications is not array at TEAM_is_in_applications().');
-		}
-		
-		return false;
-	}
-	
 	function TEAM_is_player_captain()
 	{
 		global $_player_id;
