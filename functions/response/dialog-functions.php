@@ -41,6 +41,11 @@
 		DIALOG_add_fail( 'player', $message );
 	}
 	
+	function DIALOG_add_search_fail( $message )
+	{
+		DIALOG_add_fail( 'search', $message );
+	}
+	
 	function DIALOG_add_register_fail( $message )
 	{
 		DIALOG_add_fail( 'register', $message );

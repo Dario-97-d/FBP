@@ -21,6 +21,7 @@
 	$_FILEREF_mail_functions             = __DIR__ . '/../functions/features/mail-functions.php';
 	$_FILEREF_mates_functions            = __DIR__ . '/../functions/features/mates-functions.php';
 	$_FILEREF_player_functions           = __DIR__ . '/../functions/features/player-functions.php';
+	$_FILEREF_search_functions           = __DIR__ . '/../functions/features/search-functions.php';
 	$_FILEREF_team_functions             = __DIR__ . '/../functions/features/team-functions.php';
 	$_FILEREF_user_functions             = __DIR__ . '/../functions/features/user-functions.php';
 	

@@ -80,6 +80,23 @@
 		return INPUT_handled( $name );
 	}
 	
+	function INPUT_handle_search_name( $name )
+	{
+		$name = trim( $name );
+		
+		if ( strlen( $name ) > 31 )
+		{
+			return INPUT_failed( $name, 'Search name is too long.' );
+		}
+		
+		if ( ! ctype_alnum( str_replace( array('_','-',' '), '', $name ) ) )
+		{
+			return INPUT_failed( $name, 'Invalid search name.' );
+		}
+		
+		return INPUT_handled( $name );
+	}
+	
 	function INPUT_handle_team_name( $name )
 	{
 		$name = trim( $name );

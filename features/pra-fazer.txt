@@ -1,8 +1,5 @@
 pra fazer:
 
-make search player
-make search team
-
 make training
 
 make play-3
