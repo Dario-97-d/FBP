@@ -132,14 +132,16 @@
 		return SQL_prep_get_value(
 			'SELECT
 				CASE
-					WHEN find_in_set(?, mates)       > 0 THEN \'mates\'
-					WHEN find_in_set(?, requests_to) > 0 THEN \'request sent\'
-					WHEN find_in_set(?, requests_of) > 0 THEN \'request received\'
+					WHEN EXISTS (SELECT 1 FROM mates         WHERE user1_id = ? AND user2_id = ? OR user1_id = ? AND user2_id = ?) THEN \'mates\'
+					WHEN EXISTS (SELECT 1 FROM mate_requests WHERE requester_id = ? AND requested_id = ?)                          THEN \'request sent\'
+					WHEN EXISTS (SELECT 1 FROM mate_requests WHERE requester_id = ? AND requested_id = ?)                          THEN \'request received\'
 					ELSE \'none\'
-				END
-			FROM  user_mates
-			WHERE id = ?',
-			array( $checked_id, $checked_id, $checked_id, $_user_id ) );
+				END',
+			array(
+				$_user_id, $checked_id, $checked_id, $_user_id,
+				$_user_id, $checked_id,
+				$checked_id, $_user_id
+			) );
 	}
 	
 	function PLAYER_get_overview()
