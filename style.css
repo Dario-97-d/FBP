@@ -16,7 +16,6 @@ select option { padding: 4px; }
 .content {
 	min-height: 100%;
 	max-width: 50%;
-	/*background-color: rgba(127,255,127,0.67);*/
 	background-image: linear-gradient( rgba(127,255,127,0.75) 50%, rgba(127,255,127,0.5) );
 	padding: 16px;
 	border: 4px solid white;
@@ -42,5 +41,28 @@ table.table2 { border: 4px solid green; border-radius: 8px; }
 .table-training-atts th { width: 170px; }
 
 .at-username { color: rgba(63,63,63,0.9); }
+
+.mail-entry {
+	width: 512px;
+	margin: 16px auto;
+	border-left: 4px solid green;
+	padding-left: 4px;
+}
+
+.mail-entry-header { display: flex; padding: 0 8px; }
+.mail-entry-header-sender { margin-right: auto; }
+.mail-entry-header-time { margin-left: auto; }
+
+.mail-entry-text {
+	display: block;
+	background-color: rgba(55,55,55,0.5);
+	color: lightgray;
+	font-family: Verdana, sans-serif;
+	line-height: 1.5;
+	text-align: left;
+	margin-top: 4px;
+	padding: 8px 16px;
+	border-radius: 16px;
+}
 
 .logout-link a { color: darkred; text-decoration: none; }

@@ -1,18 +1,7 @@
 pra fazer:
 
-maybe handle procedure output in SQL_prep_stmt_result() instead of function SQL_prep_procedure()
-
-remove unnecessary id from composite primary key tables
-
-maybe use $_SESSION vars to take user message beyond redirects
-maybe try alert() -> REDIRECT()
-
-<--->
-
 make search player
 make search team
-
-make mailing system
 
 make training
 

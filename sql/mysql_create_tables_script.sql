@@ -119,12 +119,12 @@ CREATE TABLE IF NOT EXISTS player_team_applications (
 ) ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS mail (
-	id        INT       PRIMARY KEY AUTO_INCREMENT,
-	mail_of   INT       NOT NULL,
-	mail_to   INT       NOT NULL,
-	mail_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	mail_text BLOB      NOT NULL,
+	id          INT       PRIMARY KEY AUTO_INCREMENT,
+	receiver_id INT       NOT NULL,
+	sender_id   INT       NOT NULL,
+	time_stamp  TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	mail_text   TEXT      NOT NULL,
 	
-	FOREIGN KEY (mail_of) REFERENCES football_players (id),
-	FOREIGN KEY (mail_to) REFERENCES football_players (id)
+	FOREIGN KEY (receiver_id) REFERENCES football_players (id),
+	FOREIGN KEY (sender_id) REFERENCES football_players (id)
 ) ENGINE = InnoDB;

@@ -122,10 +122,10 @@
 			// Text is empty.
 			return INPUT_failed( '<text>', 'Text is empty.');
 		}
-		elseif ( $text_length > 255 )
+		elseif ( $text_length > 1000 )
 		{
-			// Text is too long. Max chars: 255
-			return INPUT_failed( '<text>', 'Text must be at most 255 characters.');
+			// Text is too long. Max chars: 1000
+			return INPUT_failed( '<text>', 'Text must be at most 1000 characters.');
 		}
 		
 		return INPUT_handled( $text );

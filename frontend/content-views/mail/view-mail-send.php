@@ -9,9 +9,12 @@
 	<br /><br />
 	
 	<label for="message"></label>
-	<textarea id="message" name="message" maxlength="255" placeholder="Message" required><?= $_mail_text ?></textarea>
+	<textarea id="message" name="message" maxlength="1000" placeholder="Message" required><?= $_mail_text ?></textarea>
 	
 	<br /><br />
 	
 	<input type="submit" class="button1" name="send" value="Send" />
 </form>
+
+<h3><a href="mail-box">Messages received</a></h3>
+<h3><a href="mail-sent">Messages sent</a></h3>
