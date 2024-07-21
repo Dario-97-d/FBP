@@ -21,7 +21,7 @@ proc_edure:BEGIN
 	
 	-- Insert --
 	
-	INSERT INTO mail VALUES (var_sender_id, var_receiver_id, var_text);
+	INSERT INTO mail (mail_of, mail_to, mail_text) VALUES (var_sender_id, var_receiver_id, var_text);
 	
 	-- Success
 	SELECT 'success';
