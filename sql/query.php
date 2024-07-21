@@ -13,17 +13,24 @@
 		{
 			$result = mysqli_query( $conn, $_POST['query'] ) or die( mysqli_error( $conn ) );
 			
-			$_output = '<table>';
-			while ( $row = mysqli_fetch_assoc( $result ) )
+			if ( $result == '1' )
 			{
-				$_output .= '<tr>';
-				foreach ( $row as $field => $value )
-				{
-					$_output .= "<th>$field</th><td>$value</td>";
-				}
-				$_output .= '</tr>';
+				$_output = $result;
 			}
-			$_output .= '</table>';
+			else
+			{
+				$_output = '<table>';
+				while ( $row = mysqli_fetch_assoc( $result ) )
+				{
+					$_output .= '<tr>';
+					foreach ( $row as $field => $value )
+					{
+						$_output .= "<th>$field</th><td>$value</td>";
+					}
+					$_output .= '</tr>';
+				}
+				$_output .= '</table>';
+			}
 		}
 	}
 	else $_output = 'Do something.';
