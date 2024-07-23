@@ -52,6 +52,14 @@
 				<?php
 			}
 		}
+		else
+		{
+			?>
+			
+			<tr><td colspan="5">None</td></tr>
+			
+			<?php
+		}
 	
 	?>
 	
