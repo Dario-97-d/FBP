@@ -21,20 +21,24 @@
 
 		<hr color="purple">
 		
-		<div class="content">
+		<div class="frame">
 			
-			<?php require_once $_FILEREF_partial_view_top_bar; ?>
-			
-			<?php require_once $_FILEREF_frontend_content; ?>
-			
-			<h4><u onclick="history.back()">Back</u></h4>
-			
-			<?php
-				if ( $_IS_LOGGED_IN ) require_once $_FILEREF_partial_view_logout_link;
-				else echo '<a href="user-login">Login</a><br /><a href="user-register">Register</a>';
-			?>
-			
-			<?php /*require_once $_FILEREF_partial_view_website_map;*/ ?>
+			<div class="inner-frame">
+				
+				<?php require_once $_FILEREF_partial_view_top_bar; ?>
+				
+				<?php require_once $_FILEREF_frontend_content; ?>
+				
+				<h4><u onclick="history.back()">Back</u></h4>
+				
+				<?php
+					if ( $_IS_LOGGED_IN ) require_once $_FILEREF_partial_view_logout_link;
+					else echo '<a href="user-login">Login</a><br /><a href="user-register">Register</a>';
+				?>
+				
+				<?php /*require_once $_FILEREF_partial_view_website_map;*/ ?>
+				
+			</div>
 			
 		</div>
 
