@@ -4,17 +4,12 @@
 
 	require_once $_FILEREF_player_functions;
 	
-	// Get Player's generic playing attributes.
-	$_player = PLAYER_get_generic_play_profile( $_player_id ) or DIE_error();
+	// Redirect if GET id was not given or is not valid.
+	if ( ! isset( $_GET['partner-id'] ) || ! INPUT_is_id_valid( $_GET['partner-id'] ) ) REDIRECT('ranking-player');
 	
-	// Check whether a partner id was given.
-	if ( isset( $_GET['id'] ) )
-	{
-		$_partner_id = $_GET['id'];
-		
-		// Get Partner's generic playing attributes.
-		$_partner = PLAYER_get_generic_play_profile( $_partner_id ) or DIE_error();
-	}
+	$_partner_id = $_GET['partner-id'];
+	
+	$_partner = PLAYER_get_generic_play_profile( $_partner_id ) or DIE_error();
 
 ?>
 

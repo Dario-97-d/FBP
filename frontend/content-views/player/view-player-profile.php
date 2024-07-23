@@ -31,7 +31,10 @@
 	{
 		?>
 		
-		<!-- Link to Send message -->
+		<!-- Link to Arrange 3-a-side -->
+		<h3><a href="play-3-arrange?partner-id=<?= $_profile_id ?>">Play 3</a></h3>
+		
+		<!-- Link to Write message -->
 		<h3><a href="mail-send?to-username=<?= $_profile['username'] ?>">Message</a></h3>
 		
 		<?php
