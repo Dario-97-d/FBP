@@ -38,6 +38,7 @@
 	$_FILEREF_frontend_layout            = __DIR__ . '/../frontend/layout.php';
 	
 	// Partial Views.
+	$_FILEREF_partial_view_generic_attributes = __DIR__ . '/../frontend/partial-views/partial-view-generic-attributes.php';
 	$_FILEREF_partial_view_logout_link   = __DIR__ . '/../frontend/partial-views/logout-link.html';
 	$_FILEREF_partial_view_search_player = __DIR__ . '/../frontend/partial-views/search-player.html';
 	$_FILEREF_partial_view_search_team   = __DIR__ . '/../frontend/partial-views/search-team.html';

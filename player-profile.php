@@ -11,6 +11,8 @@
 	
 	$_profile = PLAYER_get_profile( $_profile_id ) or REDIRECT('search-player');
 	
+	$_generic_atts = PLAYER_get_generic_attributes_from_player( $_profile );
+	
 	// Display player's team name or (no team).
 	if ( ! $_profile['team_name'] ) $_profile['team_name'] = '(no team)';
 	

@@ -4,22 +4,10 @@
 <h2><?= $_player['player_name'] ?> | &empty; <?= $_player['rating'] ?></h2>
 @<?= $_player['username'] ?>
 
-<table class="table2" cellpadding="8" cellspacing="0">
-	<tr>
-		<th width="48px">STR</th>
-		<th width="48px">MOV</th>
-		<th width="48px">SKL</th>
-		<th width="48px">ATK</th>
-		<th width="48px">DFS</th>
-	</tr>
-	<tr>
-		<td><?= $_player['strength'] ?></td>
-		<td><?= $_player['movement'] ?></td>
-		<td><?= $_player['skill'] ?></td>
-		<td><?= $_player['attacking'] ?></td>
-		<td><?= $_player['defending'] ?></td>
-	</tr>
-</table>
+<?php
+	// Partial View: Generic Attributes.
+	require_once $_FILEREF_partial_view_generic_attributes;
+?>
 
 <table class="table1">
 	<tr>

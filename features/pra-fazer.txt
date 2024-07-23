@@ -1,14 +1,14 @@
 pra fazer:
 
-make play-3
-
-<--->
-
 game appearance
 
 make notification display system (mail, mates, games?)
 
+show page title in tab <head><title>
+
 <--->
+
+make play-3
 
 make play-5
 

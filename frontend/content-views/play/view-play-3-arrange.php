@@ -4,22 +4,10 @@
 
 <h2><?= $_partner['player_name'] ?> | &empty; <?= $_partner['rating'] ?></h2>
 
-<table class="table2" cellpadding="8" cellspacing="0">
-	<tr>
-		<th width="48px">STR</th>
-		<th width="48px">MOV</th>
-		<th width="48px">SKL</th>
-		<th width="48px">ATK</th>
-		<th width="48px">DFS</th>
-	</tr>
-	<tr>
-		<td><?= $_partner['strength'] ?></td>
-		<td><?= $_partner['movement'] ?></td>
-		<td><?= $_partner['skill'] ?></td>
-		<td><?= $_partner['attacking'] ?></td>
-		<td><?= $_partner['defending'] ?></td>
-	</tr>
-</table>
+<?php
+	// Partial View: Generic Attributes.
+	require_once $_FILEREF_partial_view_generic_attributes;
+?>
 
 <form action="play-3-game" method="POST" onsubmit="return confirm('?')">
 	<br />

@@ -114,6 +114,16 @@
 			array( $_player_id ) );
 	}
 	
+	function PLAYER_get_generic_attributes_from_player( $player )
+	{
+		return array(
+			'strength'  => $player['strength'],
+			'movement'  => $player['movement'],
+			'skill'     => $player['skill'],
+			'attacking' => $player['attacking'],
+			'defending' => $player['defending']);
+	}
+	
 	function PLAYER_get_generic_play_profile( $player_id )
 	{
 		// -- Handle Input --
