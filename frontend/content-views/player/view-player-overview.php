@@ -1,8 +1,8 @@
 
 <h1>Overview</h1>
 
-@<?= $_player['username'] ?>
 <h2><?= $_player['player_name'] ?> | &empty; <?= $_player['rating'] ?></h2>
+@<?= $_player['username'] ?>
 
 <table class="table2" cellpadding="8" cellspacing="0">
 	<tr>
