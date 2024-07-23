@@ -28,24 +28,23 @@
 		<th style="width:170px">Tactical</th>
 	</tr>
 	<tr>
-		<td>Speed: <?= $_player['pace'] ?></td>
-		<td>Dribble: <?= $_player['dribbling'] ?></td>
-		<td>Position: <?= $_player['opportunity'] ?></td>
+		<td>Speed: <?=     $_player['speed'] ?></td>
+		<td>Dribble: <?=   $_player['dribble'] ?></td>
+		<td>Position: <?=  $_player['position'] ?></td>
 	</tr>
 	<tr>
-		<td>Agility: <?= $_player['agility'] ?></td>
-		<td>Pass: <?= $_player['passing'] ?></td>
-		<td>Vision: <?= $_player['vision'] ?></td>
+		<td>Agility: <?=   $_player['agility'] ?></td>
+		<td>Pass: <?=      $_player['pass'] ?></td>
+		<td>Vision: <?=    $_player['vision'] ?></td>
 	</tr>
 	<tr>
-		<td>Airplay: <?= $_player['air_play'] ?></td>
-		<td>Shot: <?= $_player['shooting'] ?></td>
-		<td>Marking: <?= $_player['marking'] ?></td>
+		<td>Airplay: <?=   $_player['airplay'] ?></td>
+		<td>Shoot: <?=     $_player['shoot'] ?></td>
+		<td>Prevision: <?= $_player['prevision'] ?></td>
 	</tr>
 	<tr>
-		<td>Energy: <?= $_player['duels'] ?></td>
-		<td>Tackle: <?= $_player['tackling'] ?></td>
-		<td>Prevision: <?= $_player['positioning'] ?></td>
+		<td>Power: <?=     $_player['power'] ?></td>
+		<td>Tackle: <?=    $_player['tackle'] ?></td>
+		<td>Marking: <?=   $_player['marking'] ?></td>
 	</tr>
 </table>
-
