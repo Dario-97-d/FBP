@@ -5,15 +5,6 @@ CREATE TABLE IF NOT EXISTS game_users (
 	pass_word VARCHAR(63) NOT NULL
 ) ENGINE = InnoDB;
 
-CREATE TABLE IF NOT EXISTS user_mates (
-	id          INT         PRIMARY KEY AUTO_INCREMENT,
-	mates       VARCHAR(63) NOT NULL DEFAULT '0',
-	requests_to VARCHAR(63) NOT NULL DEFAULT '0',
-	requests_of VARCHAR(63) NOT NULL DEFAULT '0',
-	
-	FOREIGN KEY (id) REFERENCES game_users (id)
-) ENGINE = InnoDB;
-
 CREATE TABLE IF NOT EXISTS mates (
 	user1_id INT NOT NULL,
 	user2_id INT NOT NULL,
