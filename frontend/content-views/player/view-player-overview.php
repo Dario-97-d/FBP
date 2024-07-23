@@ -9,32 +9,39 @@
 	require_once $_FILEREF_partial_view_generic_attributes;
 ?>
 
-<table class="table1">
-	<tr>
-		<th style="width:170px">Physical</th>
-		<th style="width:170px">Technical</th>
-		<th style="width:170px">Tactical</th>
-	</tr>
-	<tr>
-		<td>Speed: <?=     $_player['speed'] ?></td>
-		<td>Dribble: <?=   $_player['dribble'] ?></td>
-		<td>Position: <?=  $_player['position'] ?></td>
-	</tr>
-	<tr>
-		<td>Agility: <?=   $_player['agility'] ?></td>
-		<td>Pass: <?=      $_player['pass'] ?></td>
-		<td>Vision: <?=    $_player['vision'] ?></td>
-	</tr>
-	<tr>
-		<td>Airplay: <?=   $_player['airplay'] ?></td>
-		<td>Shoot: <?=     $_player['shoot'] ?></td>
-		<td>Prevision: <?= $_player['prevision'] ?></td>
-	</tr>
-	<tr>
-		<td>Power: <?=     $_player['power'] ?></td>
-		<td>Tackle: <?=    $_player['tackle'] ?></td>
-		<td>Marking: <?=   $_player['marking'] ?></td>
-	</tr>
-</table>
+<div class="display-playing-attributes">
+	
+	<!-- Header -->
+	<div class="display-playing-attributes-header">Physical</div>
+	<div class="display-playing-attributes-header">Technical</div>
+	<div class="display-playing-attributes-header">Tactical</div>
+	
+	<!-- Body -->
+	
+	<!-- Physical -->
+	<div class="display-playing-attributes-body">
+		<div>Speed</div><div><?=     $_player['speed']     ?></div>
+		<div>Agility</div><div><?=   $_player['agility']   ?></div>
+		<div>Airplay</div><div><?=   $_player['airplay']   ?></div>
+		<div>Power</div><div><?=     $_player['power']     ?></div>
+	</div>
+	
+	<!-- Technical -->
+	<div class="display-playing-attributes-body">
+		<div>Dribble</div><div><?=   $_player['dribble']   ?></div>
+		<div>Pass</div><div><?=      $_player['pass']      ?></div>
+		<div>Shoot</div><div><?=     $_player['shoot']     ?></div>
+		<div>Tackle</div><div><?=    $_player['tackle']    ?></div>
+	</div>
+	
+	<!-- Tactical -->
+	<div class="display-playing-attributes-body">
+		<div>Position</div><div><?=  $_player['position']  ?></div>
+		<div>Vision</div><div><?=    $_player['vision']    ?></div>
+		<div>Prevision</div><div><?= $_player['prevision'] ?></div>
+		<div>Marking</div><div><?=   $_player['marking']   ?></div>
+	</div>
+	
+</div>
 
 <h3><a href="player-development">Train</a></h3>
