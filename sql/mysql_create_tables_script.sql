@@ -5,6 +5,17 @@ CREATE TABLE IF NOT EXISTS game_users (
 	pass_word VARCHAR(63) NOT NULL
 ) ENGINE = InnoDB;
 
+CREATE TABLE IF NOT EXISTS mail (
+	id          INT       PRIMARY KEY AUTO_INCREMENT,
+	receiver_id INT       NOT NULL,
+	sender_id   INT       NOT NULL,
+	time_stamp  TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	mail_text   TEXT      NOT NULL,
+	
+	FOREIGN KEY (receiver_id) REFERENCES game_users (id),
+	FOREIGN KEY (sender_id) REFERENCES game_users (id)
+) ENGINE = InnoDB;
+
 CREATE TABLE IF NOT EXISTS mates (
 	user1_id INT NOT NULL,
 	user2_id INT NOT NULL,
@@ -107,15 +118,4 @@ CREATE TABLE IF NOT EXISTS player_team_applications (
 	FOREIGN KEY (player_id) REFERENCES football_players (id),
 	FOREIGN KEY (team_id) REFERENCES teams (id),
 	UNIQUE (player_id, team_id)
-) ENGINE = InnoDB;
-
-CREATE TABLE IF NOT EXISTS mail (
-	id          INT       PRIMARY KEY AUTO_INCREMENT,
-	receiver_id INT       NOT NULL,
-	sender_id   INT       NOT NULL,
-	time_stamp  TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	mail_text   TEXT      NOT NULL,
-	
-	FOREIGN KEY (receiver_id) REFERENCES football_players (id),
-	FOREIGN KEY (sender_id) REFERENCES football_players (id)
 ) ENGINE = InnoDB;
