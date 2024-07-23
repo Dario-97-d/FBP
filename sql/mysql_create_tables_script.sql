@@ -46,12 +46,13 @@ CREATE TABLE IF NOT EXISTS football_players (
 
 
 CREATE TABLE IF NOT EXISTS generic_attributes (
-	player_id       INT PRIMARY KEY AUTO_INCREMENT,
-	strength        INT NOT NULL DEFAULT 2,
-	movement        INT NOT NULL DEFAULT 2,
-	skill           INT NOT NULL DEFAULT 4,
-	attacking       INT NOT NULL DEFAULT 2,
-	defending       INT NOT NULL DEFAULT 2,
+	player_id        INT PRIMARY KEY AUTO_INCREMENT,
+	strength         INT NOT NULL DEFAULT 5,
+	movement         INT NOT NULL DEFAULT 5,
+	skill            INT NOT NULL DEFAULT 5,
+	attacking        INT NOT NULL DEFAULT 5,
+	defending        INT NOT NULL DEFAULT 5,
+	available_points INT NOT NULL DEFAULT 25,
 	
 	FOREIGN KEY (player_id) REFERENCES football_players (id)
 ) ENGINE = InnoDB;

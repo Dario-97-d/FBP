@@ -16,6 +16,7 @@
 		'user-settings'            => 'user/view-user-settings.php',
 		
 		// Player.
+		'player-development'       => 'player/view-player-development.php',
 		'player-overview'          => 'player/view-player-overview.php',
 		'player-profile'           => 'player/view-player-profile.php',
 		

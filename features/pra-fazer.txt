@@ -1,7 +1,5 @@
 pra fazer:
 
-make training
-
 make play-3
 
 <--->

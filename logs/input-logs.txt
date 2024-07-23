@@ -48,3 +48,4 @@
 [2024-07-21 19:55:45] input Fail - search-player: SEARCH_player_by_name() -> INPUT_handle_player_name() -> INPUT_failed() - messi: Player name must be 7 to 31 chars long. (Session User ID: 7)
 [2024-07-21 19:56:10] input Fail - search-player: SEARCH_player_by_name() -> INPUT_handle_player_name() -> INPUT_failed() - messi: Player name must be 7 to 31 chars long. (Session User ID: 7)
 [2024-07-21 19:56:35] input Fail - search-player: SEARCH_player_by_name() -> INPUT_handle_player_name() -> INPUT_failed() - messi: Player name must be 7 to 31 chars long. (Session User ID: 7)
+[2024-07-22 16:25:57] input Fail - mail-send: MAIL_is_username_valid() -> INPUT_handle_username() -> INPUT_failed() - LeoMessi19@: Username may only have letters, numbers, underscore and hyphen. (Session User ID: 1)

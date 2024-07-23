@@ -84,6 +84,7 @@
 				case 'play-5':
 				case 'play-7':
 				
+				case 'player-development';
 				case 'player-overview':
 				
 				case 'team-center':

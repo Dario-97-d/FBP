@@ -48,3 +48,5 @@
 		<td>Marking: <?=   $_player['marking'] ?></td>
 	</tr>
 </table>
+
+<h3><a href="player-development">Train</a></h3>
