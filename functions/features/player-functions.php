@@ -262,24 +262,6 @@
 			array( $_player_id ) );
 	}
 	
-	function PLAYER_get_training_data()
-	{
-		global $_player_id;
-		
-		// -- DB operation --
-		return SQL_prep_get_row(
-			'SELECT
-				f.player_name as name,
-				f.rating,
-				g.*,
-				p.*
-			FROM  football_players   f
-			JOIN  generic_attributes g ON g.player_id = f.id
-			JOIN  playing_attributes p ON p.player_id = f.id
-			WHERE f.id = ?',
-			array( $_player_id ) );
-	}
-	
 	function PLAYER_has_team()
 	{
 		global $_player_id;

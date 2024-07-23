@@ -18,7 +18,6 @@
 		// Player.
 		'player-overview'          => 'player/view-player-overview.php',
 		'player-profile'           => 'player/view-player-profile.php',
-		'player-training'          => 'player/view-player-training.php',
 		
 		// Play.
 		'play-3-arrange'           => 'play/view-play-3-arrange.php',

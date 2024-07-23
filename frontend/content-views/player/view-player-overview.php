@@ -49,4 +49,3 @@
 	</tr>
 </table>
 
-<h3><a href="player-training">Train</a></h3>

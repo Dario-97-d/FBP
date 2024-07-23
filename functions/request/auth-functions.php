@@ -85,7 +85,6 @@
 				case 'play-7':
 				
 				case 'player-overview':
-				case 'player-training':
 				
 				case 'team-center':
 				case 'team-create':
