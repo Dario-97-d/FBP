@@ -1,14 +1,16 @@
 
 <h1>Players</h1>
 
-<table class="table2" cellpadding="8" cellspacing="0">
-	<tr>
-		<th>Rank</th>
-		<th>Username</th>
-		<th>Name</th>
-		<th>Team</td>
-		<th>Rating</th>
-	</tr>
+<div class="display-ranking display-ranking-players">
+	
+	<!-- Header -->
+	<div class="display-ranking-header">Rank</div>
+	<div class="display-ranking-header">Username</div>
+	<div class="display-ranking-header">Name</div>
+	<div class="display-ranking-header">Team</div>
+	<div class="display-ranking-header">RTG</div>
+	
+	<!-- Body -->
 	
 	<?php
 	
@@ -19,49 +21,43 @@
 			{
 				$r++;
 				?>
+					
+				<!-- Rank -->
+				<div class="display-ranking-body"><?= $r ?></div>
 				
-				<tr>
+				<!-- Username -->
+				<div class="display-ranking-body at-username">@<?= $row['username'] ?></div>
 				
-					<!-- Rank # -->
-					<td>
-						<?= $r ?>
-					</td>
-					
-					<!-- Username -->
-					<td  align="left" class="at-username">
-						@<?= $row['username'] ?>
-					</td>
-					
-					<!-- Player -->
-					<td>
-						<a href="player-profile?id=<?= $row['player_id'] ?>"><?= $row['player_name'] ?></a>
-					</td>
-					
-					<!-- Team -->
-					<td>
-						
-						<?php
-						
-							if ( $row['team_id'] )
-							{
-								?>
-								
-								<a href="team-profile?id=<?= $row['team_id'] ?>"><?= $row['team_name'] ?></a>
-								
-								<?php
-							}
-						
-						?>
-						
-					</td>
-					
-					<!-- Rating -->
-					<td>
-						<?= $row['rating'] ?>
-					</td>
+				<!-- Player name -->
+				<div class="display-ranking-body">
+					<a href="player-profile?id=<?= $row['player_id'] ?>">
+						<?= $row['player_name'] ?>
+					</a>
+				</div>
 				
-				</tr>
+				<!-- Team -->
+				<div class="display-ranking-body">
 					
+					<?php
+					
+						if ( $row['team_id'] )
+						{
+							?>
+							
+							<a href="team-profile?id=<?= $row['team_id'] ?>">
+								<?= $row['team_name'] ?>
+							</a>
+							
+							<?php
+						}
+					
+					?>
+					
+				</div>
+				
+				<!-- Rating -->
+				<div class="display-ranking-body"><?= $row['rating'] ?></div>
+				
 				<?php
 			}
 		}
@@ -69,14 +65,14 @@
 		{
 			?>
 			
-			<tr><td colspan="5">None</td></tr>
+			<div class="display-ranking-body grid-span-col-5">None</div>
 			
 			<?php
 		}
 	
 	?>
 	
-</table>
+</div>
 
 <?php
 	// Partial View: Search Player.
