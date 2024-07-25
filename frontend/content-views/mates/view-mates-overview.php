@@ -4,82 +4,81 @@
 <h3><a href="mates-requests">Requests received</a></h3>
 <h3><a href="mates-sent">Requests sent</a></h3>
 
-<table class="table2" cellpadding="8" cellspacing="0">
+<div class="display-mates-overview">
 	
-<?php
-
-	if ( is_array( $_mates ) )
-	{
-		?>
-		
-		<tr>
-			<th>Username</th>
-			<th>Player name</th>
-			<th>Team</th>
-			<th>Options</th>
-		</tr>
-		
-		<?php
-		foreach ( $_mates as $row )
+	<?php
+	
+		if ( is_array( $_mates ) )
 		{
 			?>
 			
-			<tr>
+			<!-- Header -->
+			<div class="display-mates-overview-header">Username</div>
+			<div class="display-mates-overview-header">Player</div>
+			<div class="display-mates-overview-header">Team</div>
+			<div class="display-mates-overview-header">Options</div>
 			
-				<!-- Username -->
-				<td align="left" class="at-username">
-					@<?= $row['username'] ?>
-				</td>
-				
-				<!-- Player -->
-				<td>
-					<a href="player-profile?id=<?= $row['player_id'] ?>"><?= $row['player_name'] ?></a>
-				</td>
-				
-				<!-- Team -->
-				<td>
-					
-					<?php
-					
-						if ( $row['team_id'] )
-						{
-							?>
-							
-							<a href="team-profile?id=<?= $row['team_id'] ?>"><?= $row['team_name'] ?></a>
-							
-							<?php
-						}
-					
+			<!-- Body -->
+			
+			<?php
+			
+				foreach( $_mates as $row )
+				{
 					?>
 					
-				</td>
-				
-				<!-- Options -->
-				<td>
-					<form method="POST" onsubmit="return confirm('Remove mate <?= $row['player_name'] ?>?')">
-						<input type="hidden" name="remove-mate-id" value="<?= $row['player_id'] ?>" />
-						<input type="submit" value="Remove" />
-					</form>
-				</td>
+					<!-- Username -->
+					<div class="display-mates-overview-body at-username">@<?= $row['username'] ?></div>
+					
+					<!-- Player name -->
+					<div class="display-mates-overview-body">
+						<a href="player-profile?id=<?= $row['player_id'] ?>">
+							<?=  $row['player_name'] ?>
+						</a>
+					</div>
+					
+					<!-- Team -->
+					<div class="display-mates-overview-body">
+						
+						<?php
+						
+							if ( $row['team_id'] )
+							{
+								?>
+								
+								<a href="team-profile?id=<?= $row['team_id'] ?>">
+									<?=  $row['team_name'] ?>
+								</a>
+								
+								<?php
+							}
+						
+						?>
+						
+					</div>
+					
+					<!-- Remove -->
+					<div class="display-mates-overview-body">
+						<form method="POST" onsubmit="return confirm('Remove mate <?= $row['player_name'] ?>?')">
+							<input type="hidden" name="remove-mate-id" value="<?= $row['player_id'] ?>" />
+							<input type="submit" value="Remove" />
+						</form>
+					</div>
+					
+					<?php
+				}
+		}
+		else
+		{
+			?>
 			
-			</tr>
+			<div class="display-mates-overview-body grid-span-col-4">None</div>
 			
 			<?php
 		}
-	}
-	else
-	{
-		?>
-		
-		<tr><td colspan="4">None</td></tr>
-		
-		<?php
-
-	}
-
-?>
 	
-</table>
+	?>
+
+</div>
 
 <form method="POST" onsubmit="return confirm('Submit mate request to '+ document.getElementById('request-mate-username').value +'?')">
 	<br />
