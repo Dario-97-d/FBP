@@ -3,13 +3,12 @@
 
 <h2>Class <?= $_team_info['team_class'] ?> | <?= $_team_info['rating'] ?> &empty;</h2>
 
-<table class="table2" width="512" cellpadding="8" cellspacing="0">
-	<tr>
-		<th>#</th>
-		<th>Username</th>
-		<th>Players</th>
-		<th>Rating</th>
-	</tr>
+<div class="display-team-profile-members">
+	
+	<div class="display-team-profile-members-header">#</div>
+	<div class="display-team-profile-members-header">Username</div>
+	<div class="display-team-profile-members-header">Players</div>
+	<div class="display-team-profile-members-header">RTG</div>
 	
 	<?php
 	
@@ -19,28 +18,28 @@
 			$r++;
 			?>
 			
-			<tr>
-				
-				<!-- # -->
-				<td><?= $r ?></td>
-				
-				<!-- Username -->
-				<td class="at-username">@<?= $row['username'] ?></td>
-				
-				<!-- Player -->
-				<td><a href="player-profile?id=<?= $row['player_id'] ?>"><?= $row['player_name'] ?></a></td>
-				
-				<!-- Rating -->
-				<td><?= $row['player_rating'] ?></td>
+			<!-- # -->
+			<div class="display-team-profile-members-body"><?= $r ?></div>
 			
-			</tr>
+			<!-- Username -->
+			<div class="display-team-profile-members-body at-username">@<?= $row['username'] ?></div>
+			
+			<!-- Player name -->
+			<div class="display-team-profile-members-body">
+				<a href="player-profile?id=<?= $row['player_id'] ?>">
+					<?= $row['player_name'] ?>
+				</a>
+			</div>
+			
+			<!-- Rating -->
+			<div class="display-team-profile-members-body"><?= $row['player_rating'] ?></div>
 			
 			<?php
 		}
 	
 	?>
 	
-</table>
+</div>
 
 <?php
 
