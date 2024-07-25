@@ -46,7 +46,10 @@ table.table2 { border: 4px solid green; border-radius: 8px; }
 
 .table-training-atts th { width: 170px; }
 
-.at-username { color: rgba(63,63,63,0.9); }
+.at-username {
+	text-align: left;
+	color: rgba(63,63,63,0.9);
+}
 
 /* Display Generic Attributes */
 .display-generic-attributes {
