@@ -3,8 +3,8 @@
 
 <h2>Requests Sent</h2>
 
-<table class="table1" cellpadding="8" cellspacing="0">
-	
+<div class="display-mates-requests display-mates-requests-sent">
+
 	<?php
 	
 		if ( is_array( $_requests_sent ) )
@@ -13,45 +13,43 @@
 			{
 				?>
 				
-				<tr>
+				<!-- Username -->
+				<div class="display-mates-requests-body at-username">@<?= $row['username'] ?></div>
 				
-					<!-- Username -->
-					<td align="left" class="at-username">
-						@<?= $row['username'] ?>
-					</td>
-					
-					<!-- Player -->
-					<td>
-						<a href="player-profile?id=<?= $row['player_id'] ?>"><?= $row['player_name'] ?></a>
-					</td>
-					
-					<!-- Team -->
-					<td>
-						
-						<?php
-						
-							if ( $row['team_id'] )
-							{
-								?>
-								
-								<a href="team-profile?id=<?= $row['team_id'] ?>"><?= $row['team_name'] ?></a>
-								
-								<?php
-							}
-						
-						?>
-						
-					</td>
-					
-					<!-- Options -->
-					<td>
-						<form method="POST" onsubmit="return confirm('Cancel request to <?= $row['player_name'] ?>?')">
-							<input type="hidden" name="cancel-mate-id" value="<?= $row['player_id'] ?>" />
-							<input type="submit" value="Withdraw" />
-						</form>
-					</td>
+				<!-- Player name -->
+				<div class="display-mates-requests-body">
+					<a href="player-profile?id=<?= $row['player_id'] ?>">
+						<?= $row['player_name'] ?>
+					</a>
+				</div>
 				
-				</tr>
+				<!-- Team -->
+				<div class="display-mates-requests-body">
+					
+					<?php
+					
+						if ( $row['team_id'] )
+						{
+							?>
+							
+							<a href="team-profile?id=<?= $row['team_id'] ?>">
+								<?= $row['team_name'] ?>
+							</a>
+							
+							<?php
+						}
+					
+					?>
+					
+				</div>
+				
+				<!-- Withdraw -->
+				<div class="display-mates-requests-body">
+					<form method="POST" onsubmit="return confirm('Cancel request to <?= $row['player_name'] ?>?')">
+						<input type="hidden" name="cancel-mate-id" value="<?= $row['player_id'] ?>" />
+						<input type="submit" value="Withdraw" />
+					</form>
+				</div>
 				
 				<?php
 			}
@@ -60,11 +58,11 @@
 		{
 			?>
 			
-			<tr><td>None</td></tr>
+			<div class="display-mates-requests-body grid-span-col-4">None</div>
 			
 			<?php
 		}
 	
 	?>
-	
-</table>
+
+</div>

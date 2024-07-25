@@ -3,8 +3,8 @@
 
 <h2>Requests Received</h2>
 
-<table class="table1" cellpadding="8" cellspacing="0">
-	
+<div class="display-mates-requests display-mates-requests-received">
+
 	<?php
 	
 		if ( is_array( $_requests_received ) )
@@ -13,53 +13,52 @@
 			{
 				?>
 				
-				<tr>
+				<!-- Username -->
+				<div class="display-mates-requests-body at-username">@<?= $row['username'] ?></div>
 				
-					<!-- Username -->
-					<td align="left" class="at-username">
-						@<?= $row['username'] ?>
-					</td>
+				<!-- Player name -->
+				<div class="display-mates-requests-body">
+					<a href="player-profile?id=<?= $row['player_id'] ?>">
+						<?= $row['player_name'] ?>
+					</a>
+				</div>
+				
+				<!-- Team -->
+				<div class="display-mates-requests-body">
 					
-					<!-- Player -->
-					<td>
-						<a href="player-profile?id=<?= $row['player_id'] ?>"><?= $row['player_name'] ?></a>
-					</td>
+					<?php
 					
-					<!-- Team -->
-					<td>
-						
-						<?php
-						
-							if ( $row['team_id'] )
-							{
-								?>
-								
-								<a href="team-profile?id=<?= $row['team_id'] ?>"><?= $row['team_name'] ?></a>
-								
-								<?php
-							}
-						
-						?>
-						
-					</td>
+						if ( $row['team_id'] )
+						{
+							?>
+							
+							<a href="team-profile?id=<?= $row['team_id'] ?>">
+								<?= $row['team_name'] ?>
+							</a>
+							
+							<?php
+						}
+					
+					?>
+					
+				</div>
+				
+				<!-- Options -->
+				<div class="display-mates-requests-body">
 					
 					<!-- Accept Request -->
-					<td>
-						<form method="POST" onsubmit="return confirm('Accept <?= $row['player_name'] ?>'s request?')">
-							<input type="hidden" name="accept-mate-id" value="<?= $row['player_id'] ?>" />
-							<input type="submit" value="Accept" />
-						</form>
-					</td>
-					
-					<!-- Decline Request -->
-					<td>
-						<form method="POST" onsubmit="return confirm('Decline <?= $row['player_name'] ?>'s request?')">
-							<input type="hidden" name="decline-mate-id" value="<?= $row['player_id'] ?>" />
-							<input type="submit" value="Decline" />
-						</form>
-					</td>
+					<form method="POST" onsubmit="return confirm('Accept request from <?= $row['player_name'] ?>?')">
+						<input type="hidden" name="accept-mate-id" value="<?= $row['player_id'] ?>" />
+						<input type="submit" value="Accept" />
+					</form>
 				
-				</tr>
+					<!-- Decline Request -->
+					<form method="POST" onsubmit="return confirm('Decline request from <?= $row['player_name'] ?>?')">
+						<input type="hidden" name="decline-mate-id" value="<?= $row['player_id'] ?>" />
+						<input type="submit" value="Decline" />
+					</form>
+					
+				</div>
 				
 				<?php
 			}
@@ -68,11 +67,11 @@
 		{
 			?>
 			
-			<tr><td>None</td></tr>
+			<div class="display-mates-requests-body grid-span-col-4">None</div>
 			
 			<?php
 		}
 	
 	?>
-	
-</table>
+
+</div>
