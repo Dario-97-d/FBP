@@ -3,30 +3,44 @@
 
 <h2>Admin Members</h2>
 
-<table class="table1" cellpadding="8">
-	<tr>
-		<th>Staff</th>
-		<th>Username</th>
-		<th>Player</th>
-		<th>Rating</th>
-	</tr>
+<div class="display-own-team-members">
+	
+	<!-- Header -->
+	<div class="display-own-team-members-header">Staff Role</div>
+	<div class="display-own-team-members-header">Username</div>
+	<div class="display-own-team-members-header">Player</div>
+	<div class="display-own-team-members-header">Rating</div>
+	
+	<!-- Body -->
 	
 	<?php
 	
 		foreach ( $_team_members as $row )
 		{
-			echo
-				'<tr>
-					<td>'.$row['staff_role'].'</td>
-					<td class="at-username">@'.$row['username'].'</td>
-					<td><a href="player-profile?id='.$row['player_id'].'">'.$row['player_name'].'</a></td>
-					<td>'.$row['player_rating'].'</td>
-				</tr>';
+			?>
+			
+			<!-- Staff Role -->
+			<div class="display-own-team-members-body"><?= $row['staff_role'] ?></div>
+			
+			<!-- Username -->
+			<div class="display-own-team-members-body at-username">@<?= $row['username'] ?></div>
+			
+			<!-- Player name -->
+			<div class="display-own-team-members-body">
+				<a href="player-profile?id=<?= $row['player_id'] ?>">
+					<?= $row['player_name'] ?>
+				</a>
+			</div>
+			
+			<!-- Rating -->
+			<div class="display-own-team-members-body"><?= $row['player_rating'] ?></div>
+			
+			<?php
 		}
 	
 	?>
 	
-</table>
+</div>
 
 <!--
 <h2>Set member as:</h2>

@@ -3,49 +3,42 @@
 
 <h2>Class <?= $_team['team_class'] ?> | <?= $_team['rating'] ?> &empty;</h2>
 
-<!-- Display all members -->
-<table class="table1" cellpadding="8">
-	<tr>
-		<th>Staff</th>
-		<th>Username</th>
-		<th>Player</th>
-		<th>Rating</th>
-	</tr>
+<h3><?= $_team['members'] ?> members</h3>
+
+<div class="display-own-team-members">
+	
+	<!-- Header -->
+	<div class="display-own-team-members-header">Staff Role</div>
+	<div class="display-own-team-members-header">Username</div>
+	<div class="display-own-team-members-header">Player</div>
+	<div class="display-own-team-members-header">Rating</div>
+	
+	<!-- Body -->
 	
 	<?php
 	
-		// Count rows for later display.
 		$r = 0;
 		
-		// Display team members.
 		foreach ( $_team_members as $row )
 		{
 			$r++;
 			?>
 			
-			<tr>
+			<!-- Staff Role -->
+			<div class="display-own-team-members-body"><?= $row['staff_role'] ?></div>
 			
-				<!-- Staff role -->
-				<td>
-					<?= $row['staff_role'] ?>
-				</td>
-				
-				<!-- Username -->
-				<td  align="left" class="at-username">
-					@<?= $row['username'] ?>
-				</td>
-				
-				<!-- Player -->
-				<td>
-					<a href="player-profile?id=<?= $row['player_id'] ?>"><?= $row['player_name'] ?></a>
-				</td>
-				
-				<!-- Rating -->
-				<td>
-					<?= $row['player_rating'] ?>
-				</td>
+			<!-- Username -->
+			<div class="display-own-team-members-body at-username">@<?= $row['username'] ?></div>
 			
-			</tr>
+			<!-- Player name -->
+			<div class="display-own-team-members-body">
+				<a href="player-profile?id=<?= $row['player_id'] ?>">
+					<?= $row['player_name'] ?>
+				</a>
+			</div>
+			
+			<!-- Rating -->
+			<div class="display-own-team-members-body"><?= $row['player_rating'] ?></div>
 			
 			<?php
 		}
@@ -56,16 +49,17 @@
 			$r++;
 			?>
 			
-			<tr><td><?= $r ?></td><td>-</td><td>-</td></tr>
+			<div class="display-own-team-members-body"><?= $r ?></div>
+			<div class="display-own-team-members-body">-</div>
+			<div class="display-own-team-members-body">-</div>
+			<div class="display-own-team-members-body">-</div>
 			
 			<?php
 		}
 	
 	?>
 	
-</table>
-
-<h3><?= $_team['members'] ?> members</h3>
+</div>
 
 <?php
 
