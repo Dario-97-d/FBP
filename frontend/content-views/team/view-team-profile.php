@@ -1,7 +1,7 @@
 
-<h1><?= $_team_info['team_name'] ?></h1>
+<h1><?= $_profile['team_name'] ?></h1>
 
-<h2>Class <?= $_team_info['team_class'] ?> | <?= $_team_info['rating'] ?> &empty;</h2>
+<h2>Class <?= $_profile['team_class'] ?> | <?= $_profile['rating'] ?> &empty;</h2>
 
 <div class="display-team-profile-members">
 	
@@ -55,7 +55,7 @@
 			case 'none':
 				?>
 				
-				<form action="team-center" method="POST" onsubmit="return confirm('Apply to <?= $_team_info['team_name'] ?>?')">
+				<form action="team-center" method="POST" onsubmit="return confirm('Apply to <?= $_profile['team_name'] ?>?')">
 					<input type="hidden" name="apply-team-id" value="<?= $_team_id ?>" />
 					<input type="submit" value="Apply to team" />
 				</form>
@@ -68,7 +68,7 @@
 			case 'has application':
 				?>
 				
-				<form action="team-center" method="POST" onsubmit="return confirm('Cancel application to <?= $_team_info['team_name'] ?>?')">
+				<form action="team-center" method="POST" onsubmit="return confirm('Cancel application to <?= $_profile['team_name'] ?>?')">
 					<input type="hidden" name="cancel-team-id" value="<?= $_team_id ?>" />
 					<input type="submit" value="Cancel application" />
 				</form>
@@ -79,12 +79,12 @@
 			case 'has invite':
 				?>
 				
-				<form action="team-center" method="POST" onsubmit="return confirm('Accept invite from <?= $_team_info['team_name'] ?>?')">
+				<form action="team-center" method="POST" onsubmit="return confirm('Accept invite from <?= $_profile['team_name'] ?>?')">
 					<input type="hidden" name="accept-team-id" value="<?= $_team_id ?>" />
 					<input type="submit" value="Accept Invite" />
 				</form>
 				
-				<form action="team-center" method="POST" onsubmit="return confirm('Reject invite from <?= $_team_info['team_name'] ?>?')">
+				<form action="team-center" method="POST" onsubmit="return confirm('Reject invite from <?= $_profile['team_name'] ?>?')">
 					<input type="hidden" name="reject-team-id" value="<?= $_team_id ?>" />
 					<input type="submit" value="Reject Invite" />
 				</form>

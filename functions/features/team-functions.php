@@ -246,6 +246,41 @@
 		);
 	}
 	
+	function TEAM_get_profile( $team_id )
+	{
+		// -- Handle Input --
+		
+		// Exit if input isn't valid.
+		if ( ! INPUT_is_id_valid( $team_id ) ) return false;
+		
+		// -- DB operation --
+		return SQL_prep_get_row( 'SELECT * FROM teams WHERE id = ?', array( $team_id ) );
+	}
+	
+	function TEAM_get_profile_members( $team_id )
+	{
+		// -- Handle Input --
+		
+		// Exit if input isn't valid.
+		if ( ! INPUT_is_id_valid( $team_id ) ) return false;
+		
+		// -- DB operation --
+		return SQL_prep_get_multi(
+			'SELECT
+				u.username,
+				f.id           as player_id,
+				f.player_name,
+				f.rating       as player_rating
+			FROM  game_users       u
+			JOIN  football_players f ON f.id        = u.id
+			JOIN  player_team      t ON t.player_id = f.id
+			WHERE t.team_id = ?
+			ORDER BY
+				f.rating     DESC,
+				f.id         ASC',
+			array( $team_id ) );
+	}
+	
 	function TEAM_get_rankings()
 	{
 		// -- DB operation --
