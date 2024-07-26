@@ -1,43 +1,46 @@
 
 <h1><?= $_player['name'] ?></h1>
 
-<table class="table2" cellpadding="8">
-	<tr>
-		<th colspan="5">Available: <?= $_player['available_points'] ?></th>
-	</tr>
+<!-- Display Generic Attributes Upgrade -->
+<div class="display-generic-attributes-upgrade">
 	
-	<tr>
-		<td>STR</td>
-		<td>MOV</td>
-		<td>SKL</td>
-		<td>ATK</td>
-		<td>DFS</td>
-	</tr>
+	<!-- Available Points -->
+	<div class="display-generic-attributes-upgrade-header grid-span-col-5">
+		Available: <?= $_player['available_points'] ?>
+	</div>
 	
-	<tr>
-		<td><?= $_player['strength']  ?></td>
-		<td><?= $_player['movement']  ?></td>
-		<td><?= $_player['skill']     ?></td>
-		<td><?= $_player['attacking'] ?></td>
-		<td><?= $_player['defending'] ?></td>
-	</tr>
+	<!-- Generic Attributes Abreviations -->
+	<div class="display-generic-attributes-upgrade-body">STR</div>
+	<div class="display-generic-attributes-upgrade-body">MOV</div>
+	<div class="display-generic-attributes-upgrade-body">SKL</div>
+	<div class="display-generic-attributes-upgrade-body">ATK</div>
+	<div class="display-generic-attributes-upgrade-body">DFS</div>
 	
-	<tr>
-		<form method="POST" onsubmit="return confirm('Upgrade '+ event.submitter.name +'?')">
-			<input type="hidden" name="upgrade-generic-attribute">
-			
-			<td><input type="submit" name="strength"  value="+" class="button-upgrade-generic-attribute" <?= $_generic_upgrade_disabled ?>></td>
-			<td><input type="submit" name="movement"  value="+" class="button-upgrade-generic-attribute" <?= $_generic_upgrade_disabled ?>></td>
-			<td><input type="submit" name="skill"     value="+" class="button-upgrade-generic-attribute" <?= $_generic_upgrade_disabled ?>></td>
-			<td><input type="submit" name="attacking" value="+" class="button-upgrade-generic-attribute" <?= $_generic_upgrade_disabled ?>></td>
-			<td><input type="submit" name="defending" value="+" class="button-upgrade-generic-attribute" <?= $_generic_upgrade_disabled ?>></td>
-		</form>
-	</tr>
+	<!-- Generic Attributes Values -->
+	<div class="display-generic-attributes-upgrade-body"><?= $_player['strength']  ?></div>
+	<div class="display-generic-attributes-upgrade-body"><?= $_player['movement']  ?></div>
+	<div class="display-generic-attributes-upgrade-body"><?= $_player['skill']     ?></div>
+	<div class="display-generic-attributes-upgrade-body"><?= $_player['attacking'] ?></div>
+	<div class="display-generic-attributes-upgrade-body"><?= $_player['defending'] ?></div>
 	
-	<tr>
-		<th colspan="5">RTG: <?= $_player['rating'] ?></th>
-	</tr>
-</table>
+	<!-- Upgrade Buttons for each Generic Attribute -->
+	<form class="grid-ignore-element" method="POST" onsubmit="return confirm('Upgrade '+ event.submitter.name +'?')">
+		<input type="hidden" name="upgrade-generic-attribute">
+		
+		<div class="display-generic-attributes-upgrade-body"><input type="submit" name="strength"  value="+" <?= $_generic_upgrade_disabled ?>></div>
+		<div class="display-generic-attributes-upgrade-body"><input type="submit" name="movement"  value="+" <?= $_generic_upgrade_disabled ?>></div>
+		<div class="display-generic-attributes-upgrade-body"><input type="submit" name="skill"     value="+" <?= $_generic_upgrade_disabled ?>></div>
+		<div class="display-generic-attributes-upgrade-body"><input type="submit" name="attacking" value="+" <?= $_generic_upgrade_disabled ?>></div>
+		<div class="display-generic-attributes-upgrade-body"><input type="submit" name="defending" value="+" <?= $_generic_upgrade_disabled ?>></div>
+		
+	</form>
+	
+	<!-- Rating -->
+	<div class="display-generic-attributes-upgrade-header grid-span-col-5">
+		RTG: <?= $_player['rating'] ?>
+	</div>
+	
+</div>
 
 <br />
 <hr color="purple" width="394">
