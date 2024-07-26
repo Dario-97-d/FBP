@@ -21,6 +21,7 @@
 	// Frontend.
 	require_once $_FILEREF_js_functions;
 	require_once $_FILEREF_js_references;
+	require_once $_FILEREF_page_functions;
 	
 	// Attempt MySQL connection.
 	SQL_connect() or DIE_error();
