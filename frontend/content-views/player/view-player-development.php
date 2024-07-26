@@ -46,94 +46,93 @@
 <hr color="purple" width="394">
 <br />
 
-<table class="table1 table-training-atts">
+<!-- Display Playing Attributes Upgrade -->
+<div class="display-playing-attributes-upgrade">
 	
-	<tr>
-		<th>Physical</th>
-		<th>Technical</th>
-		<th>Tactical</th>
-	</tr>
+	<!-- Header -->
+	<div class="display-playing-attributes-upgrade-header">Physical</div>
+	<div class="display-playing-attributes-upgrade-header">Technical</div>
+	<div class="display-playing-attributes-upgrade-header">Tactical</div>
 	
-	<tr>
+	<!-- Body -->
+	
+	<form class="grid-ignore-element" method="POST" onsubmit="return confirm('Upgrade '+ event.submitter.name +'?')">
 		
-		<form method="POST" onsubmit="return confirm('Upgrade '+ event.submitter.name +'?')">
-			<input type="hidden" name="upgrade-playing-attribute">
+		<!-- Physical -->
+		<div class="display-playing-attributes-upgrade-body">
 			
-			<td>
-				<table>
-					<tr>
-						<td>Speed:</td>
-						<td><?= $_player['speed'] ?></td>
-						<td><input type="submit" class="button-upgrade-playing-attribute" name="speed" value="+" <?= $_upgradeable_atts['speed'] ? '' : 'disabled' ?>></td>
-					</tr>
-					<tr>
-						<td>Agility:</td>
-						<td><?= $_player['agility'] ?></td>
-						<td><input type="submit" class="button-upgrade-playing-attribute" name="agility" value="+" <?= $_upgradeable_atts['agility'] ? '' : 'disabled' ?>></td>
-					</tr>
-					<tr>
-						<td>Airplay:</td>
-						<td><?= $_player['airplay'] ?></td>
-						<td><input type="submit" class="button-upgrade-playing-attribute" name="airplay" value="+" <?= $_upgradeable_atts['airplay'] ? '' : 'disabled' ?>></td>
-					</tr>
-					<tr>
-						<td>Power:</td>
-						<td><?= $_player['power'] ?></td>
-						<td><input type="submit" class="button-upgrade-playing-attribute" name="power" value="+" <?= $_upgradeable_atts['power'] ? '' : 'disabled' ?>></td>
-					</tr>
-				</table>
-			</td>
-			<td>
-				<table>
-					<tr>
-						<td>Dribble:</td>
-						<td><?= $_player['dribble'] ?></td>
-						<td><input type="submit" class="button-upgrade-playing-attribute" name="dribble" value="+" <?= $_upgradeable_atts['dribble'] ? '' : 'disabled' ?>></td>
-					</tr>
-					<tr>
-						<td>Pass:</td>
-						<td><?= $_player['pass'] ?></td>
-						<td><input type="submit" class="button-upgrade-playing-attribute" name="pass" value="+" <?= $_upgradeable_atts['pass'] ? '' : 'disabled' ?>></td>
-					</tr>
-					<tr>
-						<td>Shoot:</td>
-						<td><?= $_player['shoot'] ?></td>
-						<td><input type="submit" class="button-upgrade-playing-attribute" name="shoot" value="+" <?= $_upgradeable_atts['shoot'] ? '' : 'disabled' ?>></td>
-					</tr>
-					<tr>
-						<td>Tackle:</td>
-						<td><?= $_player['tackle'] ?></td>
-						<td><input type="submit" class="button-upgrade-playing-attribute" name="tackle" value="+" <?= $_upgradeable_atts['tackle'] ? '' : 'disabled' ?>></td>
-					</tr>
-				</table>
-			</td>
-			<td>
-				<table>
-					<tr>
-						<td>Position:</td>
-						<td><?= $_player['position'] ?></td>
-						<td><input type="submit" class="button-upgrade-playing-attribute" name="position" value="+" <?= $_upgradeable_atts['position'] ? '' : 'disabled' ?>></td>
-					</tr>
-					<tr>
-						<td>Vision:</td>
-						<td><?= $_player['vision'] ?></td>
-						<td><input type="submit" class="button-upgrade-playing-attribute" name="vision" value="+" <?= $_upgradeable_atts['vision'] ? '' : 'disabled' ?>></td>
-					</tr>
-					<tr>
-						<td>Prevision:</td>
-						<td><?= $_player['prevision'] ?></td>
-						<td><input type="submit" class="button-upgrade-playing-attribute" name="prevision" value="+" <?= $_upgradeable_atts['prevision'] ? '' : 'disabled' ?>></td>
-					</tr>
-					<tr>
-						<td>Marking:</td>
-						<td><?= $_player['marking'] ?></td>
-						<td><input type="submit" class="button-upgrade-playing-attribute" name="marking" value="+" <?= $_upgradeable_atts['marking'] ? '' : 'disabled' ?>></td>
-					</tr>
-				</table>
-			</td>
+			<!-- Speed -->
+			<div class="display-playing-attributes-upgrade-body-cell">Speed</div>
+			<div class="display-playing-attributes-upgrade-body-cell"><?= $_player['speed'] ?></div>
+			<div class="display-playing-attributes-upgrade-body-cell"><input type="submit" class="button-upgrade-playing-attribute" name="speed" value="+" <?= $_upgradeable_atts['speed'] ? '' : 'disabled' ?>></div>
 			
-		</form>
+			<!-- Agility -->
+			<div class="display-playing-attributes-upgrade-body-cell">Agility</div>
+			<div class="display-playing-attributes-upgrade-body-cell"><?= $_player['agility'] ?></div>
+			<div class="display-playing-attributes-upgrade-body-cell"><input type="submit" class="button-upgrade-playing-attribute" name="agility" value="+" <?= $_upgradeable_atts['agility'] ? '' : 'disabled' ?>></div>
+			
+			<!-- Airplay -->
+			<div class="display-playing-attributes-upgrade-body-cell">Airplay</div>
+			<div class="display-playing-attributes-upgrade-body-cell"><?= $_player['airplay'] ?></div>
+			<div class="display-playing-attributes-upgrade-body-cell"><input type="submit" class="button-upgrade-playing-attribute" name="airplay" value="+" <?= $_upgradeable_atts['airplay'] ? '' : 'disabled' ?>></div>
+			
+			<!-- Power -->
+			<div class="display-playing-attributes-upgrade-body-cell">Power</div>
+			<div class="display-playing-attributes-upgrade-body-cell"><?= $_player['power'] ?></div>
+			<div class="display-playing-attributes-upgrade-body-cell"><input type="submit" class="button-upgrade-playing-attribute" name="power" value="+" <?= $_upgradeable_atts['power'] ? '' : 'disabled' ?>></div>
+			
+		</div>
 		
-	</tr>
+		<!-- Technical -->
+		<div class="display-playing-attributes-upgrade-body">
+			
+			<!-- Dribble -->
+			<div class="display-playing-attributes-upgrade-body-cell">Dribble</div>
+			<div class="display-playing-attributes-upgrade-body-cell"><?= $_player['dribble'] ?></div>
+			<div class="display-playing-attributes-upgrade-body-cell"><input type="submit" class="button-upgrade-playing-attribute" name="dribble" value="+" <?= $_upgradeable_atts['dribble'] ? '' : 'disabled' ?>></div>
+			
+			<!-- Pass -->
+			<div class="display-playing-attributes-upgrade-body-cell">Pass</div>
+			<div class="display-playing-attributes-upgrade-body-cell"><?= $_player['pass'] ?></div>
+			<div class="display-playing-attributes-upgrade-body-cell"><input type="submit" class="button-upgrade-playing-attribute" name="pass" value="+" <?= $_upgradeable_atts['pass'] ? '' : 'disabled' ?>></div>
+			
+			<!-- Shoot -->
+			<div class="display-playing-attributes-upgrade-body-cell">Shoot</div>
+			<div class="display-playing-attributes-upgrade-body-cell"><?= $_player['shoot'] ?></div>
+			<div class="display-playing-attributes-upgrade-body-cell"><input type="submit" class="button-upgrade-playing-attribute" name="shoot" value="+" <?= $_upgradeable_atts['shoot'] ? '' : 'disabled' ?>></div>
+			
+			<!-- Tackle -->
+			<div class="display-playing-attributes-upgrade-body-cell">Tackle</div>
+			<div class="display-playing-attributes-upgrade-body-cell"><?= $_player['tackle'] ?></div>
+			<div class="display-playing-attributes-upgrade-body-cell"><input type="submit" class="button-upgrade-playing-attribute" name="tackle" value="+" <?= $_upgradeable_atts['tackle'] ? '' : 'disabled' ?>></div>
+			
+		</div>
+		
+		<!-- Tactical -->
+		<div class="display-playing-attributes-upgrade-body">
+			
+			<!-- Position -->
+			<div class="display-playing-attributes-upgrade-body-cell">Position</div>
+			<div class="display-playing-attributes-upgrade-body-cell"><?= $_player['position'] ?></div>
+			<div class="display-playing-attributes-upgrade-body-cell"><input type="submit" class="button-upgrade-playing-attribute" name="position" value="+" <?= $_upgradeable_atts['position'] ? '' : 'disabled' ?>></div>
+			
+			<!-- Vision -->
+			<div class="display-playing-attributes-upgrade-body-cell">Vision</div>
+			<div class="display-playing-attributes-upgrade-body-cell"><?= $_player['vision'] ?></div>
+			<div class="display-playing-attributes-upgrade-body-cell"><input type="submit" class="button-upgrade-playing-attribute" name="vision" value="+" <?= $_upgradeable_atts['vision'] ? '' : 'disabled' ?>></div>
+			
+			<!-- Prevision -->
+			<div class="display-playing-attributes-upgrade-body-cell">Prevision</div>
+			<div class="display-playing-attributes-upgrade-body-cell"><?= $_player['prevision'] ?></div>
+			<div class="display-playing-attributes-upgrade-body-cell"><input type="submit" class="button-upgrade-playing-attribute" name="prevision" value="+" <?= $_upgradeable_atts['prevision'] ? '' : 'disabled' ?>></div>
+			
+			<!-- Marking -->
+			<div class="display-playing-attributes-upgrade-body-cell">Marking</div>
+			<div class="display-playing-attributes-upgrade-body-cell"><?= $_player['marking'] ?></div>
+			<div class="display-playing-attributes-upgrade-body-cell"><input type="submit" class="button-upgrade-playing-attribute" name="marking" value="+" <?= $_upgradeable_atts['marking'] ? '' : 'disabled' ?>></div>
+			
+		</div>
+		
+	</form>
 	
-</table>
+</div>
