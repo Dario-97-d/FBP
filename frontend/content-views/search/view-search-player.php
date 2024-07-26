@@ -8,7 +8,7 @@
 
 <br />
 
-<table class="table1" cellpadding="8" cellspacing="0">
+<div class="display-search-results display-search-results-players">
 	
 	<?php
 	
@@ -16,54 +16,48 @@
 		{
 			?>
 			
-			<tr>
-				<th>Username</th>
-				<th>Player name</th>
-				<th>Rating</th>
-				<th>Team</th>
-			</tr>
+			<div class="display-search-results-header">Username</div>
+			<div class="display-search-results-header">Player name</div>
+			<div class="display-search-results-header">Team</div>
+			<div class="display-search-results-header">RTG</div>
 			
 			<?php
 			foreach ( $_players_found as $row )
 			{
 				?>
 				
-				<tr>
+				<!-- Username -->
+				<div class="display-search-results-body at-username">@<?= $row['username'] ?></div>
 				
-					<!-- Username -->
-					<td align="left" class="at-username">
-						@<?= $row['username'] ?>
-					</td>
-					
-					<!-- Player -->
-					<td>
-						<a href="player-profile?id=<?= $row['player_id'] ?>"><?= $row['player_name'] ?></a>
-					</td>
-					
-					<!-- Rating -->
-					<td>
-						<?= $row['rating'] ?>
-					</td>
-					
-					<!-- Team -->
-					<td>
-						
-						<?php
-						
-							if ( $row['team_id'] )
-							{
-								?>
-								
-								<a href="team-profile?id=<?= $row['team_id'] ?>"><?= $row['team_name'] ?></a>
-								
-								<?php
-							}
-						
-						?>
-						
-					</td>
+				<!-- Player -->
+				<div class="display-search-results-body">
+					<a href="player-profile?id=<?= $row['player_id'] ?>">
+						<?= $row['player_name'] ?>
+					</a>
+				</div>
 				
-				</tr>
+				<!-- Team -->
+				<div class="display-search-results-body">
+					
+					<?php
+					
+						if ( $row['team_id'] )
+						{
+							?>
+							
+							<a href="team-profile?id=<?= $row['team_id'] ?>">
+								<?= $row['team_name'] ?>
+							</a>
+							
+							<?php
+						}
+					
+					?>
+					
+				</div>
+				
+				<!-- Rating -->
+				<div class="display-search-results-body"><?= $row['rating'] ?></div>
 				
 				<?php
 			}
@@ -72,11 +66,11 @@
 		{
 			?>
 			
-			<tr><td>No results.</td></tr>
+			<div class="display-search-results-body grid-span-col-4">No results.</div>
 			
 			<?php
 		}
 	
 	?>
 	
-</table>
+</div>

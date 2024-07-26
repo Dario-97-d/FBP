@@ -8,7 +8,7 @@
 
 <br />
 
-<table class="table1" cellpadding="8" cellspacing="0">
+<div class="display-search-results display-search-results-teams">
 	
 	<?php
 	
@@ -16,41 +16,31 @@
 		{
 			?>
 			
-			<tr>
-				<th>Class</th>
-				<th>Team name</th>
-				<th>Rating</th>
-				<th>Members</th>
-			</tr>
+			<div class="display-search-results-header">Class</div>
+			<div class="display-search-results-header">Team</div>
+			<div class="display-search-results-header">Rating</div>
+			<div class="display-search-results-header">Members</div>
 			
 			<?php
 			foreach ( $_teams_found as $row )
 			{
 				?>
 				
-				<tr>
+				<!-- Class -->
+				<div class="display-search-results-body"><?= $row['team_class'] ?></div>
 				
-					<!-- Class -->
-					<td>
-						<?= $row['team_class'] ?>
-					</td>
-					
-					<!-- Team Name -->
-					<td>
-						<a href="team-profile?id=<?= $row['team_id'] ?>"><?= $row['team_name'] ?></a>
-					</td>
-					
-					<!-- Rating -->
-					<td>
-						<?= $row['rating'] ?>
-					</td>
-					
-					<!-- Members -->
-					<td>
-						<?= $row['members'] ?>
-					</td>
+				<!-- Team Name -->
+				<div class="display-search-results-body">
+					<a href="team-profile?id=<?= $row['team_id'] ?>">
+						<?= $row['team_name'] ?>
+					</a>
+				</div>
 				
-				</tr>
+				<!-- Rating -->
+				<div class="display-search-results-body"><?= $row['rating'] ?></div>
+				
+				<!-- Members -->
+				<div class="display-search-results-body"><?= $row['members'] ?></div>
 				
 				<?php
 			}
@@ -59,11 +49,11 @@
 		{
 			?>
 			
-			<tr><td>No results.</td></tr>
+			<div class="display-search-results-body grid-span-col-4">No results.</div>
 			
 			<?php
 		}
 	
 	?>
 	
-</table>
+</div>

@@ -278,6 +278,28 @@ table.table2 { border: 4px solid green; border-radius: 8px; }
 	color: purple;
 }
 
+/* Display Search Results */
+.display-search-results {
+	display: grid;
+	grid-template-rows: repeat(auto-fill, 1fr);
+	background-color: rgba(255,255,255,0.1);
+	margin: 4px auto;
+	border: 2px solid purple;
+	padding: 2px;
+}
+.display-search-results-players { grid-template-columns: 3fr 5fr 3fr 1fr; }
+.display-search-results-teams   { grid-template-columns: 1fr 3fr 2fr 1fr; }
+.display-search-results-header,
+.display-search-results-body {
+	padding: 8px;
+}
+.display-search-results-header {
+	font-weight: bold;
+}
+.display-search-results-body a {
+	color: purple;
+}
+
 /* Display Team Applications */
 .display-team-applications {
 	display: grid;
