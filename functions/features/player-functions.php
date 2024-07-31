@@ -96,6 +96,76 @@
 		return PLAYER_RESULT( $cancel );
 	}
 	
+	function PLAYER_development_upgrade_generic_attribute( $att )
+	{
+		global $_player_id;
+		
+		$generic_atts = [ 'strength', 'movement', 'skill' , 'attacking' , 'defending' ];
+		
+		if ( in_array( $att, $generic_atts ) )
+		{
+			$upgrade = SQL_prep_stmt_result(
+				'UPDATE   football_players   f
+				JOIN      generic_attributes g ON g.player_id = f.id
+				JOIN      player_team        p ON p.player_id = f.id
+				LEFT JOIN teams              t ON t.id        = p.team_id
+				SET
+					f.rating = f.rating + 1,
+					t.rating = t.rating + 1,
+					'.$att.' = '.$att.' + 1,
+					available_points = available_points - 1
+				WHERE f.id = ?
+				AND   g.available_points > 0
+				AND   f.rating < 60',
+				array( $_player_id ));
+			
+			if ( RESULT_is_success( $upgrade ) )
+			{
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
+	function PLAYER_development_upgrade_playing_attribute( $att )
+	{
+		global $_player_id;
+		
+		// Find $att in a certain array and return the corresponding SQL condition for upgrade.
+		$upgrade_condition = match( true )
+		{
+			in_array( $att, [ 'speed'    , 'agility' ] )                 => 'movement  > speed     + agility',
+			in_array( $att, [ 'airplay'  , 'power'   ] )                 => 'strength  > airplay   + power',
+			in_array( $att, [ 'dribble'  , 'pass', 'shoot', 'tackle' ] ) => 'skill     > dribble   + pass    + shoot + tackle',
+			in_array( $att, [ 'position' , 'vision'  ] )                 => 'attacking > position  + vision',
+			in_array( $att, [ 'prevision', 'marking' ] )                 => 'defending > prevision + marking',
+			default => null
+		};
+		
+		// $upgrade_condition is null if $att was not matched.
+		if ( $upgrade_condition != null )
+		{
+			// -- DB operation --
+			$upgrade = SQL_prep_stmt_result(
+				'UPDATE football_players   f
+				JOIN    playing_attributes p  ON  p.player_id =  f.id
+				JOIN    generic_attributes g  ON  g.player_id =  f.id
+				SET
+					'.$att.' = '.$att.' + 1
+				WHERE f.id = ?
+				AND   '.$upgrade_condition,
+				array( $_player_id ) );
+			
+			if ( RESULT_is_success( $upgrade ) )
+			{
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
 	function PLAYER_get_development_data()
 	{
 		global $_player_id;
@@ -368,73 +438,4 @@
 		
 		// -- Handle result --
 		return PLAYER_RESULT( $reject );
-	}
-	
-	function PLAYER_development_upgrade_generic_attribute( $att )
-	{
-		global $_player_id;
-		
-		$generic_atts = [ 'strength', 'movement', 'skill' , 'attacking' , 'defending' ];
-		
-		if ( in_array( $att, $generic_atts ) )
-		{
-			$upgrade = SQL_prep_stmt_result(
-				'UPDATE   football_players   f
-				JOIN      generic_attributes g ON g.player_id = f.id
-				JOIN      player_team        p ON p.player_id = f.id
-				LEFT JOIN teams              t ON t.id        = p.team_id
-				SET
-					f.rating = f.rating + 1,
-					t.rating = t.rating + 1,
-					'.$att.' = '.$att.' + 1,
-					available_points = available_points - 1
-				WHERE f.id = ?
-				AND   g.available_points > 0
-				AND   f.rating < 60',
-				array( $_player_id ));
-			
-			if ( RESULT_is_success( $upgrade ) )
-			{
-				return true;
-			}
-		}
-		
-		return false;
-	}
-	
-	function PLAYER_development_upgrade_playing_attribute( $att )
-	{
-		global $_player_id;
-		
-		// Find $att in a certain array and return the corresponding SQL condition for upgrade.
-		$upgrade_condition = match( true )
-		{
-			in_array( $att, [ 'speed'    , 'agility' ] )                 => 'movement  > speed     + agility',
-			in_array( $att, [ 'airplay'  , 'power'   ] )                 => 'strength  > airplay   + power',
-			in_array( $att, [ 'dribble'  , 'pass', 'shoot', 'tackle' ] ) => 'skill     > dribble   + pass    + shoot + tackle',
-			in_array( $att, [ 'position' , 'vision'  ] )                 => 'attacking > position  + vision',
-			in_array( $att, [ 'prevision', 'marking' ] )                 => 'defending > prevision + marking',
-			default => null
-		};
-		
-		// $upgrade_condition is null if $att was not matched.
-		if ( $upgrade_condition != null )
-		{
-			// -- DB operation --
-			$upgrade = SQL_prep_stmt_result(
-				'UPDATE football_players   f
-				JOIN    playing_attributes p  ON  p.player_id =  f.id
-				JOIN    generic_attributes g  ON  g.player_id =  f.id
-				SET
-					'.$att.' = '.$att.' + 1
-				WHERE f.id = ?
-				AND   '.$upgrade_condition,
-				array( $_player_id ) );
-			if ( RESULT_is_success( $upgrade ) )
-			{
-				return true;
-			}
-		}
-		
-		return false;
 	}
