@@ -1,11 +1,5 @@
 pra fazer:
 
-game appearance
-
-make notification display system (mail, mates, games?)
-
-<--->
-
 make play-3
 
 make play-5
@@ -31,3 +25,9 @@ make player contracts
 make team training
 
 make player transfers
+
+<-->
+
+game appearance
+
+make notification display system (mail, mates, games?)

@@ -1,0 +1,7 @@
+Feature: Play-3
+
+Play-3 is a Partner Practice mode meant to develop player's generic attributes in 3-a-side games with Bots.
+
+Concept Premises:
+- The player will get an Available Point if the practice is good.
+- The result of the practice depends on the complementarity of the players and the similarity of ratings.

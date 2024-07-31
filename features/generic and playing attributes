@@ -1,0 +1,20 @@
+feature: Generic and Playing attributes
+
+Max Rating: 100
+Rating levels:
+- 93 ( )
+- 87 ( )
+- 75 ( Play 7 and 11 games )
+- 50 ( Play 3 and 5 games )
+- 25 ( Start )
+Min Rating: 25
+
+Generic Attributes
+
+Max level: 20
+Min level: 5
+
+Playing Attributes
+
+Max level: 20
+Min level: 1
