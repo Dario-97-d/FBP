@@ -188,8 +188,9 @@
 			JOIN  player_team      t ON t.player_id = f.id
 			WHERE t.team_id = ?
 			ORDER BY
-				staff_role ASC,
-				f.id ASC',
+				t.staff_role ASC,
+				f.rating     DESC,
+				f.id         ASC',
 			array( $_team_id ) );
 	}
 	
