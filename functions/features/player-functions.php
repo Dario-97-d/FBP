@@ -378,7 +378,20 @@
 		
 		if ( in_array( $att, $generic_atts ) )
 		{
-			SQL_prep_stmt_one( 'UPDATE generic_attributes SET '.$att.' = '.$att.' + 1, available_points = available_points - 1 WHERE player_id = ? AND available_points > 0', array( $_player_id ));
+			SQL_prep_stmt_result(
+				'UPDATE   football_players   f
+				JOIN      generic_attributes g ON g.player_id = f.id
+				JOIN      player_team        p ON p.player_id = f.id
+				LEFT JOIN teams              t ON t.id        = p.team_id
+				SET
+					f.rating = f.rating + 1,
+					t.rating = t.rating + 1,
+					'.$att.' = '.$att.' + 1,
+					available_points = available_points - 1
+				WHERE f.id = ?
+				AND   g.available_points > 0
+				AND   f.rating < 60',
+				array( $_player_id ));
 		}
 	}
 	
@@ -402,15 +415,11 @@
 		{
 			// -- DB operation --
 			SQL_prep_stmt_result(
-				'UPDATE   football_players   f
-				JOIN      playing_attributes p  ON  p.player_id =  f.id
-				JOIN      generic_attributes g  ON  g.player_id =  f.id
-				JOIN      player_team        pt ON pt.player_id =  f.id
-				LEFT JOIN teams              t  ON  t.id        = pt.team_id
+				'UPDATE football_players   f
+				JOIN    playing_attributes p  ON  p.player_id =  f.id
+				JOIN    generic_attributes g  ON  g.player_id =  f.id
 				SET
-					'.$att.' = '.$att.' + 1,
-					f.rating = f.rating + 1,
-					t.rating = t.rating + 1
+					'.$att.' = '.$att.' + 1
 				WHERE f.id = ? AND '.$trainable_condition,
 				array( $_player_id ) );
 		}

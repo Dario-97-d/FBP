@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS mate_requests (
 CREATE TABLE IF NOT EXISTS football_players (
 	id           INT         PRIMARY KEY AUTO_INCREMENT,
 	player_name  VARCHAR(63) NOT NULL,
-	rating       INT         NOT NULL DEFAULT 12,
+	rating       INT         NOT NULL DEFAULT 25,
 	
 	FOREIGN KEY (id) REFERENCES game_users (id)
 ) ENGINE = InnoDB;
