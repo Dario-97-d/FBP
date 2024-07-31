@@ -370,7 +370,7 @@
 		return PLAYER_RESULT( $reject );
 	}
 	
-	function PLAYER_upgrade_generic_attribute( $att )
+	function PLAYER_development_upgrade_generic_attribute( $att )
 	{
 		global $_player_id;
 		
@@ -395,12 +395,12 @@
 		}
 	}
 	
-	function PLAYER_upgrade_playing_attribute( $att )
+	function PLAYER_development_upgrade_playing_attribute( $att )
 	{
 		global $_player_id;
 		
 		// Find $att in a certain array and return the corresponding SQL condition for upgrade.
-		$trainable_condition = match( true )
+		$upgrade_condition = match( true )
 		{
 			in_array( $att, [ 'speed'    , 'agility' ] )                 => 'movement  > speed     + agility',
 			in_array( $att, [ 'airplay'  , 'power'   ] )                 => 'strength  > airplay   + power',
@@ -410,8 +410,8 @@
 			default => null
 		};
 		
-		// $trainable_condition is null if $att was not found.
-		if ( $trainable_condition != null )
+		// $upgrade_condition is null if $att was not matched.
+		if ( $upgrade_condition != null )
 		{
 			// -- DB operation --
 			SQL_prep_stmt_result(
@@ -420,7 +420,8 @@
 				JOIN    generic_attributes g  ON  g.player_id =  f.id
 				SET
 					'.$att.' = '.$att.' + 1
-				WHERE f.id = ? AND '.$trainable_condition,
+				WHERE f.id = ?
+				AND   '.$upgrade_condition,
 				array( $_player_id ) );
 		}
 	}

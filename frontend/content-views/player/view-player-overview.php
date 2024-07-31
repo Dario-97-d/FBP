@@ -44,4 +44,4 @@
 	
 </div>
 
-<h3><a href="player-development">Train</a></h3>
+<h3><a href="player-development">Development</a></h3>

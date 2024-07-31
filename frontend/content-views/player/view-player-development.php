@@ -1,5 +1,5 @@
 
-<h1><?= $_player['name'] ?></h1>
+<h1>Development</h1>
 
 <!-- Display Generic Attributes Upgrade -->
 <div class="display-generic-attributes-upgrade">
