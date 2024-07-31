@@ -378,7 +378,7 @@
 		
 		if ( in_array( $att, $generic_atts ) )
 		{
-			SQL_prep_stmt_result(
+			$upgrade = SQL_prep_stmt_result(
 				'UPDATE   football_players   f
 				JOIN      generic_attributes g ON g.player_id = f.id
 				JOIN      player_team        p ON p.player_id = f.id
@@ -392,7 +392,14 @@
 				AND   g.available_points > 0
 				AND   f.rating < 60',
 				array( $_player_id ));
+			
+			if ( RESULT_is_success( $upgrade ) )
+			{
+				return true;
+			}
 		}
+		
+		return false;
 	}
 	
 	function PLAYER_development_upgrade_playing_attribute( $att )
@@ -414,7 +421,7 @@
 		if ( $upgrade_condition != null )
 		{
 			// -- DB operation --
-			SQL_prep_stmt_result(
+			$upgrade = SQL_prep_stmt_result(
 				'UPDATE football_players   f
 				JOIN    playing_attributes p  ON  p.player_id =  f.id
 				JOIN    generic_attributes g  ON  g.player_id =  f.id
@@ -423,5 +430,11 @@
 				WHERE f.id = ?
 				AND   '.$upgrade_condition,
 				array( $_player_id ) );
+			if ( RESULT_is_success( $upgrade ) )
+			{
+				return true;
+			}
 		}
+		
+		return false;
 	}
