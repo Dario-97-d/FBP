@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS playing_attributes (
 	agility   INT NOT NULL DEFAULT 1,
 	airplay   INT NOT NULL DEFAULT 1,
 	power     INT NOT NULL DEFAULT 1,
-	dribbe    INT NOT NULL DEFAULT 1,
+	dribble   INT NOT NULL DEFAULT 1,
 	pass      INT NOT NULL DEFAULT 1,
 	shoot     INT NOT NULL DEFAULT 1,
 	tackle    INT NOT NULL DEFAULT 1,
