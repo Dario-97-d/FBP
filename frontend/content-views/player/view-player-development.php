@@ -57,6 +57,7 @@
 	<!-- Body -->
 	
 	<form class="grid-ignore-element" method="POST" onsubmit="return confirm('Upgrade '+ event.submitter.name +'?')">
+		<input type="hidden" name="upgrade-playing-attribute">
 		
 		<!-- Physical -->
 		<div class="display-playing-attributes-upgrade-body">
