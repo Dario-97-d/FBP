@@ -115,6 +115,28 @@ select option { padding: 4px; }
 	background: linear-gradient( rgba(0,170,0,1), rgba(0,170,0,0.75) );
 }
 
+/* Display Generic Attributes Play-3 */
+.display-generic-attributes-play-3 {
+	display: grid;
+	grid-template-rows: repeat(3, auto);
+	grid-template-columns: repeat(5, 1fr);
+	margin: 8px auto;
+	border: 4px solid green;
+	border-radius: 8px;
+	font-weight: bold;
+	color: white;
+}
+.display-generic-attributes-play-3-header,
+.display-generic-attributes-play-3-body {
+	padding: 8px;
+}
+.display-generic-attributes-play-3-header {
+	background: green;
+}
+.display-generic-attributes-play-3-body {
+	background: linear-gradient( rgba(0,170,0,1), rgba(0,170,0,0.75) );
+}
+
 /* Display Generic Attributes Upgrade */
 .display-generic-attributes-upgrade {
 	display: grid;

@@ -9,9 +9,9 @@
 	
 	$_partner_id = $_GET['partner-id'];
 	
-	$_partner = PLAYER_get_generic_play_profile( $_partner_id ) or DIE_error();
+	$_player = PLAYER_get_generic_play_profile( $_player_id ) or DIE_error();
 	
-	$_generic_atts = PLAYER_get_generic_attributes_from_player( $_partner );
+	$_partner = PLAYER_get_generic_play_profile( $_partner_id ) or DIE_error();
 
 ?>
 
