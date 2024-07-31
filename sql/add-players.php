@@ -31,7 +31,19 @@
 		),
 		array(
 			'Pilro', 'Andrea Pirlo', 'pilro@e.mail'
-		)
+		),
+		array(
+			'Kepler', 'Pepe Laveran', 'kepler@e.mail'
+		),
+		array(
+			'SR4', 'Sergio Ramos', 'sergio-ramos@e.mail'
+		),
+		array(
+			'LahmSchaft', 'Philipp Lahm', 'lahm-schaft@e.mail'
+		),
+		array(
+			'Kimicher', 'Joshua Kimmich', 'kimicher@e.mail'
+		),
 	);
 	
 	if ( isset( $_POST['add-players'] ) )
