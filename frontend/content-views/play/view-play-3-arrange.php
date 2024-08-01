@@ -1,6 +1,6 @@
 
-<h1>3-a-side</h1>
-<p>3-a-side is a Practice mode to develop initial traits, up to 20 Ø</p>
+<h1>Play 3v3</h1>
+<p>Partner game mode for complementary development of players</p>
 
 <div class="display-generic-attributes-play-3">
 	

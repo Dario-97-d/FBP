@@ -76,9 +76,9 @@ CREATE TABLE IF NOT EXISTS playing_attributes (
 ) ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS player_stats (
-	player_id INT PRIMARY KEY AUTO_INCREMENT,
-	games     INT NOT NULL DEFAULT 0,
-	wins      INT NOT NULL DEFAULT 0,
+	player_id   INT PRIMARY KEY AUTO_INCREMENT,
+	play3_games INT NOT NULL DEFAULT 0,
+	play3_wins  INT NOT NULL DEFAULT 0,
 	
 	FOREIGN KEY (player_id) REFERENCES football_players (id)
 ) ENGINE = InnoDB;

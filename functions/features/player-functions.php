@@ -96,6 +96,34 @@
 		return PLAYER_RESULT( $cancel );
 	}
 	
+	function PLAYER_development_add_available_point()
+	{
+		global $_player_id;
+		
+		$add_available_point = SQL_prep_stmt_result(
+			'UPDATE generic_attributes
+			SET     available_points = available_points + 1
+			WHERE   player_id = ?
+			AND     available_points < 5',
+			array( $_player_id ) );
+		
+		return RESULT_is_success( $add_available_point );
+	}
+	
+	function PLAYER_development_remove_available_point()
+	{
+		global $_player_id;
+		
+		$remove_available_point = SQL_prep_stmt_result(
+			'UPDATE generic_attributes
+			SET     available_points = available_points - 1
+			WHERE   player_id = ?
+			AND     available_points > 0',
+			array( $_player_id ) );
+		
+		return RESULT_is_success( $remove_available_point );
+	}
+	
 	function PLAYER_development_upgrade_generic_attribute( $att )
 	{
 		global $_player_id;
@@ -194,29 +222,6 @@
 			'defending' => $player['defending']);
 	}
 	
-	function PLAYER_get_generic_play_profile( $player_id )
-	{
-		// -- Handle Input --
-		
-		// Exit if input isn't valid.
-		if ( ! INPUT_is_id_valid( $player_id ) ) return false;
-		
-		// -- DB operation --
-		return SQL_prep_get_row(
-			'SELECT
-				f.player_name,
-				f.rating,
-				g.strength,
-				g.movement,
-				g.skill,
-				g.attacking,
-				g.defending
-			FROM  football_players   f
-			JOIN  generic_attributes g ON g.player_id = f.id
-			WHERE f.id = ?',
-			array( $player_id ) );
-	}
-	
 	function PLAYER_get_mate_status( $checked_id )
 	{
 		global $_user_id;
@@ -272,10 +277,9 @@
 		// -- DB operation --
 		return SQL_prep_get_row(
 			'SELECT
-				f.id,
 				f.player_name,
 				f.rating,
-				g.skill
+				g.*
 			FROM  football_players   f
 			JOIN  generic_attributes g ON g.player_id = f.id
 			WHERE f.id = ?',
@@ -438,4 +442,29 @@
 		
 		// -- Handle result --
 		return PLAYER_RESULT( $reject );
+	}
+	
+	function PLAYER_update_on_play_3_result( $play_3 )
+	{
+		global $_player_id;
+		
+		$update_stats = SQL_prep_stmt_one(
+			'UPDATE player_stats
+			SET     play3_games = play3_games + 1'.
+			(
+				$play_3['own_score'] > $play_3['bot_score'] ?
+				', play3_wins = play3_wins + 1' :
+				''
+			).
+			' WHERE player_id = ?',
+			array( $_player_id ) );
+		
+		if ( ! RESULT_is_success( $update_stats ) ) return false;
+		
+		return match( true )
+		{
+			$play_3['upgrade'] === 1  => PLAYER_development_add_available_point(),
+			$play_3['upgrade'] === -1 => PLAYER_development_remove_available_point(),
+			default => true
+		};
 	}

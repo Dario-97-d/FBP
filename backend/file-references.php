@@ -25,6 +25,9 @@
 	$_FILEREF_team_functions             = __DIR__ . '/../functions/features/team-functions.php';
 	$_FILEREF_user_functions             = __DIR__ . '/../functions/features/user-functions.php';
 	
+	// Game functions.
+	$_FILEREF_play_3_functions           = __DIR__ . '/../functions/game/play-3-functions.php';
+	
 	// -- Frontend --
 	
 	// Functions.

@@ -3,6 +3,7 @@
 <?php
 
 	require_once $_FILEREF_player_functions;
+	require_once $_FILEREF_play_3_functions;
 	
 	// This page is meant to work only on POST['id'] requests.
 	
@@ -23,23 +24,10 @@
 	
 	$_partner = PLAYER_get_play_3_data( $_partner_id ) or DIE_error();
 	
-	// TODO: Make game 3v3
 	
-	// -- Make up values for frontend --
+	$_result = PLAY_3( $_player, $_partner );
 	
-	$_player['performance'] = round ( 10 * sqrt( $_player['rating'] * $_partner['skill'] ) );
-	$_partner['performance'] = round ( 10 * sqrt( $_partner['rating'] * $_player['skill'] ) );
-	
-	$b1_rating = ceil( ( $_player['rating'] + $_partner['rating'] ) / 2 );
-	$b2_rating = floor( ( $_player['rating'] + $_partner['rating'] ) / 2 );
-	$b1_skill = floor( ( $_player['skill'] + $_partner['skill'] ) / 2 );
-	$b2_skill = ceil( ( $_player['skill'] + $_partner['skill'] ) / 2 );
-	
-	$b1_performance = round ( 10 * sqrt( $b1_rating * $b2_skill ) );
-	$b2_performance = round ( 10 * sqrt( $b2_rating * $b1_skill ) );
-	
-	$p_result = round( 30 * ( $_player['skill'] * $_partner['skill'] ) / ( $b1_rating * $b2_rating ) );
-	$b_result = round( 30 * ( $b1_skill * $b2_skill ) / ( $_player['rating'] * $_partner['rating'] ) );
+	PLAYER_update_on_play_3_result( $_result ) or DIE_error();
 
 ?>
 
