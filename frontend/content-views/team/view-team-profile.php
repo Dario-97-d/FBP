@@ -1,7 +1,7 @@
 
 <h1><?= $_profile['team_name'] ?></h1>
 
-<h2>Class <?= $_profile['team_class'] ?> | <?= $_profile['rating'] ?> &empty;</h2>
+<h2>Class <?= $_profile['team_class'] ?></h2>
 
 <div class="display-team-profile-members">
 	
@@ -38,6 +38,8 @@
 		}
 	
 	?>
+	
+	<div class="display-team-profile-members-header grid-span-col-4">Rating <?= $_profile['rating'] ?></div>
 	
 </div>
 

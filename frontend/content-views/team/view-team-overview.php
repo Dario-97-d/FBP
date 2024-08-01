@@ -1,9 +1,9 @@
 
 <h1><?= $_team['team_name'] ?></h1>
 
-<h2>Class <?= $_team['team_class'] ?> | <?= $_team['rating'] ?> &empty;</h2>
+<h3>Class <?= $_team['team_class'] ?></h3>
 
-<h3><?= $_team['members'] ?> members</h3>
+<h2>Rating <?= $_team['rating'] ?></h2>
 
 <div class="display-own-team-members">
 	

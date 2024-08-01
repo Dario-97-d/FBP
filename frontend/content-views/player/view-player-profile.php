@@ -1,16 +1,14 @@
 
 <h1><?= $_profile['player_name'] ?></h1>
 
-<span>Plays for <?= $_profile['team_name'] ?></span>
+<h4>@<?= $_profile['username'] ?></h4>
 
-<h2>Rating: <?= $_profile['rating'] ?></h2>
+<span>Plays for <?= $_profile['team_name'] ?></span>
 
 <?php
 	// Partial View: Generic Attributes.
 	require_once $_FILEREF_partial_view_generic_attributes;
 ?>
-
-<h4>@<?= $_profile['username'] ?></h4>
 
 <?php
 

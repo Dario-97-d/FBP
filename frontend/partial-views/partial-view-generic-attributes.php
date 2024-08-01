@@ -15,4 +15,6 @@
 	<div class="display-generic-attributes-body"><?= $_generic_atts['attacking'] ?></div>
 	<div class="display-generic-attributes-body"><?= $_generic_atts['defending'] ?></div>
 	
+	<div class="display-generic-attributes-header grid-span-col-5">Rating <?= $_generic_atts['rating'] ?></div>
+	
 </div>

@@ -215,6 +215,7 @@
 	function PLAYER_get_generic_attributes_from_player( $player )
 	{
 		return array(
+			'rating'    => $player['rating'],
 			'strength'  => $player['strength'],
 			'movement'  => $player['movement'],
 			'skill'     => $player['skill'],

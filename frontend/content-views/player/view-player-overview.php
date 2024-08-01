@@ -1,7 +1,7 @@
 
 <h1>Overview</h1>
 
-<h2><?= $_player['player_name'] ?> | &empty; <?= $_player['rating'] ?></h2>
+<h2><?= $_player['player_name'] ?></h2>
 @<?= $_player['username'] ?>
 
 <?php
