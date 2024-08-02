@@ -96,34 +96,6 @@
 		return PLAYER_RESULT( $cancel );
 	}
 	
-	function PLAYER_development_add_available_point()
-	{
-		global $_player_id;
-		
-		$add_available_point = SQL_prep_stmt_result(
-			'UPDATE generic_attributes
-			SET     available_points = available_points + 1
-			WHERE   player_id = ?
-			AND     available_points < 5',
-			array( $_player_id ) );
-		
-		return RESULT_is_success( $add_available_point );
-	}
-	
-	function PLAYER_development_remove_available_point()
-	{
-		global $_player_id;
-		
-		$remove_available_point = SQL_prep_stmt_result(
-			'UPDATE generic_attributes
-			SET     available_points = available_points - 1
-			WHERE   player_id = ?
-			AND     available_points > 0',
-			array( $_player_id ) );
-		
-		return RESULT_is_success( $remove_available_point );
-	}
-	
 	function PLAYER_development_upgrade_generic_attribute( $att )
 	{
 		global $_player_id;
@@ -449,23 +421,23 @@
 	{
 		global $_player_id;
 		
-		$update_stats = SQL_prep_stmt_one(
-			'UPDATE player_stats
-			SET     play3_games = play3_games + 1'.
-			(
-				$play_3['own_score'] > $play_3['bot_score'] ?
-				', play3_wins = play3_wins + 1' :
-				''
-			).
-			' WHERE player_id = ?',
+		$is_win = $play_3['own_score'] > $play_3['bot_score'];
+		$ap_difference = $play_3['upgrade'];
+		
+		$update = SQL_prep_stmt_result(
+			'UPDATE player_stats       s
+			JOIN    generic_attributes g ON g.player_id = s.player_id
+			SET
+				s.play3_games = s.play3_games + 1,'
+				.( $is_win ? 's.play3_wins = s.play3_wins + 1,' : '' ).'
+				g.available_points =
+					CASE
+						WHEN g.available_points + ('.$ap_difference.') > 5 THEN 5
+						WHEN g.available_points + ('.$ap_difference.') < 0 THEN 0
+						ELSE g.available_points + ('.$ap_difference.')
+					END
+			WHERE s.player_id = ?',
 			array( $_player_id ) );
 		
-		if ( ! RESULT_is_success( $update_stats ) ) return false;
-		
-		return match( true )
-		{
-			$play_3['upgrade'] === 1  => PLAYER_development_add_available_point(),
-			$play_3['upgrade'] === -1 => PLAYER_development_remove_available_point(),
-			default => true
-		};
+		return RESULT_is_success( $update );
 	}
