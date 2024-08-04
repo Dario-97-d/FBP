@@ -72,14 +72,6 @@
 		return PLAYER_RESULT( $apply );
 	}
 	
-	function PLAYER_can_invite_to_team()
-	{
-		global $_player_id;
-		
-		// -- DB operation --
-		return SQL_prep_bool_or_null( 'SELECT 1 FROM player_team WHERE player_id = ? AND staff_role = \'Captain\'', array( $_player_id ) );
-	}
-	
 	function PLAYER_cancel_team_application( $team_id )
 	{
 		global $_player_id;
