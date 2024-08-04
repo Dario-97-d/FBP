@@ -81,7 +81,6 @@
 				case 'play-11':
 				case 'play-3-arrange':
 				case 'play-3-game':
-				case 'play-5':
 				case 'play-7':
 				
 				case 'player-development';

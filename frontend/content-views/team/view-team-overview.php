@@ -74,5 +74,4 @@
 
 ?>
 
-<h2><a href="play-5">Play 5v5</a></h2>
 <h2><a href="team-center">Team center</a></h2>
