@@ -4,7 +4,9 @@
 
 	require_once $_FILEREF_play_3_functions;
 	
-	// This page is meant to work only on POST['id'] requests.
+	/*
+	This page is meant to work only on POST['id'] requests.
+	*/
 	
 	// Redirect if id was not given.
 	if ( ! isset( $_POST['partner-id'] ) ) REDIRECT('play-3-arrange');
