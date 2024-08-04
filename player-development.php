@@ -8,14 +8,20 @@
 	if ( isset( $_POST['upgrade-generic-attribute'] ) )
 	{
 		// Get name of submit element clicked.
-		PLAYER_Development_upgrade_generic_attribute( array_search( '+', $_POST ) ) or REDIRECT('player-development');
+		PLAYER_Development_upgrade_generic_attribute( array_search( '+', $_POST ) ) or DIE_error();
+		
+		// Avoid form resubmission.
+		REDIRECT_current();
 	}
 	
 	// -- Upgrade Playing Attribute --
 	if ( isset( $_POST['upgrade-playing-attribute'] ) )
 	{
 		// Get name of submit element clicked.
-		PLAYER_Development_upgrade_playing_attribute( array_search( '+', $_POST ) ) or REDIRECT('player-development');
+		PLAYER_Development_upgrade_playing_attribute( array_search( '+', $_POST ) ) or DIE_error();
+		
+		// Avoid form resubmission.
+		REDIRECT_current();
 	}
 	
 	

@@ -21,8 +21,11 @@
 	{
 		$apply_to_team = PLAYER_Team_apply( $_POST['apply-team-id'] ) or DIE_error();
 		
+		// -- Success -> Redirect (avoid form resubmission) --
+		if ( RESULT_is_success( $apply_to_team ) ) REDIRECT_current();
+		
 		// Display failure messaage.
-		if ( ! RESULT_is_success( $apply_to_team ) ) DIALOG_add_result( $apply_to_team );
+		DIALOG_add_result( $apply_to_team );
 	}
 	
 	// -- Cancel Application --
@@ -30,8 +33,11 @@
 	{
 		$cancel_application = PLAYER_Team_cancel_application( $_POST['cancel-team-id'] ) or DIE_error();
 		
+		// -- Success -> Redirect (avoid form resubmission) --
+		if ( RESULT_is_success( $cancel_application ) ) REDIRECT_current();
+		
 		// Display failure messaage.
-		if ( ! RESULT_is_success( $cancel_application ) ) DIALOG_add_result( $cancel_application );
+		DIALOG_add_result( $cancel_application );
 	}
 	
 	// -- Leave Team --
@@ -39,8 +45,11 @@
 	{
 		$leave_team = PLAYER_Team_leave() or DIE_error();
 		
+		// -- Success -> Redirect (avoid form resubmission) --
+		if ( RESULT_is_success( $leave_team ) ) REDIRECT_current();
+		
 		// Display failure messaage.
-		if ( ! RESULT_is_success( $leave_team ) ) DIALOG_add_result( $leave_team );
+		DIALOG_add_result( $leave_team );
 	}
 	
 	// -- Reject Invite --
@@ -48,8 +57,11 @@
 	{
 		$reject_invite = PLAYER_Team_reject_invite( $_POST['reject-team-id'] ) or DIE_error();
 		
+		// -- Success -> Redirect (avoid form resubmission) --
+		if ( RESULT_is_success( $reject_invite ) ) REDIRECT_current();
+		
 		// Display failure messaage.
-		if ( ! RESULT_is_success( $reject_invite ) ) DIALOG_add_result( $reject_invite );
+		DIALOG_add_result( $reject_invite );
 	}
 	
 	

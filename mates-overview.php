@@ -21,8 +21,11 @@
 	{
 		$remove_mate = MATES_remove( $_POST['remove-mate-id'] ) or DIE_error();
 		
+		// -- Success -> Redirect (avoid form resubmission) --
+		if ( RESULT_is_success( $remove_mate ) ) REDIRECT_current();
+		
 		// Display failure message.
-		if ( ! RESULT_is_success( $remove_mate ) ) DIALOG_add_result( $remove_mate );
+		DIALOG_add_result( $remove_mate );
 	}
 	
 	

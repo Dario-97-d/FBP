@@ -21,8 +21,11 @@
 	{
 		$decline_request = MATES_decline_request( $_POST['decline-mate-id'] ) or DIE_error();
 		
+		// -- Success -> Redirect (avoid form resubmission) --
+		if ( RESULT_is_success( $decliine_request ) ) REDIRECT_current();
+		
 		// Display failure message.
-		if ( ! RESULT_is_success( $decline_request ) ) DIALOG_add_result( $decline_request );
+		DIALOG_add_result( $decliine_request );
 	}
 	
 	

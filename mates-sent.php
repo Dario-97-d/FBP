@@ -9,8 +9,11 @@
 	{
 		$cancel_request = MATES_cancel_request( $_POST['cancel-mate-id'] ) or DIE_error();
 		
+		// -- Success -> Redirect (avoid form resubmission) --
+		if ( RESULT_is_success( $cancel_request ) ) REDIRECT_current();
+		
 		// Display failure message.
-		if ( ! RESULT_is_success( $cancel_request ) ) DIALOG_add_result( $cancel_request );
+		DIALOG_add_result( $cancel_request );
 	}
 	
 	

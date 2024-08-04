@@ -28,8 +28,11 @@
 	{
 		$reject_application = TEAM_Manage_Applications_reject_player( $_POST['reject-player-id'] ) or DIE_error();
 		
+		// -- Success -> Redirect (avoid form resubmission) --
+		if ( RESULT_is_success( $reject_application ) ) REDIRECT_current();
+		
 		// Display failure message.
-		if ( ! RESULT_is_success( $reject_application ) ) DIALOG_add_result( $reject_application );
+		DIALOG_add_result( $reject_application );
 	}
 	
 	

@@ -16,8 +16,11 @@
 	{
 		$invite_player = TEAM_Manage_Invites_send( $_POST['invite-player-id'] ) or DIE_error();
 		
+		// -- Success -> Redirect (avoid form resubmission) --
+		if ( RESULT_is_success( $invite_player ) ) REDIRECT_current();
+		
 		// Display failure message.
-		if ( ! RESULT_is_success( $invite_player ) ) DIALOG_add_result( $invite_player );
+		DIALOG_add_result( $invite_player );
 	}
 	
 	// -- Withdraw Invite --
@@ -25,8 +28,11 @@
 	{
 		$withdraw_invite = TEAM_Manage_Invites_withdraw( $_POST['withdraw-player-id'] ) or DIE_error();
 		
+		// -- Success -> Redirect (avoid form resubmission) --
+		if ( RESULT_is_success( $withdraw_invite ) ) REDIRECT_current();
+		
 		// Display failure message.
-		if ( ! RESULT_is_success( $withdraw_invite ) ) DIALOG_add_result( $withdraw_invite );
+		DIALOG_add_result( $withdraw_invite );
 	}
 	
 	
