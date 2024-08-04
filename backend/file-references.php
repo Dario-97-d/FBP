@@ -17,13 +17,28 @@
 	$_FILEREF_die_functions                   = __DIR__ . '/../functions/response/die-functions.php';
 	$_FILEREF_redirect_functions              = __DIR__ . '/../functions/response/redirect-functions.php';
 	
-	// Feature functions.
+	// General Feature functions.
 	$_FILEREF_mail_functions                  = __DIR__ . '/../functions/features/mail-functions.php';
 	$_FILEREF_mates_functions                 = __DIR__ . '/../functions/features/mates-functions.php';
 	$_FILEREF_player_functions                = __DIR__ . '/../functions/features/player-functions.php';
 	$_FILEREF_search_functions                = __DIR__ . '/../functions/features/search-functions.php';
 	$_FILEREF_team_functions                  = __DIR__ . '/../functions/features/team-functions.php';
 	$_FILEREF_user_functions                  = __DIR__ . '/../functions/features/user-functions.php';
+	
+	// Player functions.
+	$_FILEREF_player_development_functions    = __DIR__ . '/../functions/features/player/player-development-functions.php';
+	$_FILEREF_player_profile_functions        = __DIR__ . '/../functions/features/player/player-profile-functions.php';
+	$_FILEREF_player_team_functions           = __DIR__ . '/../functions/features/player/player-team-functions.php';
+	
+	// Team functions.
+	$_FILEREF_team_manage_functions              = __DIR__ . '/../functions/features/team/team-manage-functions.php';
+	$_FILEREF_team_profile_functions             = __DIR__ . '/../functions/features/team/team-profile-functions.php';
+	
+	// Team Management functions.
+	$_FILEREF_team_manage_applications_functions = __DIR__ . '/../functions/features/team/manage/team-manage-applications-functions.php';
+	$_FILEREF_team_manage_invites_functions      = __DIR__ . '/../functions/features/team/manage/team-manage-invites-functions.php';
+	$_FILEREF_team_manage_members_functions      = __DIR__ . '/../functions/features/team/manage/team-manage-members-functions.php';
+	$_FILEREF_team_manage_name_functions         = __DIR__ . '/../functions/features/team/manage/team-manage-name-functions.php';
 	
 	// Game functions.
 	$_FILEREF_play_3_functions                = __DIR__ . '/../functions/game/play-3-functions.php';

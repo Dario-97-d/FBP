@@ -2,6 +2,13 @@
 
 	// -- Play-3 Functions --
 	
+	// Require other functions.
+	require_once $_FILEREF_input_handling_functions;
+	require_once $_FILEREF_result_functions;
+	require_once $_FILEREF_sql_functions;
+	
+	// -- Functions --
+	
 	function PLAY_3_result( $own_score, $bot_score, $upgrade, $complementarity_index )
 	{
 		return array(
@@ -64,4 +71,48 @@
 		};
 		
 		return PLAY_3_result( $own_score, $bot_score, $upgrade, $complementarity_index );
+	}
+	
+	function PLAY_3_get_player( $player_id )
+	{
+		// -- Handle Input --
+		
+		// Exit if input isn't valid.
+		if ( ! INPUT_is_id_valid( $player_id ) ) return false;
+		
+		// -- DB operation --
+		return SQL_prep_get_row(
+			'SELECT
+				f.player_name,
+				f.rating,
+				g.*
+			FROM  football_players   f
+			JOIN  generic_attributes g ON g.player_id = f.id
+			WHERE f.id = ?',
+			array( $player_id ) );
+	}
+	
+	function PLAY_3_update_player_on_result( $play_3_result )
+	{
+		global $_player_id;
+		
+		$is_win = $play_3_result['own_score'] > $play_3_result['bot_score'];
+		$ap_difference = $play_3_result['upgrade'];
+		
+		$update = SQL_prep_stmt_result(
+			'UPDATE player_stats       s
+			JOIN    generic_attributes g ON g.player_id = s.player_id
+			SET
+				s.play3_games = s.play3_games + 1,'
+				.( $is_win ? 's.play3_wins = s.play3_wins + 1,' : '' ).'
+				g.available_points =
+					CASE
+						WHEN g.available_points + ('.$ap_difference.') > 5 THEN 5
+						WHEN g.available_points + ('.$ap_difference.') < 0 THEN 0
+						ELSE g.available_points + ('.$ap_difference.')
+					END
+			WHERE s.player_id = ?',
+			array( $_player_id ) );
+		
+		return RESULT_is_success( $update );
 	}

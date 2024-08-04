@@ -2,13 +2,13 @@
 
 <?php
 
-	require_once $_FILEREF_team_functions;
+	require_once $_FILEREF_team_manage_members_functions;
 	
 	// Get Team id.
 	$_team_id = TEAM_get_id() or REDIRECT('team-center');
 	
-	// Get whether player is captain.
-	if ( ! ( TEAM_is_player_captain() ?? false ) ) REDIRECT('team-overview');
+	// Check whether player is allowed to manage the team.
+	if ( ! ( TEAM_Manage_is_player_allowed() ?? false ) ) REDIRECT('team-overview');
 	
 	
 	// -- Set member as --
@@ -16,7 +16,7 @@
 	{
 		if ( isset( $_POST['player-id'] ) && isset( $_POST['staff-role'] ) )
 		{
-			$update_staff_role = TEAM_update_staff_role( $target_player_id, $target_staff_role ) or DIE_error();
+			$update_staff_role = TEAM_Manage_Members_update_staff_role( $target_player_id, $target_staff_role ) or DIE_error();
 			
 			// Display failure message.
 			if ( ! RESULT_is_success( $update_staff_role ) ) DIALOG_add_result( $update_staff_role );
@@ -31,7 +31,7 @@
 	if ( isset( $_POST['expel-player-at-username'] ) )
 	{
 		// Remove @ at the beginning of the name.
-		$expel_player = TEAM_expel_player( substr( $_POST['expel-player-at-username'], 1 ) ) or DIE_error();
+		$expel_player = TEAM_Manage_Members_expel( substr( $_POST['expel-player-at-username'], 1 ) ) or DIE_error();
 		
 		// -- Success -> Redirect --
 		if ( RESULT_is_success( $expel_player ) ) REDIRECT('team-overview');
@@ -48,7 +48,7 @@
 	$_team_members = TEAM_get_members() or DIE_error();
 	
 	// Get an array for the html element <select>.
-	$_select_members = TEAM_get_select_members( $_team_members );
+	$_select_members = TEAM_Manage_Members_get_select_assoc( $_team_members );
 
 ?>
 

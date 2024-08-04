@@ -2,14 +2,14 @@
 
 <?php
 
-	require_once $_FILEREF_player_functions;
+	require_once $_FILEREF_player_profile_functions;
 	
 	// Redirect if GET id was not given or is not valid.
 	if ( ! isset( $_GET['id'] ) || ! INPUT_is_id_valid( $_GET['id'] ) ) REDIRECT('ranking-player');
 	
 	$_profile_id = $_GET['id'];
 	
-	$_profile = PLAYER_get_profile( $_profile_id ) or REDIRECT('search-player');
+	$_profile = PLAYER_Profile_get( $_profile_id ) or REDIRECT('search-player');
 	
 	$_generic_atts = PLAYER_get_generic_attributes_from_player( $_profile );
 	
@@ -20,9 +20,9 @@
 	$_show_controls = $_IS_LOGGED_IN && $_profile_id != $_player_id;
 	if ( $_show_controls )
 	{
-		$_mate_status = PLAYER_get_mate_status( $_profile_id ) or DIALOG_add_player_fail('could not determine whether these players are already mates');
+		$_mate_status = PLAYER_Profile_get_mate_status( $_profile_id ) or DIALOG_add_player_fail('could not determine whether these players are already mates');
 		
-		$_show_button_invite = PLAYER_is_invite_allowed() ?? DIALOG_add_player_fail('could not determine whether invite is allowed');
+		$_show_button_invite = PLAYER_Profile_is_invite_allowed() ?? DIALOG_add_player_fail('could not determine whether invite is allowed');
 	}
 
 ?>

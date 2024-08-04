@@ -2,7 +2,6 @@
 
 <?php
 
-	require_once $_FILEREF_player_functions;
 	require_once $_FILEREF_play_3_functions;
 	
 	// This page is meant to work only on POST['id'] requests.
@@ -20,14 +19,14 @@
 	$_partner_id = $_POST['partner-id'];
 	
 	
-	$_player = PLAYER_get_play_3_data( $_player_id ) or DIE_error();
+	$_player = PLAY_3_get_player( $_player_id ) or DIE_error();
 	
-	$_partner = PLAYER_get_play_3_data( $_partner_id ) or DIE_error();
+	$_partner = PLAY_3_get_player( $_partner_id ) or DIE_error();
 	
 	
 	$_result = PLAY_3( $_player, $_partner );
 	
-	PLAYER_update_on_play_3_result( $_result ) or DIE_error();
+	PLAY_3_update_player_on_result( $_result ) or DIE_error();
 
 ?>
 
