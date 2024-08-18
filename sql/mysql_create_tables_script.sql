@@ -7,13 +7,13 @@ CREATE TABLE IF NOT EXISTS game_users (
 
 CREATE TABLE IF NOT EXISTS mail (
 	id          INT       PRIMARY KEY AUTO_INCREMENT,
-	receiver_id INT       NOT NULL,
-	sender_id   INT       NOT NULL,
 	time_stamp  TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	sender_id   INT       NOT NULL,
+	receiver_id INT       NOT NULL,
 	mail_text   TEXT      NOT NULL,
 	
-	FOREIGN KEY (receiver_id) REFERENCES game_users (id),
-	FOREIGN KEY (sender_id) REFERENCES game_users (id)
+	FOREIGN KEY (sender_id)   REFERENCES game_users (id),
+	FOREIGN KEY (receiver_id) REFERENCES game_users (id)
 ) ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS mates (
@@ -97,9 +97,9 @@ CREATE TABLE IF NOT EXISTS team_player_invites (
 	team_id   INT NOT NULL,
 	player_id INT NOT NULL,
 	
-	UNIQUE (team_id, player_id),
-	FOREIGN KEY (team_id) REFERENCES teams (id),
-	FOREIGN KEY (player_id) REFERENCES football_players (id)
+	FOREIGN KEY (team_id)   REFERENCES teams (id),
+	FOREIGN KEY (player_id) REFERENCES football_players (id),
+	UNIQUE (team_id, player_id)
 ) ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS player_team (
@@ -108,7 +108,7 @@ CREATE TABLE IF NOT EXISTS player_team (
 	staff_role VARCHAR(63) NOT NULL DEFAULT 'NONE',
 	
 	FOREIGN KEY (player_id) REFERENCES football_players (id),
-	FOREIGN KEY (team_id) REFERENCES teams (id)
+	FOREIGN KEY (team_id)   REFERENCES teams (id)
 ) ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS player_team_applications (
@@ -117,6 +117,6 @@ CREATE TABLE IF NOT EXISTS player_team_applications (
 	team_id        INT NOT NULL,
 	
 	FOREIGN KEY (player_id) REFERENCES football_players (id),
-	FOREIGN KEY (team_id) REFERENCES teams (id),
+	FOREIGN KEY (team_id)   REFERENCES teams (id),
 	UNIQUE (player_id, team_id)
 ) ENGINE = InnoDB;
