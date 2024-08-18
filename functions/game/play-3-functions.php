@@ -100,8 +100,9 @@
 		$ap_difference = $play_3_result['upgrade'];
 		
 		$update = SQL_prep_stmt_result(
-			'UPDATE player_stats       s
-			JOIN    generic_attributes g ON g.player_id = s.player_id
+			'UPDATE football_players   f
+			JOIN    player_stats       s ON s.player_id = f.id
+			JOIN    generic_attributes g ON g.player_id = f.id
 			SET
 				s.play3_games = s.play3_games + 1,'
 				.( $is_win ? 's.play3_wins = s.play3_wins + 1,' : '' ).'
@@ -111,7 +112,8 @@
 						WHEN g.available_points + ('.$ap_difference.') < 0 THEN 0
 						ELSE g.available_points + ('.$ap_difference.')
 					END
-			WHERE s.player_id = ?',
+			WHERE s.player_id = ?
+			AND   f.rating    < 56',
 			array( $_player_id ) );
 		
 		return RESULT_is_success( $update );
