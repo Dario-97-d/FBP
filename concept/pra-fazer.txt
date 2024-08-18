@@ -1,7 +1,5 @@
 pra fazer:
 
-make play-5
-
 make team upgrade to class 7
 
 make play-7

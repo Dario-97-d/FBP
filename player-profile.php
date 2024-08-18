@@ -23,6 +23,8 @@
 		$_mate_status = PLAYER_Profile_get_mate_status( $_profile_id ) or DIALOG_add_player_fail('could not determine whether these players are already mates');
 		
 		$_show_button_invite = PLAYER_Profile_is_invite_allowed() ?? DIALOG_add_player_fail('could not determine whether invite is allowed');
+		
+		$_show_button_play5_selection = PLAYER_Profile_is_play_5_selection_allowed() ?? DIALOG_add_player_fail('could not determine whether play-5 selection is allowed');
 	}
 
 ?>

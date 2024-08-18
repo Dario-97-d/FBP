@@ -79,6 +79,8 @@ CREATE TABLE IF NOT EXISTS player_stats (
 	player_id   INT PRIMARY KEY AUTO_INCREMENT,
 	play3_games INT NOT NULL DEFAULT 0,
 	play3_wins  INT NOT NULL DEFAULT 0,
+	play5_games INT NOT NULL DEFAULT 0,
+	play5_wins  INT NOT NULL DEFAULT 0,
 	
 	FOREIGN KEY (player_id) REFERENCES football_players (id)
 ) ENGINE = InnoDB;
@@ -119,4 +121,13 @@ CREATE TABLE IF NOT EXISTS player_team_applications (
 	FOREIGN KEY (player_id) REFERENCES football_players (id),
 	FOREIGN KEY (team_id)   REFERENCES teams (id),
 	UNIQUE (player_id, team_id)
+) ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS play5_selections (
+	player_id   INT NOT NULL,
+	selected_id INT NOT NULL,
+	
+	FOREIGN KEY (player_id)   REFERENCES football_players (id),
+	FOREIGN KEY (selected_id) REFERENCES football_players (id),
+	UNIQUE (player_id, selected_id)
 ) ENGINE = InnoDB;

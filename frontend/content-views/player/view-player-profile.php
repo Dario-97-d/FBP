@@ -20,6 +20,22 @@
 		<!-- Link to Arrange 3-a-side -->
 		<h3><a href="play-3-arrange?partner-id=<?= $_profile_id ?>">Play-3</a></h3>
 		
+		<?php
+		
+			if ( $_show_button_play5_selection )
+			{
+				?>
+				
+				<form action="play-5-arrange" method="POST">
+					<input type="hidden" name="selected-ids[]" value="<?= $_profile_id ?>">
+					<input type="submit" name="select-players" value="Select for Play-5">
+				</form>
+				
+				<?php
+			}
+		
+		?>
+		
 		<!-- Link to Write message -->
 		<h3><a href="mail-send?to-username=<?= $_profile['username'] ?>">Message</a></h3>
 		

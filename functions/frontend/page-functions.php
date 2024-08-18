@@ -28,6 +28,8 @@
 			// Play.
 			'play-3-arrange'           => 'FBP - Arrange Play-3',
 			'play-3-game'              => 'FBP - 3-a-side',
+			'play-5-arrange'           => 'FBP - Arrange Play-5',
+			'play-5-game'              => 'FBP - 5-a-side',
 			'play-seven'               => 'FBP - Play-7',
 			'play-eleven'              => 'FBP - Play-11',
 			
