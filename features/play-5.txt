@@ -1,0 +1,28 @@
+Feature: Play-5
+
+Play-5 is a single-player team-game mode.
+One must be in a team in order to play this game mode.
+
+The game requires a selection of players, of which:
+- 1 is the player
+- 1 may be a GK Bot
+- 3 or 4 are customly selected with priority:
+-- 1- teammates
+-- 2- mates
+-- 2- teamless
+-- 3- others
+
+The result of the game is based on the balance of the combined generic attributes of the players.
+
+The field-players will be sorted into 4 positions, in a determinable formation (2-2, 1-2-1, 2-1-1, 1-1-2)
+
+Some attributes will enhance the result of the team.
+The better the attributes for a position, the better the contribution for the team.
+Positions are:
+
+LF CF RF 2 2 2
+LW CM RW 1 2 1
+LB CB RB 2 2 2
+
+the further forwards, the more atk is relevant.
+the further backwards, the more def is relevant.

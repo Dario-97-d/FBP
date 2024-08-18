@@ -1,0 +1,23 @@
+1-1-2
+
+defender:   Def/Atk = 2,   Mov/Str = 1
+midfielder: Def/Atk = 1,   Mov/Str = 0.5
+attackers:  Def/Atk = 0.5, Mov/Str = 2
+
+1-2-1
+
+defender:    Def/Atk = 2,   Mov/Str = 1
+midfielders: Def/Atk = 1,   Mov/Str = 1
+attacker:    Def/Atk = 0.5, Mov/Str = 1
+
+2-1-1
+
+defenders:  Def/Atk = 2,   Mov/Str = 2
+midfielder: Def/Atk = 1,   Mov/Str = 0.5
+attacker:   Def/Atk = 0.5, Mov/Str = 1
+
+2-2
+
+defenders: Def/Atk = 2,   Mov/Str = 1
+attackers: Def/Atk = 0.5, Mov/Str = 1
+
