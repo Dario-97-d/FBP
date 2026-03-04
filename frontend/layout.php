@@ -36,8 +36,6 @@
 					else echo '<a href="user-login">Login</a><br /><a href="user-register">Register</a>';
 				?>
 				
-				<?php /*require_once $_FILEREF_partial_view_website_map;*/ ?>
-				
 			</div>
 			
 		</div>
