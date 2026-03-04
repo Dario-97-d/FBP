@@ -49,7 +49,7 @@
 	{
 		?>
 		
-		<h3><a href="play-5-arrange?team-id=<?= $_team_id ?>">Play 5v5</a></h3>
+		<h3><a href="play-5-arrange?team-id=<?= $_profile_id ?>">Play 5v5</a></h3>
 		
 		<?php
 		switch ( $_player_team_status )
@@ -58,7 +58,7 @@
 				?>
 				
 				<form action="team-center" method="POST" onsubmit="return confirm('Apply to <?= $_profile['team_name'] ?>?')">
-					<input type="hidden" name="apply-team-id" value="<?= $_team_id ?>" />
+					<input type="hidden" name="apply-team-id" value="<?= $_profile_id ?>" />
 					<input type="submit" value="Apply to team" />
 				</form>
 				
@@ -71,7 +71,7 @@
 				?>
 				
 				<form action="team-center" method="POST" onsubmit="return confirm('Cancel application to <?= $_profile['team_name'] ?>?')">
-					<input type="hidden" name="cancel-team-id" value="<?= $_team_id ?>" />
+					<input type="hidden" name="cancel-team-id" value="<?= $_profile_id ?>" />
 					<input type="submit" value="Cancel application" />
 				</form>
 				
@@ -82,12 +82,12 @@
 				?>
 				
 				<form action="team-center" method="POST" onsubmit="return confirm('Accept invite from <?= $_profile['team_name'] ?>?')">
-					<input type="hidden" name="accept-team-id" value="<?= $_team_id ?>" />
+					<input type="hidden" name="accept-team-id" value="<?= $_profile_id ?>" />
 					<input type="submit" value="Accept Invite" />
 				</form>
 				
 				<form action="team-center" method="POST" onsubmit="return confirm('Reject invite from <?= $_profile['team_name'] ?>?')">
-					<input type="hidden" name="reject-team-id" value="<?= $_team_id ?>" />
+					<input type="hidden" name="reject-team-id" value="<?= $_profile_id ?>" />
 					<input type="submit" value="Reject Invite" />
 				</form>
 				
