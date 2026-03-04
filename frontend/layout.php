@@ -7,6 +7,7 @@
 		
 		<title><?= PAGE_get_title() ?></title>
 		
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 		<link href="style.css" rel="stylesheet" type="text/css">
 	</head>
 
