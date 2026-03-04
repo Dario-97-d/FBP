@@ -1,6 +1,6 @@
 <?php
 
-	// -- Page Functions --
+	// -- Page functions --
 	
 	function PAGE_get_title()
 	{

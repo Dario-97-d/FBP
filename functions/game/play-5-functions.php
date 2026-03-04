@@ -1,6 +1,6 @@
 <?php
 
-	// -- Play-5 Functions --
+	// -- Play-5 functions --
 	
 	// Require other functions.
 	require_once $_FILEREF_input_handling_functions;

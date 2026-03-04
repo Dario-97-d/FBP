@@ -1,6 +1,6 @@
 <?php
 
-	// -- Search Functions --
+	// -- Search functions --
 	
 	// Include other functions.
 	require_once $_FILEREF_input_handling_functions;

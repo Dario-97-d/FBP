@@ -1,6 +1,6 @@
 <?php
 
-	// -- Play 5 Arrange functions --
+	// -- Play-5 Arrange functions --
 	
 	require_once $_FILEREF_play_5_functions;
 	

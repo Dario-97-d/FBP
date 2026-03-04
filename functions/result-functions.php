@@ -1,6 +1,6 @@
 <?php
 
-	// -- RESULT functions --
+	// -- Result functions --
 	// Used as function result in Feature and SQL functions.
 	
 	function RESULT( $status, $message, $data = null )

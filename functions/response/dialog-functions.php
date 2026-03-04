@@ -1,6 +1,6 @@
 <?php
 
-	// -- Dialog Functions --
+	// -- Dialog functions --
 	
 	$_DIALOG_MESSAGES = [];
 	

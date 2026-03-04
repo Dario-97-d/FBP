@@ -1,6 +1,6 @@
 <?php
 
-	// -- Player Development functions --
+	// -- Player Team functions --
 	
 	require_once $_FILEREF_player_functions;
 	

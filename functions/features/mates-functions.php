@@ -1,6 +1,6 @@
 <?php
 
-	// -- Mates Functions --
+	// -- Mates functions --
 	
 	// Require other functions.
 	require_once $_FILEREF_input_handling_functions;

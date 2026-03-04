@@ -1,6 +1,6 @@
 <?php
 
-	// -- Play 5 Game functions --
+	// -- Play-5 Game functions --
 	
 	require_once $_FILEREF_play_5_functions;
 	

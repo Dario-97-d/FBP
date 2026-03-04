@@ -1,6 +1,6 @@
 <?php
 
-	// -- Team functions --
+	// -- Team Manage Applications functions --
 	
 	require_once $_FILEREF_team_manage_functions;
 	

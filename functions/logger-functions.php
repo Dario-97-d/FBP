@@ -1,6 +1,6 @@
 <?php
 
-	// -- Logger Functions --
+	// -- Logger functions --
 	
 	function LOGGER_delete_old_records( $file_name )
 	{
