@@ -60,6 +60,8 @@
 	
 </div>
 
+<h2>Team Players <?= $_result['own_score'] ?> - <?= $_result['bot_score'] ?> Team Bots</h2>
+
 <div class="display-play-5-game-result">
 	
 	<div class="display-header">Measure</div>
@@ -75,8 +77,6 @@
 	<div class="display-header"><?= round( 100 * $_result['balance']['overall']   ); ?> %</div>
 	
 </div>
-
-<h2>Team Players <?= $_result['own_score'] ?> - <?= $_result['bot_score'] ?> Team Bots</h2>
 
 <div class="display-field-play-5">
 	<div class="rectangle">

@@ -32,13 +32,6 @@
 				
 				<?php require_once $_FILEREF_frontend_content; ?>
 				
-				<h4><u onclick="history.back()">Back</u></h4>
-				
-				<?php
-					if ( $_IS_LOGGED_IN ) require_once $_FILEREF_partial_view_logout_link;
-					else echo '<a href="user-login">Login</a><br /><a href="user-register">Register</a>';
-				?>
-				
 			</div>
 			
 		</div>

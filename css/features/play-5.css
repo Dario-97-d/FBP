@@ -213,7 +213,7 @@
 .display-play-5-game-result {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	margin: 8px auto;
+	margin: 16px auto;
 	border: 4px solid green;
 	border-radius: 8px;
 	font-weight: bold;

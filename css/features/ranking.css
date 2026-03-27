@@ -11,7 +11,7 @@
 
 .display-ranking-players { grid-template-columns: auto auto 3fr auto auto; }
 
-.display-ranking-teams   { grid-template-columns: 12.5% 12.5% 1fr 12.5% 12.5%; }
+.display-ranking-teams   { grid-template-columns: auto auto 1fr auto auto; }
 
 .display-ranking-header,
 .display-ranking-body {

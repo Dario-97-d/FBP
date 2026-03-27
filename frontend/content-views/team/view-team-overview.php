@@ -8,10 +8,10 @@
 <div class="display-own-team-members">
 	
 	<!-- Header -->
-	<div class="display-own-team-members-header">Staff Role</div>
 	<div class="display-own-team-members-header">Username</div>
-	<div class="display-own-team-members-header">Player</div>
+	<div class="display-own-team-members-header player-name">Player</div>
 	<div class="display-own-team-members-header">Rating</div>
+	<div class="display-own-team-members-header">Staff Role</div>
 	
 	<!-- Body -->
 	
@@ -24,14 +24,11 @@
 			$r++;
 			?>
 			
-			<!-- Staff Role -->
-			<div class="display-own-team-members-body"><?= $row['staff_role'] ?></div>
-			
 			<!-- Username -->
 			<div class="display-own-team-members-body at-username">@<?= $row['username'] ?></div>
 			
 			<!-- Player name -->
-			<div class="display-own-team-members-body">
+			<div class="display-own-team-members-body player-name">
 				<a href="player-profile?id=<?= $row['player_id'] ?>">
 					<?= $row['player_name'] ?>
 				</a>
@@ -39,6 +36,9 @@
 			
 			<!-- Rating -->
 			<div class="display-own-team-members-body"><?= $row['player_rating'] ?></div>
+			
+			<!-- Staff Role -->
+			<div class="display-own-team-members-body"><?= $row['staff_role'] ?></div>
 			
 			<?php
 		}

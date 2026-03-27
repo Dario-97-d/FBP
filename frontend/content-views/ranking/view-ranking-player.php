@@ -6,9 +6,9 @@
 	<!-- Header -->
 	<div class="display-ranking-header">Rank</div>
 	<div class="display-ranking-header">Username</div>
-	<div class="display-ranking-header">Name</div>
-	<div class="display-ranking-header">Team</div>
+	<div class="display-ranking-header player-name">Name</div>
 	<div class="display-ranking-header">RTG</div>
+	<div class="display-ranking-header">Team</div>
 	
 	<!-- Body -->
 	
@@ -26,14 +26,17 @@
 				<div class="display-ranking-body"><?= $r ?></div>
 				
 				<!-- Username -->
-				<div class="display-ranking-body at-username">@<?= $row['username'] ?></div>
+				<div class="display-ranking-body at-username"><small>@<?= $row['username'] ?></small></div>
 				
 				<!-- Player name -->
-				<div class="display-ranking-body">
+				<div class="display-ranking-body player-name">
 					<a href="player-profile?id=<?= $row['player_id'] ?>">
 						<?= $row['player_name'] ?>
 					</a>
 				</div>
+				
+				<!-- Rating -->
+				<div class="display-ranking-body"><?= $row['rating'] ?></div>
 				
 				<!-- Team -->
 				<div class="display-ranking-body">
@@ -54,9 +57,6 @@
 					?>
 					
 				</div>
-				
-				<!-- Rating -->
-				<div class="display-ranking-body"><?= $row['rating'] ?></div>
 				
 				<?php
 			}
