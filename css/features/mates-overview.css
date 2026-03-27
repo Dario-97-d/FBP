@@ -1,0 +1,35 @@
+/* Display Mates Overview */
+
+.display-mates-overview {
+	display: grid;
+	grid-template-columns: 3fr 5fr 3fr 3fr;
+	margin: 8px auto;
+	border: 4px solid green;
+	border-radius: 8px;
+	font-weight: bold;
+	color: white;
+}
+
+.display-mates-overview-header,
+.display-mates-overview-body {
+	padding: 8px;
+}
+
+.display-mates-overview-header {
+	background: green;
+}
+
+.display-mates-overview-body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient( rgba(0,170,0,1), rgba(0,170,0,0.75) );
+}
+
+.display-mates-overview-body a {
+	color: purple;
+}
+
+.display-mates-overview-body.at-username {
+	justify-content: flex-start;
+}

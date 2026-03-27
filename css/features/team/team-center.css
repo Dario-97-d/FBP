@@ -1,0 +1,43 @@
+/* Display Player Applications */
+
+.display-player-applications {
+	display: grid;
+	grid-template-columns: 3fr 3fr;
+	background-color: rgba(255,255,255,0.1);
+	margin: 4px auto;
+	border: 2px solid purple;
+	padding: 2px;
+}
+
+.display-player-applications-body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 8px;
+}
+
+.display-player-applications-body a {
+	color: purple;
+}
+
+/* Display Player Invites */
+
+.display-player-invites {
+	display: grid;
+	grid-template-columns: 3fr 3fr;
+	background-color: rgba(255,255,255,0.1);
+	margin: 4px auto;
+	border: 2px solid purple;
+	padding: 2px;
+}
+
+.display-player-invites-body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 8px;
+}
+
+.display-player-invites-body a {
+	color: purple;
+}

@@ -7,8 +7,10 @@
 		
 		<title><?= PAGE_get_title() ?></title>
 		
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-		<link href="style.css" rel="stylesheet" type="text/css">
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="css/layout.css">
+		<link rel="stylesheet" href="css/style.css">
+		<?= CSS_render_stylesheets() ?>
 	</head>
 
 	<body>

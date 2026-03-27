@@ -1,0 +1,26 @@
+/* Mail */
+
+.mail-entry {
+	width: 512px;
+	margin: 16px auto;
+	border-left: 4px solid green;
+	padding-left: 4px;
+}
+
+.mail-entry-header { display: flex; padding: 0 8px; }
+
+.mail-entry-header-sender { margin-right: auto; }
+
+.mail-entry-header-time { margin-left: auto; }
+
+.mail-entry-text {
+	display: block;
+	background-color: rgba(55,55,55,0.5);
+	color: lightgray;
+	font-family: Verdana, sans-serif;
+	line-height: 1.5;
+	text-align: left;
+	margin-top: 4px;
+	padding: 8px 16px;
+	border-radius: 16px;
+}

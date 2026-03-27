@@ -51,10 +51,12 @@
 	// -- Frontend --
 	
 	// Functions.
+	$_FILEREF_css_functions                   = __DIR__ . '/../functions/frontend/css-functions.php';
 	$_FILEREF_js_functions                    = __DIR__ . '/../functions/frontend/js-functions.php';
 	$_FILEREF_page_functions                  = __DIR__ . '/../functions/frontend/page-functions.php';
 	
-	// JS scripts references.
+	// CSS and JS references.
+	$_FILEREF_css_references                  = __DIR__ . '/../frontend/css-references.php';
 	$_FILEREF_js_references                   = __DIR__ . '/../frontend/js-references.php';
 	
 	// Layout and Content files.

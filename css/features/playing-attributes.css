@@ -1,0 +1,59 @@
+/* Display Playing Attributes */
+
+.display-playing-attributes {
+	display: grid;
+	grid-template-rows: 1fr 4fr;
+	grid-template-columns: repeat(3, 1fr);
+	background-color: rgba(255,255,255,0.1);
+	max-width: 512px;
+	margin: 4px auto;
+	border: 2px solid purple;
+	padding: 2px;
+}
+
+.display-playing-attributes-header,
+.display-playing-attributes-body {
+	padding: 4px;
+}
+
+.display-playing-attributes-header {
+	font-weight: bold;
+}
+
+.display-playing-attributes-body {
+	display: grid;
+	grid-template-rows: repeat(4, 1fr);
+	grid-template-columns: 4fr 1fr;
+}
+
+/* Display Playing Attributes Upgrade */
+.display-playing-attributes-upgrade {
+	display: grid;
+	grid-template-rows: auto auto;
+	grid-template-columns: repeat(3, 1fr);
+	background-color: rgba(255,255,255,0.1);
+	margin: 4px auto;
+	border: 2px solid purple;
+	padding: 2px;
+}
+
+.display-playing-attributes-upgrade-header,
+.display-playing-attributes-upgrade-body {
+	padding: 4px;
+}
+
+.display-playing-attributes-upgrade-header {
+	font-weight: bold;
+}
+
+.display-playing-attributes-upgrade-body {
+	display: grid;
+	grid-template-rows: repeat(4, 1fr);
+	grid-template-columns: 4fr 1fr auto;
+}
+
+.display-playing-attributes-upgrade-body-cell {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

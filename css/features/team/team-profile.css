@@ -1,0 +1,28 @@
+/* Display Team Profile Members */
+
+.display-team-profile-members {
+	display: grid;
+	grid-template-columns: 1fr 3fr 5fr 1fr;
+	margin: 8px auto;
+	border: 4px solid green;
+	border-radius: 8px;
+	font-weight: bold;
+	color: white;
+}
+
+.display-team-profile-members-header,
+.display-team-profile-members-body {
+	padding: 8px;
+}
+
+.display-team-profile-members-header {
+	background: green;
+}
+
+.display-team-profile-members-body {
+	background: linear-gradient( rgba(0,170,0,1), rgba(0,170,0,0.75) );
+}
+
+.display-team-profile-members-body a {
+	color: purple;
+}

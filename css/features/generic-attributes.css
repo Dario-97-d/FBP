@@ -1,0 +1,54 @@
+/* Display Generic Attributes */
+
+.display-generic-attributes {
+	display: grid;
+	grid-template-rows: repeat(2, 1fr);
+	grid-template-columns: repeat(5, 1fr);
+	max-width: 512px;
+	margin: 8px auto;
+	border: 4px solid green;
+	border-radius: 8px;
+	font-weight: bold;
+	color: white;
+}
+
+.display-generic-attributes-header,
+.display-generic-attributes-body {
+	padding: 8px;
+}
+
+.display-generic-attributes-header {
+	background: green;
+}
+
+.display-generic-attributes-body {
+	background: linear-gradient( rgba(0,170,0,1), rgba(0,170,0,0.75) );
+}
+
+/* Display Generic Attributes Upgrade */
+
+.display-generic-attributes-upgrade {
+	display: grid;
+	grid-template-rows: repeat(5, auto);
+	grid-template-columns: repeat(5, 1fr);
+	margin: 8px auto;
+	border: 4px solid green;
+	padding: 1px;
+	border-radius: 8px;
+	font-weight: bold;
+	color: white;
+}
+
+.display-generic-attributes-upgrade-header,
+.display-generic-attributes-upgrade-body {
+	margin: 1px;
+	padding: 8px;
+}
+
+.display-generic-attributes-upgrade-header {
+	background: green;
+}
+
+.display-generic-attributes-upgrade-body {
+	background: linear-gradient( rgba(0,170,0,1), rgba(0,170,0,0.75) );
+}

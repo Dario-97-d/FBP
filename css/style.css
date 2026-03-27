@@ -1,0 +1,45 @@
+h1 {
+	color: purple;
+}
+
+input {
+	margin:4px;
+	padding: 4px;
+}
+
+input[type=submit] { min-width: 64px; }
+
+textarea {
+	margin: auto;
+	width: 500px;
+	height: 250px;
+}
+
+select { padding: 4px; }
+select option { padding: 4px; }
+
+.at-username {
+	text-align: left;
+	color: rgba(63,63,63,0.9);
+}
+
+/* Grid Ignore Element */
+.grid-ignore-element { display: contents; }
+
+/* Grid Span Columns */
+.grid-span-col-2 { grid-column: 1 / span 2; }
+
+.grid-span-col-3 { grid-column: 1 / span 3; }
+
+.grid-span-col-4 { grid-column: 1 / span 4; }
+
+.grid-span-col-5 { grid-column: 1 / span 5; }
+
+.button-upgrade-playing-attribute {
+	min-width: 27px !important;
+}
+
+.logout-link a {
+	color: darkred;
+	text-decoration: none;
+}

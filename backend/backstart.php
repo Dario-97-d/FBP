@@ -19,8 +19,10 @@
 	require_once $_FILEREF_redirect_functions;
 	
 	// Frontend.
-	require_once $_FILEREF_js_functions;
+	require_once $_FILEREF_css_references;
+	require_once $_FILEREF_css_functions;
 	require_once $_FILEREF_js_references;
+	require_once $_FILEREF_js_functions;
 	require_once $_FILEREF_page_functions;
 	
 	// Attempt MySQL connection.
