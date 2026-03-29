@@ -9,6 +9,7 @@
 		
 		<link rel="icon" href="favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" href="css/layout.css">
+		<link rel="stylesheet" href="<?= $_CSSREF_bottom_nav ?>">
 		<link rel="stylesheet" href="css/style.css">
 		<?= CSS_render_stylesheets() ?>
 	</head>
@@ -18,27 +19,25 @@
 		<?php /* Show all dialog entries */ ?>
 		<?= DIALOG_all() ?>
 		
-		<div>
+		<header>
 			<a href="index">FBP</a>
-		</div>
+		</header>
 
-		<hr color="purple">
+		<hr color="purple" style="margin-bottom: 0.5rem;">
 		
-		<div class="frame">
+		<main>
 			
-			<div class="inner-frame">
-				
-				<?php require_once $_FILEREF_partial_view_top_bar; ?>
-				
+			<div class="main-content">
 				<?php require_once $_FILEREF_frontend_content; ?>
-				
 			</div>
 			
-		</div>
+			<?php require_once $_FILEREF_partial_bottom_nav; ?>
+			
+		</main>
 
-		<div class="footer">FBP (C)</div>
+		<footer>FBP (C)</footer>
 		
-		<?php /* Include required JavaScript */ ?>
+		<script src="<?= $_JSREF_partial_bottom_nav ?>"></script>
 		<?= JS_render_scripts() ?>
 
 	</body>
