@@ -31,7 +31,7 @@
 	
 </div>
 
-<form action="play-3-game" method="POST" onsubmit="return confirm('?')">
+<form action="play-3-game" method="POST" onsubmit="return confirm('Play 3v3 with <?= $_partner['player_name'] ?>?')">
 	<br />
 	<button type="submit" name="partner-id" value="<?= $_partner_id ?>">GO</button>
 </form>

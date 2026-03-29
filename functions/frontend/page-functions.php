@@ -26,6 +26,7 @@
 			'player-profile'           => 'FBP - Player Profile '.$_profile_id,
 			
 			// Play.
+			'play-3'                   => 'FBP - Play-3v3',
 			'play-3-arrange'           => 'FBP - Arrange Play-3',
 			'play-3-game'              => 'FBP - 3-a-side',
 			'play-5-arrange'           => 'FBP - Arrange Play-5',

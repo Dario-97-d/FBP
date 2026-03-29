@@ -21,6 +21,7 @@
 		'player-profile'           => 'player/view-player-profile.php',
 		
 		// Play.
+		'play-3'                   => 'play/view-play-3.php',
 		'play-3-arrange'           => 'play/view-play-3-arrange.php',
 		'play-3-game'              => 'play/view-play-3-game.php',
 		'play-5-arrange'           => 'play/view-play-5-arrange.php',
