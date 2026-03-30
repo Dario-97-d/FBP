@@ -1,0 +1,31 @@
+-- FBP replanning --
+
+- Main features:
+Play-3
+Play-5
+Play-7
+Play-11
+
+Play-3:
+- pvp in a 3v3 match (1 bot + 2p vs 3 bot)
+- performance based on comparison with chosen opponent
+
+Play-5:
+- player must be in a team
+- team plays with bots if it hasn't enough players
+- team plays against other teams
+- team plays against bot team if no teams available
+- play-5 player ranking based on real (no-bot) wins
+
+Play-7:
+- team can have permanent bots
+- team formation and player positions
+- team can enter competitions (1 match per 30/60 min)
+- player-team commitment per day
+
+Play-11:
+- club plays in a competition
+- divisions system, with new clubs joining the lowest divisions
+- permanent calendar (1 real day -> 1 matchweek)
+- team formation, player positions, tactics
+- player-team commitment per season
