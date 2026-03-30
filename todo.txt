@@ -1,29 +1,33 @@
-pra fazer:
 
-make team upgrade to class 7
+done- Define main features in order to implement a simple first version of each:
+- Play 3 (done)
+- Play 5 (ongoing)
+- Play 7 (todo)
+- Play 11 (todo)
 
-make play-7
+Play 5:
+- allow team with fewer than 5 members to play a match, using bots
+- allow team to play against a bot team
+- (maybe) add play-5 ranking
 
-make play-7 competitions
+Play 7:
+- make team upgrade (maybe require player have over 'x' rating, dunno)
+- implement team formation (2-3-1 / 1-3-2) and player positions
+-- should be tactically logic
+- (later) add team competitions, where matches are played every 30 or 60 min
+- (maybe) implement player-team commitment for one day as requirement for competitions
 
-make team upgrade to class 11
-
-make play-11
-
-make play-11 competitions
-
-make player permanence in club
-
-make team upgrade to club
-
-make player contracts
-
-make team training
-
-make player transfers
+Play 11:
+- make club foundation (team upgrade, most likely)
+- implement league:
+-- 'x' teams
+-- match calendar
+- implement team formation (multiple options)
+- implement match logic based on player attributes, team formation and tactics
+- implement player-team contracts
 
 <-->
 
-game appearance
+(auth-functions: fix session not being started) -> don't remember when/where it was happening
 
 make notification display system (mail, mates, games?)
