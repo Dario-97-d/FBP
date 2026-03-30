@@ -9,9 +9,9 @@
 		global $_FILEREF_frontend_layout;
 		global $_FILEREF_frontend_content;
 		
-		global $_FILEREF_partial_view_logout_link;
-		global $_FILEREF_partial_view_top_bar;
-		global $_FILEREF_partial_view_website_map;
+		global $_FILEREF_partial_bottom_nav;
+		global $_CSSREF_bottom_nav;
+		global $_JSREF_partial_bottom_nav;
 		
 		global $_IS_LOGGED_IN;
 		
