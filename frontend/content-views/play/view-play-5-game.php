@@ -1,9 +1,10 @@
 
 <h1>5-a-side</h1>
 
-<div class="display-play-5-selected-players game">
+<div class="display-play-5-selected-players">
 	
 	<!-- Header -->
+	<div class="display-header">Pos.</div>
 	<div class="display-header">Player</div>
 	<div class="display-header">STR</div>
 	<div class="display-header">MOV</div>
@@ -14,12 +15,11 @@
 	
 	<?php
 	
-		$i = 0;
 		foreach ( $_selected_players as $row )
 		{
-			$i++;
 			?>
 			
+			<div class="display-body"><?= $row['position']  ?></div>
 			<div class="display-body player-name"><?= $row['player_name'] ?></div>
 			<div class="display-body"><?= $row['strength']  ?></div>
 			<div class="display-body"><?= $row['movement']  ?></div>
@@ -30,26 +30,11 @@
 			
 			<?php
 		}
-		
-		while ( $i < 5 )
-		{
-			$i++;
-			?>
-			
-			<div class="display-body player-name">-</div>
-			<div class="display-body">-</div>
-			<div class="display-body">-</div>
-			<div class="display-body">-</div>
-			<div class="display-body">-</div>
-			<div class="display-body">-</div>
-			<div class="display-body">-</div>
-			
-			<?php
-		}
 	
 	?>
 	
 	<!-- Total -->
+	<div class="display-header"></div>
 	<div class="display-header">Total</div>
 	<div class="display-header"><?= $_total_atts['strength']  ?></div>
 	<div class="display-header"><?= $_total_atts['movement']  ?></div>
@@ -90,31 +75,15 @@
 		<div class="round-icon keeper own-keeper">GK</div>
 		<div class="round-icon keeper other-keeper">GK</div>
 		
-		<div class="round-icon own own-<?= $_positions_players[0] ?>">P</div>
 		<div class="round-icon own own-<?= $_positions_players[1] ?>">P</div>
 		<div class="round-icon own own-<?= $_positions_players[2] ?>">P</div>
 		<div class="round-icon own own-<?= $_positions_players[3] ?>">P</div>
-		
-		<!--
-		<div class="round-icon own own-CB">P</div>
-		<div class="round-icon own own-RM">P</div>
-		<div class="round-icon own own-CM">P</div>
-		<div class="round-icon own own-LM">P</div>
-		<div class="round-icon own own-CF">P</div>
-		-->
+		<div class="round-icon own own-<?= $_positions_players[4] ?>">P</div>
 
-		<div class="round-icon bot bot-<?= $_positions_bots[0] ?>">B</div>
 		<div class="round-icon bot bot-<?= $_positions_bots[1] ?>">B</div>
 		<div class="round-icon bot bot-<?= $_positions_bots[2] ?>">B</div>
 		<div class="round-icon bot bot-<?= $_positions_bots[3] ?>">B</div>
-		
-		<!--
-		<div class="round-icon bot bot-CB">B</div>
-		<div class="round-icon bot bot-RM">B</div>
-		<div class="round-icon bot bot-CM">B</div>
-		<div class="round-icon bot bot-LM">B</div>
-		<div class="round-icon bot bot-CF">B</div>
-		-->
+		<div class="round-icon bot bot-<?= $_positions_bots[4] ?>">B</div>
 		
 	</div>
 </div>

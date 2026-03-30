@@ -14,7 +14,7 @@
 	
 	$_player = PLAY_5_get_player() or DIE_error();
 	
-	// Includes GK - Bot.
+	// Includes Bots.
 	$_selected_players = PLAY_5_get_selected_players( $_player ) or DIE_error();
 	
 	// Exit if there aren't enough players selected.

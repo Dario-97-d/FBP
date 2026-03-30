@@ -3,7 +3,7 @@
 
 <h2>Current Selection</h2>
 
-<div class="display-play-5-selected-players arrange">
+<div class="display-play-5-selected-players">
 	
 	<!-- Header -->
 	<div class="display-header">#</div>
@@ -80,13 +80,15 @@
 		
 		<input type="submit" name="clear-selection" value="Clear Selection" <?= $_clear_selection_disabled ?>>
 		
+		<input type="submit" name="use-bots" value="Use bots" class="grid-span-col-2" <?= $_is_selection_full ? 'disabled' : '' ?>>
+		
 	</form>
 
 </div>
 
 <?php
 
-	if ( $_is_selection_full < 5 )
+	if ( ! $_is_selection_full )
 	{
 		if ( is_array( $_teammates_for_selection ) )
 		{

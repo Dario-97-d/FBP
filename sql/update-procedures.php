@@ -6,7 +6,7 @@
 	 * Which procedures are created may be defined with $update_all = false and $update_which[i] = 1.
 	*/
 	
-	$update_all = true;
+	$update_all = false;
 	
 	// Folder structure of sql stored procedures.
 	$update_which = array(
@@ -23,6 +23,8 @@
 			'expel_player'       => 0,
 			'player_leave'       => 0
 		),
+		'play5_add_to_selection' => 0,
+		'play5_use_bots'         => 1,
 		'register_player'        => 0,
 		'send_mail'              => 0
 	);

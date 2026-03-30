@@ -40,6 +40,15 @@
 		}
 	}
 	
+	// -- Use bots --
+	if ( isset( $_POST['use-bots'] ) )
+	{
+		PLAY_5_Arrange_use_bots() or DIE_error();
+		
+		// Avoid form resubmission.
+		REDIRECT_current();
+	}
+	
 	
 	$_player = PLAY_5_get_player() or DIE_error();
 	

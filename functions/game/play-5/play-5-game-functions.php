@@ -39,13 +39,21 @@
 		
 		// -- Set variables for display --
 		
-		$positions_for_1_2_1 = [ 'CF', 'LM', 'RM', 'CB' ];
-		$positions_for_2_2   = [ 'LF', 'RF', 'LB', 'RB' ];
+		$positions_for_1_2_1 = [ 'GK', 'CB', 'RM', 'LM', 'CF' ];
+		$positions_for_2_2   = [ 'GK', 'RB', 'LB', 'RF', 'LF' ];
 		
 		$positions = array(
 			'players' => $formation == '1-2-1' ?  $positions_for_1_2_1 : $positions_for_2_2,
 			'bots'    => rand( 0, 1 )          ?  $positions_for_1_2_1 : $positions_for_2_2,
 		);
+		
+		// Add positions to selected_players array.
+		$i = 0;
+		foreach ( $selected_players as &$player )
+		{
+			$player['position'] = $positions['players'][$i];
+			$i++;
+		}
 		
 		$balance['physical'] = PLAY_5_Game_calculate_physical_balance( $total_atts );
 		$balance['tactical'] = PLAY_5_Game_calculate_tactical_balance( $total_atts );
@@ -181,7 +189,7 @@
 		
 		// If GK Bot isn't selected,
 		// sort selected_players by rating, skill and movement.
-		if ( $selected_players[0]['player_name'] !== 'GK - Bot' )
+		if ( $selected_players[0]['player_id'] !== 0 )
 		{
 			usort(
 				$selected_players,

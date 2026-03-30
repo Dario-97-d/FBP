@@ -53,7 +53,7 @@
 		
 		if ( $bool_select )
 		{
-			$select = SQL_prep_stmt_one( 'INSERT INTO play5_selections () VALUES (?, ?)', array( $_player_id, $_player_id ) );
+			$select = SQL_prep_stmt_one( 'INSERT INTO play5_selections () VALUES (?, 0)', array( $_player_id ) );
 			
 			return RESULT_is_success( $select );
 		}
@@ -63,4 +63,13 @@
 			
 			return RESULT_is_success( $deselect );
 		}
+	}
+	
+	function PLAY_5_Arrange_use_bots()
+	{
+		global $_player_id;
+		
+		$call_use_bots = SQL_prep_procedure( 'CALL sp_play5_use_bots(?)', array( $_player_id ) );
+		
+		return RESULT_is_success( $call_use_bots );
 	}

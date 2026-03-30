@@ -128,6 +128,5 @@ CREATE TABLE IF NOT EXISTS play5_selections (
 	selected_id INT NOT NULL,
 	
 	FOREIGN KEY (player_id)   REFERENCES football_players (id),
-	FOREIGN KEY (selected_id) REFERENCES football_players (id),
 	UNIQUE (player_id, selected_id)
 ) ENGINE = InnoDB;
