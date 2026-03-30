@@ -4,6 +4,11 @@
 	
 	$_DIALOG_MESSAGES = [];
 	
+	function DIALOG_add_debug( $message )
+	{
+		DIALOG_add_message( 'debug', $message );
+	}
+	
 	function DIALOG_add_fail( $category, $message )
 	{
 		DIALOG_add_message( $category.' fail', $message );
