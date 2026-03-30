@@ -52,6 +52,7 @@
 			case 'guide-team':
 			
 			case 'play-3':
+			case 'play-5':
 			
 			case 'player-profile':
 			case 'team-profile':

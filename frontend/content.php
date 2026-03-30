@@ -24,6 +24,7 @@
 		'play-3'                   => 'play/view-play-3.php',
 		'play-3-arrange'           => 'play/view-play-3-arrange.php',
 		'play-3-game'              => 'play/view-play-3-game.php',
+		'play-5'                   => 'play/view-play-5.php',
 		'play-5-arrange'           => 'play/view-play-5-arrange.php',
 		'play-5-game'              => 'play/view-play-5-game.php',
 		'play-seven'               => 'play/view-play-seven.php',
