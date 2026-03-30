@@ -34,6 +34,27 @@
 			array( $player_id ) );
 	}
 	
+	function PLAYER_Profile_get_invite_status()
+	{
+		global $_player_id;
+		global $_profile_id;
+		
+		return SQL_prep_get_value(
+			"SELECT
+				CASE
+					WHEN inviter.staff_role != 'Captain' THEN 'false'
+					WHEN invited.team_id    IS NOT NULL  THEN 'false'
+					WHEN invite.invite_id   IS NOT NULL  THEN 'invited'
+					ELSE                                      'can_invite'
+				END
+			FROM      player_team         inviter
+			JOIN      player_team         invited ON invited.player_id = ?
+			LEFT JOIN team_player_invites invite  ON invite.team_id    = inviter.team_id
+			                                     AND invite.player_id  = invited.player_id
+			WHERE     inviter.player_id = ?",
+			array( $_profile_id, $_player_id ) );
+	}
+	
 	function PLAYER_Profile_get_mate_status( $checked_id )
 	{
 		global $_user_id;
@@ -57,19 +78,6 @@
 				$_user_id, $checked_id,
 				$checked_id, $_user_id
 			) );
-	}
-	
-	function PLAYER_Profile_is_invite_allowed()
-	{
-		global $_player_id;
-		global $_profile_id;
-		
-		return SQL_prep_bool_or_null(
-			'SELECT 1 WHERE
-				( SELECT 1 FROM player_team WHERE player_id = ? AND staff_role = \'Captain\' )
-				AND
-				( SELECT 1 FROM player_team WHERE player_id = ? AND team_id IS NULL )',
-			array( $_player_id, $_profile_id ) );
 	}
 	
 	function PLAYER_Profile_is_play_5_selection_allowed()

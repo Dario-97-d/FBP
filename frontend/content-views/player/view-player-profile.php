@@ -82,17 +82,28 @@
 				break;
 		}
 		
-		if ( $_show_button_invite )
+		
+		switch ( $_invite_status )
 		{
-			?>
+			case 'invited':
+				?>
+				
+				<p>This player has an <a href="team-manage-invites">invite</a> from the team.</p>
+				
+				<?php
+				break;
 			
-			<!-- Invite player to team -->
-			<form action="team-manage-invites" method="POST" onsubmit="return confirm('Invite <?= $_profile['player_name'] ?> to team?')">
-				<input type="hidden" name="invite-player-id" value="<?= $_profile_id ?>" />
-				<input type="submit" value="Invite to Team" />
-			</form>
-			
-			<?php
+			case 'can_invite':
+				?>
+				
+				<!-- Invite player to team -->
+				<form action="team-manage-invites" method="POST" onsubmit="return confirm('Invite <?= $_profile['player_name'] ?> to team?')">
+					<input type="hidden" name="invite-player-id" value="<?= $_profile_id ?>" />
+					<input type="submit" value="Invite to Team" />
+				</form>
+				
+				<?php
+				break;
 		}
 	}
 
