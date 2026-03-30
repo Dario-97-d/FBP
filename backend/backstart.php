@@ -29,7 +29,7 @@
 	SQL_connect() or DIE_error();
 	
 	// Use session.
-	session_start();// $_SESSION['id'] = 1;
+	session_start();
 	
 	// Global variables.
 	$_CURRENT_PAGE_NAME = URL_get_page_name();
