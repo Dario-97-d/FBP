@@ -32,7 +32,9 @@
 			'play-5'                   => 'FBP - Play 5v5',
 			'play-5-arrange'           => 'FBP - Arrange Play-5',
 			'play-5-game'              => 'FBP - 5-a-side',
-			'play-seven'               => 'FBP - Play-7',
+			'play-7-arrange'           => 'FBP - Arrange Play-7',
+			'play-7-arrange-formation' => 'FBP - Play-7 Formation',
+			'play-7-arrange-selection' => 'FBP - Play-7 Selection',
 			'play-eleven'              => 'FBP - Play-11',
 			
 			// Team.

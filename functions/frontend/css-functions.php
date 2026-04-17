@@ -29,6 +29,10 @@
       'play-5-arrange' => [ $_CSSREF_play_5 ],
       'play-5-game'    => [ $_CSSREF_play_5 ],
 
+      'play-7-arrange'           => [ $_CSSREF_play_7_arrange ],
+      'play-7-arrange-formation' => [ $_CSSREF_play_7_arrange ],
+      'play-7-arrange-selection' => [ $_CSSREF_play_7_arrange_selection ],
+
       // -- Player --
 
       'player-development',

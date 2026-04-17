@@ -12,6 +12,8 @@
   // Play.
   $_CSSREF_play_3 = 'css/features/play-3.css';
   $_CSSREF_play_5 = 'css/features/play-5.css';
+  $_CSSREF_play_7_arrange           = 'frontend/content-views/play-7/view-play-7-arrange.css';
+  $_CSSREF_play_7_arrange_selection = 'frontend/content-views/play-7/view-play-7-arrange-selection.css';
 
   // Ranking.
   $_CSSREF_ranking = 'css/features/ranking.css';

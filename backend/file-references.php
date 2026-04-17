@@ -43,10 +43,14 @@
 	// Game functions.
 	$_FILEREF_play_3_functions                = __DIR__ . '/../functions/game/play-3-functions.php';
 	$_FILEREF_play_5_functions                = __DIR__ . '/../functions/game/play-5-functions.php';
+	$_FILEREF_play_7_functions                = __DIR__ . '/../functions/game/play-7-functions.php';
 	
 	// Play-5 Functions.
 	$_FILEREF_play_5_arrange_functions        = __DIR__ . '/../functions/game/play-5/play-5-arrange-functions.php';
 	$_FILEREF_play_5_game_functions           = __DIR__ . '/../functions/game/play-5/play-5-game-functions.php';
+	
+	// Play-7 Functions.
+	$_FILEREF_play_7_arrange_selection_functions = __DIR__ . '/../functions/game/play-7/play-7-arrange-selection-functions.php';
 	
 	// -- Frontend --
 	

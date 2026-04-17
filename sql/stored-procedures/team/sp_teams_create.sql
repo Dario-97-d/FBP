@@ -37,15 +37,18 @@ proc_edure:BEGIN
 	--
 	
 	-- Insert team
-    INSERT INTO teams (team_name, rating)
-    VALUES
-	(
-		var_team_name,
-		(SELECT rating FROM football_players WHERE id = var_player_id)
-	);
-	
-    -- Retrieve the ID of the newly inserted team
-    SELECT LAST_INSERT_ID() INTO @new_team_id;
+  INSERT INTO teams (team_name, rating)
+  VALUES
+  (
+    var_team_name,
+    (SELECT rating FROM football_players WHERE id = var_player_id)
+  );
+  
+  -- Insert teams play7 formation
+  INSERT INTO play7_formations ('2-3-1');
+
+  -- Retrieve the ID of the newly inserted team
+  SELECT LAST_INSERT_ID() INTO @new_team_id;
     
 	-- Update player's team affiliation
 	UPDATE player_team

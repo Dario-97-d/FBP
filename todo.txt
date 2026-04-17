@@ -6,16 +6,15 @@ done- Define main features in order to implement a simple first version of each:
 - Play 11 (todo)
 
 Play 5:
-- allow team with fewer than 5 members to play a match, using bots
-- allow team to play against a bot team
 - (maybe) add play-5 ranking
+- (maybe later) make team vs team play 5 game
 
 Play 7:
-- make team upgrade (maybe require player have over 'x' rating, dunno)
-- implement team formation (2-3-1 / 1-3-2) and player positions
--- should be tactically logic
+- add 7v7 game
+- add initial page for play-7
+- (later) make team upgrade (maybe require player have over 'x' rating, dunno)
 - (later) add team competitions, where matches are played every 30 or 60 min
-- (maybe) implement player-team commitment for one day as requirement for competitions
+- (maybe later) implement player-team commitment for one day as requirement for competitions
 
 Play 11:
 - make club foundation (team upgrade, most likely)

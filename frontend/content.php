@@ -27,8 +27,9 @@
 		'play-5'                   => 'play/view-play-5.php',
 		'play-5-arrange'           => 'play/view-play-5-arrange.php',
 		'play-5-game'              => 'play/view-play-5-game.php',
-		'play-seven'               => 'play/view-play-seven.php',
-		'play-eleven'              => 'play/view-play-eleven.php',
+		'play-7-arrange'           => 'play-7/view-play-7-arrange.php',
+		'play-7-arrange-formation' => 'play-7/view-play-7-arrange-formation.php',
+		'play-7-arrange-selection' => 'play-7/view-play-7-arrange-selection.php',
 		
 		// Team.
 		'team-center'              => 'team/view-team-center.php',

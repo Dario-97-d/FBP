@@ -130,3 +130,21 @@ CREATE TABLE IF NOT EXISTS play5_selections (
 	FOREIGN KEY (player_id)   REFERENCES football_players (id),
 	UNIQUE (player_id, selected_id)
 ) ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS play7_formations (
+	team_id INT          PRIMARY KEY AUTO_INCREMENT,
+	formation VARCHAR(5) NOT NULL DEFAULT '2-3-1',
+	
+	FOREIGN KEY (team_id) REFERENCES teams (id)
+) ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS play7_selections (
+	team_id         INT NOT NULL,
+	player_id       INT NOT NULL,
+  position_number INT NOT NULL,
+	
+	FOREIGN KEY (team_id) REFERENCES teams (id),
+  FOREIGN KEY (player_id) REFERENCES football_players (id),
+  UNIQUE (team_id, player_id),
+  UNIQUE (team_id, position_number)
+) ENGINE = InnoDB;

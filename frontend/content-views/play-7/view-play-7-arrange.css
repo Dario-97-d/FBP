@@ -1,0 +1,157 @@
+/* CSS for play-7-arrange */
+
+.play-7-lineup {
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 2%;
+  border: 2px solid rgba(127,127,127,0.5);
+  box-shadow: inset #gray 0 0 0.5rem;
+  background-color: #3F8F2F;
+}
+
+.play-7-lineup .outer-lines {
+	position: relative;
+	border: 4px solid #DFDFDF;
+  aspect-ratio: 3 / 2;
+  max-height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.play-7-lineup .center-semi-circle {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  aspect-ratio: 1;
+  width: 33%;
+  border-radius: 50%;
+  border: 4px solid #DFDFDF;
+}
+
+.play-7-lineup .goal-box {
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  aspect-ratio: 3;
+  width: 33%;
+  border: 4px solid #DFDFDF;
+}
+
+.play-7-lineup .penalty-box {
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  aspect-ratio: 33/13.5;
+  width: 75%;
+  border: 4px solid #DFDFDF;
+}
+
+.round-icon {
+  position: absolute;
+	width: 9%;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	border: 4px solid #000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 150%;
+	min-width: 32px;
+  background-color: #7f7f7f;
+  color: #DFDFDF;
+}
+
+.GK {
+  position: absolute;
+  bottom: 0.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #131;
+  color: white;
+}
+
+.CB {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 25%;
+}
+
+.RB {
+  position: absolute;
+  left: 75%;
+  transform: translateX(-50%);
+  bottom: 25%;
+}
+
+.LB {
+  position: absolute;
+  left: 25%;
+  transform: translateX(-50%);
+  bottom: 25%;
+}
+
+.CDM {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 48%;
+}
+
+.RWB {
+  position: absolute;
+  left: 82.5%;
+  transform: translateX(-50%);
+  bottom: 48%;
+}
+
+.LWB {
+  position: absolute;
+  left: 17.5%;
+  transform: translateX(-50%);
+  bottom: 48%;
+}
+
+.RWF {
+  position: absolute;
+  left: 17.5%;
+  transform: translateX(-50%);
+  bottom: 58%;
+}
+
+.LWF {
+  position: absolute;
+  left: 82.5%;
+  transform: translateX(-50%);
+  bottom: 58%;
+}
+
+.CAM {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 54%;
+}
+
+.RF {
+  position: absolute;
+  left: 25%;
+  transform: translateX(-50%);
+  bottom: 80%;
+}
+
+.LF {
+  position: absolute;
+  left: 75%;
+  transform: translateX(-50%);
+  bottom: 80%;
+}
+
+.CF {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 80%;
+}

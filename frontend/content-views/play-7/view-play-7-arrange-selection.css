@@ -1,0 +1,9 @@
+/* CSS for play-7-arrange-selection */
+section#play-7-arrange-selection table {
+  margin: 0 auto;
+}
+
+section#play-7-arrange-selection table th,
+section#play-7-arrange-selection table td {
+  padding: 0.25rem;
+}
